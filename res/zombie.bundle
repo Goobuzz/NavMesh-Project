@@ -1,0 +1,3753 @@
+{
+    "project.project": {
+        "created": "2013-11-05T14:40:03.742788",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "zombie_injured_walk/entities/RootNode.entity",
+            "zombie_injured_walk/entities/Zombie_Geo_0.entity"
+        ],
+        "groupRefs": [
+            "zombie_injured_walk/zombie_injured_walk.group"
+        ],
+        "id": "4j9IMiIAT7aV1WtQnfzRaQ",
+        "licenseType": "CC0",
+        "modified": "2013-11-05T14:40:03.742788",
+        "name": "Default Goo Project",
+        "originalLicenseType": null,
+        "own": [
+            "wea-6RsRQo-ziGjYWuLmwg"
+        ],
+        "parent": null,
+        "public": true,
+        "publishedURL": "http://published.gooengine.com.s3-website-eu-west-1.amazonaws.com/4j9IMiIAT7aV1WtQnfzRaQ",
+        "ref": "project.project"
+    },
+    "zombie_injured_walk/animations/Animations.animation": {
+        "layers": [
+            {
+                "defaultState": "mixamo.com",
+                "name": "Default animation layer",
+                "states": {
+                    "mixamo.com": {
+                        "stateRef": "zombie_injured_walk/animations/mixamo_com.animstate"
+                    }
+                }
+            }
+        ]
+    },
+    "zombie_injured_walk/animations/mixamo_com.animstate": {
+        "clipSource": {
+            "clipRef": "zombie_injured_walk/animations/mixamo_com.clip",
+            "loopCount": -1,
+            "timeScale": 1.0,
+            "type": "Clip"
+        },
+        "name": "mixamo.com"
+    },
+    "zombie_injured_walk/animations/mixamo_com.clip": {
+        "binaryRef": "zombie_injured_walk/binaries/1383908596_zombie_injured_walk_mixamo_com.bin",
+        "channels": [
+            {
+                "blendType": "Linear",
+                "jointIndex": 0,
+                "jointName": "Zombie:Hips",
+                "name": "_jnt0",
+                "rotationSamples": [
+                    0,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    576,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    1440,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    1008,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 1,
+                "jointName": "Zombie:Spine",
+                "name": "_jnt1",
+                "rotationSamples": [
+                    1584,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    2160,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    3024,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    2592,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 2,
+                "jointName": "Zombie:Spine1",
+                "name": "_jnt2",
+                "rotationSamples": [
+                    3168,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    3744,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    4608,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    4176,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 3,
+                "jointName": "Zombie:Spine2",
+                "name": "_jnt3",
+                "rotationSamples": [
+                    4752,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    5328,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    6192,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    5760,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 4,
+                "jointName": "Zombie:Neck",
+                "name": "_jnt4",
+                "rotationSamples": [
+                    6336,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    6912,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    7776,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    7344,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 5,
+                "jointName": "Zombie:Neck1",
+                "name": "_jnt5",
+                "rotationSamples": [
+                    7920,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    7936,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    7960,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    7948,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 6,
+                "jointName": "Zombie:Head",
+                "name": "_jnt6",
+                "rotationSamples": [
+                    7964,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    8540,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    9404,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    8972,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 9,
+                "jointName": "Zombie:Jaw",
+                "name": "_jnt9",
+                "rotationSamples": [
+                    9548,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    9564,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    9588,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    9576,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 31,
+                "jointName": "Zombie:LeftShoulder",
+                "name": "_jnt31",
+                "rotationSamples": [
+                    9592,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    10168,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    11032,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    10600,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 32,
+                "jointName": "Zombie:LeftArm",
+                "name": "_jnt32",
+                "rotationSamples": [
+                    11176,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    11752,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    12616,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    12184,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 33,
+                "jointName": "Zombie:LeftForeArm",
+                "name": "_jnt33",
+                "rotationSamples": [
+                    12760,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    13336,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    14200,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    13768,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 34,
+                "jointName": "Zombie:LeftHand",
+                "name": "_jnt34",
+                "rotationSamples": [
+                    14344,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    14920,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    15784,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    15352,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 35,
+                "jointName": "Zombie:LeftHandThumb1",
+                "name": "_jnt35",
+                "rotationSamples": [
+                    15928,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    16504,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    17368,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    16936,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 36,
+                "jointName": "Zombie:LeftHandThumb2",
+                "name": "_jnt36",
+                "rotationSamples": [
+                    17512,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    17528,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    17552,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    17540,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 37,
+                "jointName": "Zombie:LeftHandThumb3",
+                "name": "_jnt37",
+                "rotationSamples": [
+                    17556,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    18132,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    18996,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    18564,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 38,
+                "jointName": "Zombie:LeftHandMiddle1",
+                "name": "_jnt38",
+                "rotationSamples": [
+                    19140,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    19716,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    20580,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    20148,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 39,
+                "jointName": "Zombie:LeftHandMiddle2",
+                "name": "_jnt39",
+                "rotationSamples": [
+                    20724,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    21300,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    22164,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    21732,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 40,
+                "jointName": "Zombie:LeftHandMiddle3",
+                "name": "_jnt40",
+                "rotationSamples": [
+                    22308,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    22884,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    23748,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    23316,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 41,
+                "jointName": "Zombie:LeftHandIndex1",
+                "name": "_jnt41",
+                "rotationSamples": [
+                    23892,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    24468,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    25332,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    24900,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 42,
+                "jointName": "Zombie:LeftHandIndex2",
+                "name": "_jnt42",
+                "rotationSamples": [
+                    25476,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    26052,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    26916,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    26484,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 43,
+                "jointName": "Zombie:LeftHandIndex3",
+                "name": "_jnt43",
+                "rotationSamples": [
+                    27060,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    27636,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    28500,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    28068,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 44,
+                "jointName": "Zombie:LeftHandRing1",
+                "name": "_jnt44",
+                "rotationSamples": [
+                    28644,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    29220,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    30084,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    29652,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 45,
+                "jointName": "Zombie:LeftHandRing2",
+                "name": "_jnt45",
+                "rotationSamples": [
+                    30228,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    30804,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    31668,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    31236,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 46,
+                "jointName": "Zombie:LeftHandRing3",
+                "name": "_jnt46",
+                "rotationSamples": [
+                    31812,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    32388,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    33252,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    32820,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 47,
+                "jointName": "Zombie:LeftHandPinky1",
+                "name": "_jnt47",
+                "rotationSamples": [
+                    33396,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    33972,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    34836,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    34404,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 48,
+                "jointName": "Zombie:LeftHandPinky2",
+                "name": "_jnt48",
+                "rotationSamples": [
+                    34980,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    35556,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    36420,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    35988,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 49,
+                "jointName": "Zombie:LeftHandPinky3",
+                "name": "_jnt49",
+                "rotationSamples": [
+                    36564,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    37140,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    38004,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    37572,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 50,
+                "jointName": "Zombie:RightShoulder",
+                "name": "_jnt50",
+                "rotationSamples": [
+                    38148,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    38724,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    39588,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    39156,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 51,
+                "jointName": "Zombie:RightArm",
+                "name": "_jnt51",
+                "rotationSamples": [
+                    39732,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    40308,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    41172,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    40740,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 52,
+                "jointName": "Zombie:RightForeArm",
+                "name": "_jnt52",
+                "rotationSamples": [
+                    41316,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    41892,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    42756,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    42324,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 53,
+                "jointName": "Zombie:RightHand",
+                "name": "_jnt53",
+                "rotationSamples": [
+                    42900,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    43476,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    44340,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    43908,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 54,
+                "jointName": "Zombie:RightHandThumb1",
+                "name": "_jnt54",
+                "rotationSamples": [
+                    44484,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    45060,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    45924,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    45492,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 55,
+                "jointName": "Zombie:RightHandThumb2",
+                "name": "_jnt55",
+                "rotationSamples": [
+                    46068,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    46084,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    46108,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    46096,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 56,
+                "jointName": "Zombie:RightHandThumb3",
+                "name": "_jnt56",
+                "rotationSamples": [
+                    46112,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    46688,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    47552,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    47120,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 57,
+                "jointName": "Zombie:RightHandIndex1",
+                "name": "_jnt57",
+                "rotationSamples": [
+                    47696,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    48272,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    49136,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    48704,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 58,
+                "jointName": "Zombie:RightHandIndex2",
+                "name": "_jnt58",
+                "rotationSamples": [
+                    49280,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    49296,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    49320,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    49308,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 59,
+                "jointName": "Zombie:RightHandIndex3",
+                "name": "_jnt59",
+                "rotationSamples": [
+                    49324,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    49900,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    50764,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    50332,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 60,
+                "jointName": "Zombie:RightHandMiddle1",
+                "name": "_jnt60",
+                "rotationSamples": [
+                    50908,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    51484,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    52348,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    51916,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 61,
+                "jointName": "Zombie:RightHandMiddle2",
+                "name": "_jnt61",
+                "rotationSamples": [
+                    52492,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    53068,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    53932,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    53500,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 62,
+                "jointName": "Zombie:RightHandMiddle3",
+                "name": "_jnt62",
+                "rotationSamples": [
+                    54076,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    54652,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    55516,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    55084,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 63,
+                "jointName": "Zombie:RightHandRing1",
+                "name": "_jnt63",
+                "rotationSamples": [
+                    55660,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    56236,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    57100,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    56668,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 64,
+                "jointName": "Zombie:RightHandRing2",
+                "name": "_jnt64",
+                "rotationSamples": [
+                    57244,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    57820,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    58684,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    58252,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 65,
+                "jointName": "Zombie:RightHandRing3",
+                "name": "_jnt65",
+                "rotationSamples": [
+                    58828,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    59404,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    60268,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    59836,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 66,
+                "jointName": "Zombie:RightHandPinky1",
+                "name": "_jnt66",
+                "rotationSamples": [
+                    60412,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    60988,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    61852,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    61420,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 67,
+                "jointName": "Zombie:RightHandPinky2",
+                "name": "_jnt67",
+                "rotationSamples": [
+                    61996,
+                    4,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    62012,
+                    3,
+                    "float32"
+                ],
+                "times": [
+                    62036,
+                    1,
+                    "float32"
+                ],
+                "translationSamples": [
+                    62024,
+                    3,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 68,
+                "jointName": "Zombie:RightHandPinky3",
+                "name": "_jnt68",
+                "rotationSamples": [
+                    62040,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    62616,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    63480,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    63048,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 69,
+                "jointName": "Zombie:LeftUpLeg",
+                "name": "_jnt69",
+                "rotationSamples": [
+                    63624,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    64200,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    65064,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    64632,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 70,
+                "jointName": "Zombie:LeftLeg",
+                "name": "_jnt70",
+                "rotationSamples": [
+                    65208,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    65784,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    66648,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    66216,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 71,
+                "jointName": "Zombie:LeftFoot",
+                "name": "_jnt71",
+                "rotationSamples": [
+                    66792,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    67368,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    68232,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    67800,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 72,
+                "jointName": "Zombie:LeftToeBase",
+                "name": "_jnt72",
+                "rotationSamples": [
+                    68376,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    68952,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    69816,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    69384,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 73,
+                "jointName": "Zombie:RightUpLeg",
+                "name": "_jnt73",
+                "rotationSamples": [
+                    69960,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    70536,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    71400,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    70968,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 74,
+                "jointName": "Zombie:RightLeg",
+                "name": "_jnt74",
+                "rotationSamples": [
+                    71544,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    72120,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    72984,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    72552,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 75,
+                "jointName": "Zombie:RightFoot",
+                "name": "_jnt75",
+                "rotationSamples": [
+                    73128,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    73704,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    74568,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    74136,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            },
+            {
+                "blendType": "Linear",
+                "jointIndex": 76,
+                "jointName": "Zombie:RightToeBase",
+                "name": "_jnt76",
+                "rotationSamples": [
+                    74712,
+                    144,
+                    "float32"
+                ],
+                "scaleSamples": [
+                    75288,
+                    108,
+                    "float32"
+                ],
+                "times": [
+                    76152,
+                    36,
+                    "float32"
+                ],
+                "translationSamples": [
+                    75720,
+                    108,
+                    "float32"
+                ],
+                "type": "Joint"
+            }
+        ],
+        "name": "mixamo.com"
+    },
+    "zombie_injured_walk/entities/RootNode.entity": {
+        "components": {
+            "animation": {
+                "layersRef": "zombie_injured_walk/animations/Animations.animation",
+                "poseRef": "zombie_injured_walk/skeletons/Skeleton.skeleton"
+            },
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "zombie_injured_walk",
+        "nodeType": "Null"
+    },
+    "zombie_injured_walk/entities/Zombie_Geo_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "zombie_injured_walk/meshes/Zombie_Geo_0.mesh",
+                "poseRef": "zombie_injured_walk/skeletons/Skeleton.skeleton"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "zombie_injured_walk/materials/Zombie_COL.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "zombie_injured_walk/entities/RootNode.entity",
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Zombie_Geo",
+        "nodeType": "Mesh"
+    },
+    "zombie_injured_walk/materials/Zombie_COL.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "name": "Zombie_COL",
+        "renderQueue": -1,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {
+            "DIFFUSE_MAP": {
+                "enabled": true,
+                "textureRef": "zombie_injured_walk/textures/Zombie_diffuse.texture"
+            },
+            "NORMAL_MAP": {
+                "enabled": true,
+                "textureRef": "zombie_injured_walk/textures/Zombie_normal.texture"
+            },
+            "SPECULAR_MAP": {
+                "enabled": true,
+                "textureRef": "zombie_injured_walk/textures/Zombie_specular.texture"
+            }
+        },
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0.0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0.0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 24.67799949645996
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1.0
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0.0
+            }
+        }
+    },
+    "zombie_injured_walk/meshes/Zombie_Geo_0.mesh": {
+        "binaryRef": "zombie_injured_walk/binaries/1383908596_data.bin",
+        "boundingVolume": {
+            "max": [
+                95.90518188476562,
+                180.1605682373047,
+                23.805225372314453
+            ],
+            "min": [
+                -96.0192642211914,
+                -0.23441541194915771,
+                -10.957460403442383
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            39069
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            39069,
+            "uint16"
+        ],
+        "joints": [
+            387620,
+            30948,
+            "uint8"
+        ],
+        "name": "Zombie_Geo",
+        "normals": [
+            170984,
+            23211,
+            "float32"
+        ],
+        "tangents": [
+            263828,
+            30948,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                542360,
+                15474,
+                "float32"
+            ],
+            [
+                604256,
+                15474,
+                "float32"
+            ],
+            [
+                666152,
+                15474,
+                "float32"
+            ],
+            [
+                728048,
+                15474,
+                "float32"
+            ],
+            [
+                789944,
+                15474,
+                "float32"
+            ]
+        ],
+        "type": "SkinnedMesh",
+        "vertexCount": 7737,
+        "vertices": [
+            78140,
+            23211,
+            "float32"
+        ],
+        "weights": [
+            418568,
+            30948,
+            "float32"
+        ]
+    },
+    "zombie_injured_walk/skeletons/Skeleton.skeleton": {
+        "joints": [
+            {
+                "index": 0,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -96.379402,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -3.985525,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Hips",
+                "parentIndex": -32768
+            },
+            {
+                "index": 1,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -105.605721,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -5.562658,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Spine",
+                "parentIndex": 0
+            },
+            {
+                "index": 2,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -121.859749,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -5.397053,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Spine1",
+                "parentIndex": 1
+            },
+            {
+                "index": 3,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -135.499397,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -4.104748,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Spine2",
+                "parentIndex": 2
+            },
+            {
+                "index": 4,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -149.376839,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.249439,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Neck",
+                "parentIndex": 3
+            },
+            {
+                "index": 5,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -153.716866,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -0.677456,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Neck1",
+                "parentIndex": 4
+            },
+            {
+                "index": 6,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.743477,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.535976,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Head",
+                "parentIndex": 5
+            },
+            {
+                "index": 7,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -3.240073,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.17057,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -11.442652,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftEye",
+                "parentIndex": 6
+            },
+            {
+                "index": 8,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        3.240343,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.17057,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -11.442652,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightEye",
+                "parentIndex": 6
+            },
+            {
+                "index": 9,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.845309,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -6.906089,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:Jaw",
+                "parentIndex": 6
+            },
+            {
+                "index": 10,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.67541,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -11.72326,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:TongueBack",
+                "parentIndex": 9
+            },
+            {
+                "index": 11,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.261854,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.515942,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:TongueTip",
+                "parentIndex": 9
+            },
+            {
+                "index": 12,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -0.983096,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.153847,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.609521,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftLipLower",
+                "parentIndex": 9
+            },
+            {
+                "index": 13,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -156.708389,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.824537,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:JawEND",
+                "parentIndex": 9
+            },
+            {
+                "index": 14,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        0.983096,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -157.153961,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.609476,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightLipLower",
+                "parentIndex": 9
+            },
+            {
+                "index": 15,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        3.141,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -158.206452,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.172089,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightLipCorner",
+                "parentIndex": 9
+            },
+            {
+                "index": 16,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -3.141,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -158.206309,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.172089,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftLipCorner",
+                "parentIndex": 9
+            },
+            {
+                "index": 17,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -1.055771,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -158.280146,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -15.147052,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftLipUpper",
+                "parentIndex": 6
+            },
+            {
+                "index": 18,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -1.354085,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -160.581577,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.563657,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftNostril",
+                "parentIndex": 6
+            },
+            {
+                "index": 19,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -3.842501,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -161.479886,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -12.817437,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftCheek",
+                "parentIndex": 6
+            },
+            {
+                "index": 20,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -3.069471,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -164.336897,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.107866,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftEyelidLower",
+                "parentIndex": 6
+            },
+            {
+                "index": 21,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -3.069471,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.615298,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.342416,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftEyelidUpper",
+                "parentIndex": 6
+            },
+            {
+                "index": 22,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -1.626751,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.839075,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.60598,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftInnerBrow",
+                "parentIndex": 6
+            },
+            {
+                "index": 23,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -4.470804,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.998861,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.301918,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftIOuterBrow",
+                "parentIndex": 6
+            },
+            {
+                "index": 24,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.62675,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.839358,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.60597,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightInnerBrow",
+                "parentIndex": 6
+            },
+            {
+                "index": 25,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        4.4708,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.998607,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.301944,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightIOuterBrow",
+                "parentIndex": 6
+            },
+            {
+                "index": 26,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        3.06947,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -165.615028,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.342397,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightEyelidUpper",
+                "parentIndex": 6
+            },
+            {
+                "index": 27,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        3.06947,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -164.337203,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -13.107831,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightEyelidLower",
+                "parentIndex": 6
+            },
+            {
+                "index": 28,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        3.8425,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -161.480358,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -12.817424,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightCheek",
+                "parentIndex": 6
+            },
+            {
+                "index": 29,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.35408,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -160.581358,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -14.563624,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightNostril",
+                "parentIndex": 6
+            },
+            {
+                "index": 30,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        1.05577,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -158.279968,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -15.147024,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightLipUpper",
+                "parentIndex": 6
+            },
+            {
+                "index": 31,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -6.144226,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.686409,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -0.311504,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftShoulder",
+                "parentIndex": 3
+            },
+            {
+                "index": 32,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -18.463318,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftArm",
+                "parentIndex": 31
+            },
+            {
+                "index": 33,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -46.15033,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftForeArm",
+                "parentIndex": 32
+            },
+            {
+                "index": 34,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -74.024109,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHand",
+                "parentIndex": 33
+            },
+            {
+                "index": 35,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -76.402622,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -143.570534,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.138983,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandThumb1",
+                "parentIndex": 34
+            },
+            {
+                "index": 36,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -79.764991,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -142.567634,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -3.978755,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandThumb2",
+                "parentIndex": 35
+            },
+            {
+                "index": 37,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -84.266786,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -141.223135,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -6.157022,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandThumb3",
+                "parentIndex": 36
+            },
+            {
+                "index": 38,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -84.488016,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188193,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.052166,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandMiddle1",
+                "parentIndex": 34
+            },
+            {
+                "index": 39,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -90.280107,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188193,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.052166,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandMiddle2",
+                "parentIndex": 38
+            },
+            {
+                "index": 40,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -93.99328,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188193,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.052166,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandMiddle3",
+                "parentIndex": 39
+            },
+            {
+                "index": 41,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -84.418644,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188194,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.223539,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandIndex1",
+                "parentIndex": 34
+            },
+            {
+                "index": 42,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -89.967934,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188194,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.223539,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandIndex2",
+                "parentIndex": 41
+            },
+            {
+                "index": 43,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -93.359053,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.188194,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.223539,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandIndex3",
+                "parentIndex": 42
+            },
+            {
+                "index": 44,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -84.349273,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.894565,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.357495,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandRing1",
+                "parentIndex": 34
+            },
+            {
+                "index": 45,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -89.794505,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.894565,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.357495,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandRing2",
+                "parentIndex": 44
+            },
+            {
+                "index": 46,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -93.507678,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.894565,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.357495,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandRing3",
+                "parentIndex": 45
+            },
+            {
+                "index": 47,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -84.037101,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.495085,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.449094,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandPinky1",
+                "parentIndex": 34
+            },
+            {
+                "index": 48,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -87.713357,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.495085,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.449094,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandPinky2",
+                "parentIndex": 47
+            },
+            {
+                "index": 49,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -90.5247,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.495085,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.449094,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftHandPinky3",
+                "parentIndex": 48
+            },
+            {
+                "index": 50,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        6.140198,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.686409,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -0.311504,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightShoulder",
+                "parentIndex": 3
+            },
+            {
+                "index": 51,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        18.463318,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightArm",
+                "parentIndex": 50
+            },
+            {
+                "index": 52,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        46.15033,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightForeArm",
+                "parentIndex": 51
+            },
+            {
+                "index": 53,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        74.024109,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.573433,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.481953,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHand",
+                "parentIndex": 52
+            },
+            {
+                "index": 54,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        76.541875,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -143.636766,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.031715,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandThumb1",
+                "parentIndex": 53
+            },
+            {
+                "index": 55,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        79.805662,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -142.549801,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -3.998595,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandThumb2",
+                "parentIndex": 54
+            },
+            {
+                "index": 56,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        84.22219,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -141.179538,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -6.133619,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandThumb3",
+                "parentIndex": 55
+            },
+            {
+                "index": 57,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        84.490614,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063014,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.23001,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandIndex1",
+                "parentIndex": 53
+            },
+            {
+                "index": 58,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        89.867381,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063014,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.23001,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandIndex2",
+                "parentIndex": 57
+            },
+            {
+                "index": 59,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        93.25285,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063014,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.23001,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandIndex3",
+                "parentIndex": 58
+            },
+            {
+                "index": 60,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        84.783711,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063013,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.054154,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandMiddle1",
+                "parentIndex": 53
+            },
+            {
+                "index": 61,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        90.400479,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063013,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.054154,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandMiddle2",
+                "parentIndex": 60
+            },
+            {
+                "index": 62,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        94.136833,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -145.063013,
+                        0.0,
+                        0.0,
+                        1.0,
+                        1.054154,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandMiddle3",
+                "parentIndex": 61
+            },
+            {
+                "index": 63,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        84.494322,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.961305,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.418234,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandRing1",
+                "parentIndex": 53
+            },
+            {
+                "index": 64,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        89.895598,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.961305,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.418234,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandRing2",
+                "parentIndex": 63
+            },
+            {
+                "index": 65,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        93.287194,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.961305,
+                        0.0,
+                        0.0,
+                        1.0,
+                        3.418234,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandRing3",
+                "parentIndex": 64
+            },
+            {
+                "index": 66,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        83.995568,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.454289,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.435958,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandPinky1",
+                "parentIndex": 53
+            },
+            {
+                "index": 67,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        87.648326,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.454289,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.435958,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandPinky2",
+                "parentIndex": 66
+            },
+            {
+                "index": 68,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        90.43036,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -144.454289,
+                        0.0,
+                        0.0,
+                        1.0,
+                        5.435958,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightHandPinky3",
+                "parentIndex": 67
+            },
+            {
+                "index": 69,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -9.633789,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -93.106148,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -3.985524,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftUpLeg",
+                "parentIndex": 0
+            },
+            {
+                "index": 70,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -9.633789,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -46.38105,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -2.255559,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftLeg",
+                "parentIndex": 69
+            },
+            {
+                "index": 71,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -9.646394,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -12.186714,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.407872,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftFoot",
+                "parentIndex": 70
+            },
+            {
+                "index": 72,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        -9.463107,
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0063715,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -9.690136,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:LeftToeBase",
+                "parentIndex": 71
+            },
+            {
+                "index": 73,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        9.633789,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -93.106148,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -3.985524,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightUpLeg",
+                "parentIndex": 0
+            },
+            {
+                "index": 74,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        9.633789,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -46.38105,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -2.255559,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightLeg",
+                "parentIndex": 73
+            },
+            {
+                "index": 75,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        9.621182,
+                        0.0,
+                        1.0,
+                        0.0,
+                        -12.186714,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -1.407872,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightFoot",
+                "parentIndex": 74
+            },
+            {
+                "index": 76,
+                "inverseBindPose": {
+                    "matrix": [
+                        1.0,
+                        0.0,
+                        0.0,
+                        9.804492,
+                        0.0,
+                        1.0,
+                        0.0,
+                        0.0063715,
+                        0.0,
+                        0.0,
+                        1.0,
+                        -9.690136,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                },
+                "name": "Zombie:RightToeBase",
+                "parentIndex": 75
+            }
+        ],
+        "name": "Skeleton"
+    },
+    "zombie_injured_walk/textures/Zombie_diffuse.texture": {
+        "fileName": "Zombie_diffuse.png",
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "Zombie_diffuse",
+        "offset": [
+            0.0,
+            0.0
+        ],
+        "repeat": [
+            1.0,
+            1.0
+        ],
+        "url": "zombie_injured_walk/images/Zombie_diffuse.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "zombie_injured_walk/textures/Zombie_normal.texture": {
+        "fileName": "Zombie_normal.png",
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "Zombie_normal",
+        "offset": [
+            0.0,
+            0.0
+        ],
+        "repeat": [
+            1.0,
+            1.0
+        ],
+        "url": "zombie_injured_walk/images/Zombie_normal.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "zombie_injured_walk/textures/Zombie_specular.texture": {
+        "fileName": "Zombie_specular.png",
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "Zombie_specular",
+        "offset": [
+            0.0,
+            0.0
+        ],
+        "repeat": [
+            1.0,
+            1.0
+        ],
+        "url": "zombie_injured_walk/images/Zombie_specular.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "zombie_injured_walk/zombie_injured_walk.group": {
+        "libraryRefs": [
+            "zombie_injured_walk/animations/Animations.animation",
+            "zombie_injured_walk/animations/mixamo_com.clip",
+            "zombie_injured_walk/entities/RootNode.entity",
+            "zombie_injured_walk/animations/mixamo_com.animstate",
+            "zombie_injured_walk/materials/Zombie_COL.material",
+            "zombie_injured_walk/entities/Zombie_Geo_0.entity",
+            "zombie_injured_walk/textures/Zombie_specular.texture",
+            "zombie_injured_walk/images/Zombie_specular.png",
+            "zombie_injured_walk/textures/Zombie_diffuse.texture",
+            "zombie_injured_walk/images/Zombie_diffuse.png",
+            "zombie_injured_walk/textures/Zombie_normal.texture",
+            "zombie_injured_walk/images/Zombie_normal.png",
+            "zombie_injured_walk/meshes/Zombie_Geo_0.mesh",
+            "zombie_injured_walk/skeletons/Skeleton.skeleton",
+            "zombie_injured_walk/binaries/1383908596_data.bin",
+            "zombie_injured_walk/binaries/1383908596_zombie_injured_walk_mixamo_com.bin",
+            "zombie_injured_walk/images/Zombie_specular.png",
+            "zombie_injured_walk/images/Zombie_diffuse.png",
+            "zombie_injured_walk/images/Zombie_normal.png"
+        ],
+        "name": "zombie_injured_walk",
+        "ref": "zombie_injured_walk/zombie_injured_walk.group"
+    }
+}

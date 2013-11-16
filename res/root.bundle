@@ -1,0 +1,3768 @@
+{
+    "NavMesh/NavMesh.group": {
+        "libraryRefs": [
+            "NavMesh/entities/cone5_0.entity",
+            "NavMesh/meshes/house1_0.mesh",
+            "NavMesh/meshes/ally1_0.mesh",
+            "NavMesh/meshes/door3_0.mesh",
+            "NavMesh/meshes/back_0.mesh",
+            "NavMesh/meshes/cone4_0.mesh",
+            "NavMesh/entities/cone6_0.entity",
+            "NavMesh/entities/ally2_0.entity",
+            "NavMesh/meshes/door2_0.mesh",
+            "NavMesh/meshes/cone6_0.mesh",
+            "NavMesh/entities/RootNode.entity",
+            "NavMesh/entities/door1_0.entity",
+            "NavMesh/meshes/houseFront_0.mesh",
+            "NavMesh/meshes/cone2_0.mesh",
+            "NavMesh/meshes/side1_0.mesh",
+            "NavMesh/materials/DefaultMaterial.material",
+            "NavMesh/entities/houseFront_0.entity",
+            "NavMesh/entities/house1_0.entity",
+            "NavMesh/entities/house3_0.entity",
+            "NavMesh/entities/cone1_0.entity",
+            "NavMesh/meshes/door1_0.mesh",
+            "NavMesh/entities/cone8_0.entity",
+            "NavMesh/meshes/frontSide1_0.mesh",
+            "NavMesh/meshes/house2_0.mesh",
+            "NavMesh/entities/back_0.entity",
+            "NavMesh/meshes/cone9_0.mesh",
+            "NavMesh/entities/cone2_0.entity",
+            "NavMesh/meshes/cone7_0.mesh",
+            "NavMesh/meshes/cone1_0.mesh",
+            "NavMesh/meshes/house3_0.mesh",
+            "NavMesh/entities/door3_0.entity",
+            "NavMesh/meshes/cone5_0.mesh",
+            "NavMesh/entities/door2_0.entity",
+            "NavMesh/entities/side1_0.entity",
+            "NavMesh/meshes/cone8_0.mesh",
+            "NavMesh/entities/cone7_0.entity",
+            "NavMesh/entities/cone9_0.entity",
+            "NavMesh/entities/frontSide1_0.entity",
+            "NavMesh/meshes/cone10_0.mesh",
+            "NavMesh/entities/ally1_0.entity",
+            "NavMesh/entities/side2_0.entity",
+            "NavMesh/entities/cone3_0.entity",
+            "NavMesh/entities/house2_0.entity",
+            "NavMesh/meshes/cone3_0.mesh",
+            "NavMesh/meshes/side2_0.mesh",
+            "NavMesh/entities/cone4_0.entity",
+            "NavMesh/entities/cone10_0.entity",
+            "NavMesh/meshes/ally2_0.mesh",
+            "NavMesh/binaries/1384590210_data.bin",
+            "NavMesh/binaries/1384590319_data.bin",
+            "NavMesh/binaries/1384590555_data.bin",
+            "NavMesh/binaries/1384599398_data.bin"
+        ],
+        "name": "NavMesh",
+        "ref": "NavMesh/NavMesh.group"
+    },
+    "NavMesh/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "NavMesh",
+        "nodeType": "Null"
+    },
+    "NavMesh/entities/ally1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/ally1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "ally1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/ally2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/ally2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "ally2",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/back_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/back_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "back",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone10_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone10_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone10",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "cone2",
+        "nodeType": "Mesh",
+        "ref": "NavMesh/entities/cone2_0.entity"
+    },
+    "NavMesh/entities/cone3_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone3_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone3",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone4_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone4_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "cone4",
+        "nodeType": "Mesh",
+        "ref": "NavMesh/entities/cone4_0.entity"
+    },
+    "NavMesh/entities/cone5_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone5_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone5",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone6_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone6_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone6",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone7_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone7_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone7",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone8_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone8_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone8",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/cone9_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/cone9_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "cone9",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/door1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/door1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "door1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/door2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/door2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "door2",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/door3_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/door3_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "door3",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/frontSide1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/frontSide1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "frontSide1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/house1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/house1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "house1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/house2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/house2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "house2",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/house3_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/house3_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "house3",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/houseFront_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/houseFront_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "houseFront",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/side1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/side1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "side1",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/entities/side2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "NavMesh/meshes/side2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "NavMesh/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "NavMesh/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "side2",
+        "nodeType": "Mesh"
+    },
+    "NavMesh/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "CustomBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "NavMesh/materials/DefaultMaterial.material",
+        "renderQueue": 2000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0.41454545454545455,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "NavMesh/meshes/ally1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -13.5051012039185,
+                21.0528469085693,
+                0.0
+            ],
+            "min": [
+                -16.3713703155518,
+                7.19221067428589,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            632,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            464,
+            6,
+            "uint8"
+        ],
+        "name": "ally1",
+        "normals": [
+            520,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            568,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                696,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            472,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/ally2_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                1.65607833862305,
+                21.0528469085693,
+                0.0
+            ],
+            "min": [
+                -1.14541244506836,
+                7.19222402572632,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            7776,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            7608,
+            6,
+            "uint8"
+        ],
+        "name": "ally2",
+        "normals": [
+            7664,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            7712,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                7840,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            7616,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/back_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                14.5397987365723,
+                27.6761245727539,
+                0.0
+            ],
+            "min": [
+                -29.1654987335205,
+                21.0528469085693,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            1416,
+            40,
+            "float32"
+        ],
+        "indexLengths": [
+            24
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            992,
+            24,
+            "uint8"
+        ],
+        "name": "back",
+        "normals": [
+            1136,
+            30,
+            "float32"
+        ],
+        "tangents": [
+            1256,
+            40,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                1576,
+                20,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 10,
+        "vertices": [
+            1016,
+            30,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone10_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                23.2670478820801,
+                7.19218778610229,
+                0.0
+            ],
+            "min": [
+                14.5327186584473,
+                2.29145240783691,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            6852,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            6684,
+            6,
+            "uint8"
+        ],
+        "name": "cone10",
+        "normals": [
+            6740,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            6788,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6916,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            6692,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                18.7818260192871,
+                7.19220352172852,
+                0.0
+            ],
+            "min": [
+                8.3468074798584,
+                -12.6661376953125,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            5548,
+            24,
+            "float32"
+        ],
+        "indexLengths": [
+            12
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            5296,
+            12,
+            "uint8"
+        ],
+        "name": "cone1",
+        "normals": [
+            5380,
+            18,
+            "float32"
+        ],
+        "tangents": [
+            5452,
+            24,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                5644,
+                12,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 6,
+        "vertices": [
+            5308,
+            18,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone2_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                18.6174201965332,
+                -1.34246635437012,
+                0.0
+            ],
+            "min": [
+                8.3468074798584,
+                -12.6661376953125,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            3372,
+            12,
+            "float32"
+        ],
+        "indexLengths": [
+            3
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            3248,
+            3,
+            "uint8"
+        ],
+        "name": "cone2",
+        "normals": [
+            3288,
+            9,
+            "float32"
+        ],
+        "tangents": [
+            3324,
+            12,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                3420,
+                6,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 3,
+        "vertices": [
+            3252,
+            9,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone3_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                22.9927062988281,
+                -4.6169490814209,
+                0.0
+            ],
+            "min": [
+                8.3468074798584,
+                -12.6661376953125,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            7116,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            6948,
+            6,
+            "uint8"
+        ],
+        "name": "cone3",
+        "normals": [
+            7004,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            7052,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                7180,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            6956,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone4_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                24.9105033874512,
+                -6.61420631408691,
+                0.0
+            ],
+            "min": [
+                21.0524864196777,
+                -12.6661109924316,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            1780,
+            12,
+            "float32"
+        ],
+        "indexLengths": [
+            3
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            1656,
+            3,
+            "uint8"
+        ],
+        "name": "cone4",
+        "normals": [
+            1696,
+            9,
+            "float32"
+        ],
+        "tangents": [
+            1732,
+            12,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                1828,
+                6,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 3,
+        "vertices": [
+            1660,
+            9,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone5_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                32.776912689209,
+                -4.84272956848145,
+                0.0
+            ],
+            "min": [
+                22.9927062988281,
+                -12.6661109924316,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            6324,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            6156,
+            6,
+            "uint8"
+        ],
+        "name": "cone5",
+        "normals": [
+            6212,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            6260,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6388,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            6164,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone6_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                32.776912689209,
+                -1.34246635437012,
+                0.0
+            ],
+            "min": [
+                27.6399002075195,
+                -12.6661109924316,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2284,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2116,
+            6,
+            "uint8"
+        ],
+        "name": "cone6",
+        "normals": [
+            2172,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            2220,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2348,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            2124,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone7_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                32.776912689209,
+                7.19217252731323,
+                0.0
+            ],
+            "min": [
+                27.1437225341797,
+                -1.34246635437012,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            5200,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            5032,
+            6,
+            "uint8"
+        ],
+        "name": "cone7",
+        "normals": [
+            5088,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            5136,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                5264,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            5040,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone8_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                32.776912689209,
+                7.19217252731323,
+                0.0
+            ],
+            "min": [
+                23.2670478820801,
+                2.69337749481201,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            6588,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            6420,
+            6,
+            "uint8"
+        ],
+        "name": "cone8",
+        "normals": [
+            6476,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            6524,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6652,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            6428,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/cone9_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                24.9223899841309,
+                7.19217252731323,
+                0.0
+            ],
+            "min": [
+                21.3223991394043,
+                3.88772392272949,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            4960,
+            12,
+            "float32"
+        ],
+        "indexLengths": [
+            3
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            4836,
+            3,
+            "uint8"
+        ],
+        "name": "cone9",
+        "normals": [
+            4876,
+            9,
+            "float32"
+        ],
+        "tangents": [
+            4912,
+            12,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                5008,
+                6,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 3,
+        "vertices": [
+            4840,
+            9,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/door1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -22.0430736541748,
+                9.55315208435059,
+                0.0
+            ],
+            "min": [
+                -23.2382907867432,
+                7.19220352172852,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            3944,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            3776,
+            6,
+            "uint8"
+        ],
+        "name": "door1",
+        "normals": [
+            3832,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            3880,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4008,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            3784,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/door2_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -6.76453876495361,
+                9.55315208435059,
+                0.0
+            ],
+            "min": [
+                -7.95975494384766,
+                7.19220352172852,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2020,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            1852,
+            6,
+            "uint8"
+        ],
+        "name": "door2",
+        "normals": [
+            1908,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            1956,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2084,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            1860,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/door3_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                8.56929779052734,
+                9.55315208435059,
+                0.0
+            ],
+            "min": [
+                7.37408065795898,
+                7.19220352172852,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            896,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            728,
+            6,
+            "uint8"
+        ],
+        "name": "door3",
+        "normals": [
+            784,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            832,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                960,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            736,
+            12,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/frontSide1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -22.6217842102051,
+                7.19220352172852,
+                0.0
+            ],
+            "min": [
+                -39.0738296508789,
+                -12.6661376953125,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            4252,
+            20,
+            "float32"
+        ],
+        "indexLengths": [
+            9
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            4040,
+            9,
+            "uint8"
+        ],
+        "name": "frontSide1",
+        "normals": [
+            4112,
+            15,
+            "float32"
+        ],
+        "tangents": [
+            4172,
+            20,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4332,
+                10,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 5,
+        "vertices": [
+            4052,
+            15,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/house1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -18.5648555755615,
+                18.4518623352051,
+                0.0
+            ],
+            "min": [
+                -26.7268047332764,
+                9.55152797698975,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            296,
+            28,
+            "float32"
+        ],
+        "indexLengths": [
+            15
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            15,
+            "uint8"
+        ],
+        "name": "house1",
+        "normals": [
+            100,
+            21,
+            "float32"
+        ],
+        "tangents": [
+            184,
+            28,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                408,
+                14,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 7,
+        "vertices": [
+            16,
+            21,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/house2_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -3.28631973266602,
+                18.4518623352051,
+                0.0
+            ],
+            "min": [
+                -11.4482688903809,
+                9.55152797698975,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            4668,
+            28,
+            "float32"
+        ],
+        "indexLengths": [
+            15
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            4372,
+            15,
+            "uint8"
+        ],
+        "name": "house2",
+        "normals": [
+            4472,
+            21,
+            "float32"
+        ],
+        "tangents": [
+            4556,
+            28,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4780,
+                14,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 7,
+        "vertices": [
+            4388,
+            21,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/house3_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                12.0475158691406,
+                18.4518623352051,
+                0.0
+            ],
+            "min": [
+                3.88556671142578,
+                9.55152797698975,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            5988,
+            28,
+            "float32"
+        ],
+        "indexLengths": [
+            15
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            5692,
+            15,
+            "uint8"
+        ],
+        "name": "house3",
+        "normals": [
+            5792,
+            21,
+            "float32"
+        ],
+        "tangents": [
+            5876,
+            28,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                6100,
+                14,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 7,
+        "vertices": [
+            5708,
+            21,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/houseFront_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                8.56885147094727,
+                7.19222402572632,
+                0.0
+            ],
+            "min": [
+                -23.2382907867432,
+                -12.6661376953125,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2936,
+            52,
+            "float32"
+        ],
+        "indexLengths": [
+            33
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2380,
+            33,
+            "uint8"
+        ],
+        "name": "houseFront",
+        "normals": [
+            2572,
+            39,
+            "float32"
+        ],
+        "tangents": [
+            2728,
+            52,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                3144,
+                26,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 13,
+        "vertices": [
+            2416,
+            39,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/side1_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                -29.0759372711182,
+                27.6761245727539,
+                0.0
+            ],
+            "min": [
+                -39.0738296508789,
+                -12.6659603118896,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            3656,
+            20,
+            "float32"
+        ],
+        "indexLengths": [
+            9
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            3444,
+            9,
+            "uint8"
+        ],
+        "name": "side1",
+        "normals": [
+            3516,
+            15,
+            "float32"
+        ],
+        "tangents": [
+            3576,
+            20,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                3736,
+                10,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 5,
+        "vertices": [
+            3456,
+            15,
+            "float32"
+        ]
+    },
+    "NavMesh/meshes/side2_0.mesh": {
+        "binaryRef": "NavMesh/binaries/1384599398_data.bin",
+        "boundingVolume": {
+            "max": [
+                32.776912689209,
+                27.6761245727539,
+                0.0
+            ],
+            "min": [
+                14.5327186584473,
+                7.19217252731323,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            7464,
+            24,
+            "float32"
+        ],
+        "indexLengths": [
+            12
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            7212,
+            12,
+            "uint8"
+        ],
+        "name": "side2",
+        "normals": [
+            7296,
+            18,
+            "float32"
+        ],
+        "tangents": [
+            7368,
+            24,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                7560,
+                12,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 6,
+        "vertices": [
+            7224,
+            18,
+            "float32"
+        ]
+    },
+    "Point/Point.group": {
+        "libraryRefs": [
+            "Point/materials/DefaultMaterial.material",
+            "Point/entities/RootNode.entity",
+            "Point/entities/Plane01_0.entity",
+            "Point/meshes/Plane01_0.mesh",
+            "Point/binaries/1384590785_data.bin"
+        ],
+        "name": "Point",
+        "ref": "Point/Point.group"
+    },
+    "Point/entities/Plane01_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "Point/meshes/Plane01_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "Point/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "Point/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    9.41476059779234e-07
+                ]
+            }
+        },
+        "name": "Plane01",
+        "nodeType": "Mesh"
+    },
+    "Point/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Point",
+        "nodeType": "Null"
+    },
+    "Point/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": false,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "Point/materials/DefaultMaterial.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "Point/meshes/Plane01_0.mesh": {
+        "binaryRef": "Point/binaries/1384590785_data.bin",
+        "boundingVolume": {
+            "max": [
+                1.0,
+                1.0,
+                20.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            504,
+            48,
+            "float32"
+        ],
+        "indexLengths": [
+            24
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            24,
+            "uint8"
+        ],
+        "name": "Plane01",
+        "normals": [
+            168,
+            36,
+            "float32"
+        ],
+        "tangents": [
+            312,
+            48,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                696,
+                24,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 12,
+        "vertices": [
+            24,
+            36,
+            "float32"
+        ]
+    },
+    "diamond/diamond.group": {
+        "libraryRefs": [
+            "diamond/entities/diamond_mesh_0.entity",
+            "diamond/entities/RootNode.entity",
+            "diamond/textures/diamond_gradient.texture",
+            "diamond/materials/diamond_material.material",
+            "diamond/meshes/diamond_mesh_0.mesh",
+            "GOO_ASSET_LIBRARY/diamond/binaries/1383313914_data.bin",
+            "GOO_ASSET_LIBRARY/diamond/images/diamond_gradient.png"
+        ],
+        "name": "diamond",
+        "ref": "diamond/diamond.group"
+    },
+    "diamond/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "Goal",
+        "nodeType": "Null",
+        "ref": "diamond/entities/RootNode.entity"
+    },
+    "diamond/entities/diamond_mesh_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "diamond/meshes/diamond_mesh_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "diamond/materials/diamond_material.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "diamond/entities/RootNode.entity",
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.75,
+                    1.5,
+                    0.75
+                ],
+                "translation": [
+                    0,
+                    0.3046250343322754,
+                    0
+                ]
+            }
+        },
+        "name": "diamond_mesh",
+        "nodeType": "Mesh",
+        "ref": "diamond/entities/diamond_mesh_0.entity"
+    },
+    "diamond/materials/diamond_material.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcColorFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcColorFactor",
+            "blending": "CustomBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "dualTransparency": true,
+        "name": "diamond_material",
+        "ref": "diamond/materials/diamond_material.material",
+        "renderQueue": 2000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {
+            "DIFFUSE_MAP": {
+                "enabled": true,
+                "textureRef": "diamond/textures/diamond_gradient.texture"
+            },
+            "EMISSIVE_MAP": {
+                "enabled": false,
+                "textureRef": "textures/diamond_gradient_0.texture"
+            },
+            "SPECULAR_MAP": null
+        },
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0.23
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.7909090909090909,
+                    0.7909090909090909,
+                    0.7909090909090909,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0.7408264462809917,
+                    0.7545454545454545,
+                    0.7514025544703231,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.6639669421487604,
+                    0.7090909090909091,
+                    0.6977688955672426,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 8
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 1
+            }
+        }
+    },
+    "diamond/meshes/diamond_mesh_0.mesh": {
+        "binaryRef": "GOO_ASSET_LIBRARY/diamond/binaries/1383313914_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.49555692076683044,
+                0.30106183886528015,
+                0.49544939398765564
+            ],
+            "min": [
+                -0.49544939398765564,
+                -0.30095404386520386,
+                -0.49544939398765564
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            1851
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            1851,
+            "uint16"
+        ],
+        "name": "diamond_mesh",
+        "normals": [
+            18440,
+            3684,
+            "float32"
+        ],
+        "ref": "diamond/meshes/diamond_mesh_0.mesh",
+        "tangents": [
+            33176,
+            4912,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                52824,
+                2456,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 1228,
+        "vertices": [
+            3704,
+            3684,
+            "float32"
+        ]
+    },
+    "diamond/textures/diamond_gradient.texture": {
+        "anisotropy": 1,
+        "fileName": "diamond_gradient.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "diamond_gradient",
+        "offset": [
+            0,
+            0
+        ],
+        "realUrl": "/textures/diamond_gradient.png",
+        "ref": "diamond/textures/diamond_gradient.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "GOO_ASSET_LIBRARY/diamond/images/diamond_gradient.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "entities/DefaultToolCamera.entity": {
+        "components": {
+            "camera": {
+                "aspect": 1.039647577092511,
+                "far": 20000,
+                "fov": 45,
+                "near": 0.4
+            },
+            "script": {
+                "scriptRefs": [
+                    "scripts/DefaultToolCameraScript.script"
+                ]
+            }
+        },
+        "name": "DefaultToolCamera.entity",
+        "ref": "entities/DefaultToolCamera.entity"
+    },
+    "entities/default_light.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.8,
+                    0.8,
+                    0.8
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    -0.557,
+                    0.557,
+                    0.557
+                ]
+            }
+        }
+    },
+    "entities/default_light_2.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.2,
+                    0.2,
+                    0.3
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0.557,
+                    -0.557,
+                    -0.557
+                ]
+            }
+        }
+    },
+    "materials/Material.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "Blank",
+        "ref": "materials/Material.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 64
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2013-11-16T08:23:09.278256",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "entities/DefaultToolCamera.entity",
+            "stuff/entities/Box03_0.entity",
+            "stuff/entities/Box02_0.entity",
+            "stuff/entities/Cone01_0.entity",
+            "stuff/entities/Box05_0.entity",
+            "stuff/entities/RootNode.entity",
+            "NavMesh/entities/cone5_0.entity",
+            "NavMesh/entities/cone6_0.entity",
+            "NavMesh/entities/ally2_0.entity",
+            "NavMesh/entities/door1_0.entity",
+            "NavMesh/entities/houseFront_0.entity",
+            "NavMesh/entities/house1_0.entity",
+            "NavMesh/entities/house3_0.entity",
+            "NavMesh/entities/cone1_0.entity",
+            "NavMesh/entities/cone8_0.entity",
+            "NavMesh/entities/back_0.entity",
+            "NavMesh/entities/cone2_0.entity",
+            "NavMesh/entities/door3_0.entity",
+            "NavMesh/entities/door2_0.entity",
+            "NavMesh/entities/side1_0.entity",
+            "NavMesh/entities/cone7_0.entity",
+            "NavMesh/entities/cone9_0.entity",
+            "NavMesh/entities/frontSide1_0.entity",
+            "NavMesh/entities/ally1_0.entity",
+            "NavMesh/entities/side2_0.entity",
+            "NavMesh/entities/cone3_0.entity",
+            "NavMesh/entities/house2_0.entity",
+            "NavMesh/entities/cone4_0.entity",
+            "NavMesh/entities/cone10_0.entity",
+            "NavMesh/entities/RootNode.entity",
+            "Point/entities/Plane01_0.entity",
+            "Point/entities/RootNode.entity",
+            "diamond/entities/diamond_mesh_0.entity",
+            "diamond/entities/RootNode.entity",
+            "quad/entities/Plane01_0.entity",
+            "quad/entities/RootNode.entity",
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "stuff/stuff.group",
+            "NavMesh/NavMesh.group",
+            "Point/Point.group",
+            "diamond/diamond.group",
+            "quad/quad.group",
+            "root.group"
+        ],
+        "id": "Wv-zoTTvSBuuvXJ5QVXDhw",
+        "licenseType": "CC0",
+        "modified": "2013-11-16T08:23:09.278256",
+        "name": "NavMesh v2",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "publishedURL": "http://published.gooengine.com.s3-website-eu-west-1.amazonaws.com/Wv-zoTTvSBuuvXJ5QVXDhw",
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "quad/entities/Plane01_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "quad/meshes/Plane01_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "quad/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "quad/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Plane01",
+        "nodeType": "Mesh"
+    },
+    "quad/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    72.61552429199219,
+                    1,
+                    40.87600326538086
+                ],
+                "translation": [
+                    -3.1546709537506104,
+                    -0.403961181640625,
+                    -7.912703990936279
+                ]
+            }
+        },
+        "hidden": true,
+        "name": "quad",
+        "nodeType": "Null",
+        "ref": "quad/entities/RootNode.entity"
+    },
+    "quad/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "quad/materials/DefaultMaterial.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.32727272727272727,
+                    0.19647182569496618,
+                    0.09520661157024793,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "quad/meshes/Plane01_0.mesh": {
+        "binaryRef": "quad/binaries/1384593720_data.bin",
+        "boundingVolume": {
+            "max": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "min": [
+                -0.5,
+                -0.5,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            6,
+            "uint8"
+        ],
+        "name": "Plane01",
+        "normals": [
+            56,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            104,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                168,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            8,
+            12,
+            "float32"
+        ]
+    },
+    "quad/quad.group": {
+        "libraryRefs": [
+            "quad/entities/Plane01_0.entity",
+            "quad/materials/DefaultMaterial.material",
+            "quad/entities/RootNode.entity",
+            "quad/meshes/Plane01_0.mesh",
+            "quad/binaries/1384593720_data.bin"
+        ],
+        "name": "quad",
+        "ref": "quad/quad.group"
+    },
+    "root.group": {
+        "libraryRefs": [
+            "scripts/DefaultToolCameraScript.script",
+            "entities/DefaultToolCamera.entity",
+            "materials/Material.material",
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
+        ],
+        "name": "root",
+        "ref": "root.group"
+    },
+    "scripts/DefaultToolCameraScript.script": {
+        "className": "OrbitNPanControlScript",
+        "name": "DefaultToolCameraScript.script",
+        "options": {
+            "clampAzimuth": false,
+            "detailZoom": 0.15,
+            "dragOnly": true,
+            "invertedWheel": true,
+            "invertedX": false,
+            "invertedY": false,
+            "lookAtPoint": [
+                2.7481982707977295,
+                5.038066864013672,
+                -0.011816096492111683
+            ],
+            "maxAscent": 1.5699236621688994,
+            "maxAzimuth": 4.71238898038469,
+            "maxZoomDistance": 6000,
+            "minAscent": -1.5699236621688994,
+            "minAzimuth": 1.5707963267948966,
+            "minZoomDistance": 0.1,
+            "spherical": [
+                12.27285385131836,
+                1.0857963562011719,
+                0.22500015795230865
+            ],
+            "turnSpeedHorizontal": 0.005,
+            "turnSpeedVertical": 0.005,
+            "worldUpVector": [
+                0,
+                1,
+                0
+            ],
+            "zoomSpeed": 0.3
+        },
+        "ref": "scripts/DefaultToolCameraScript.script"
+    },
+    "stuff/entities/Box02_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "stuff/meshes/Box02_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "stuff/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "stuff/entities/RootNode.entity",
+                "rotation": [
+                    90.0,
+                    89.99999099336239,
+                    0.0
+                ],
+                "scale": [
+                    0.626197338104256,
+                    0.6261973381042489,
+                    1.00000000000001
+                ],
+                "translation": [
+                    -22.6468162536621,
+                    13.3551397323608,
+                    -14.0018539428711
+                ]
+            }
+        },
+        "name": "Box02",
+        "nodeType": "Mesh"
+    },
+    "stuff/entities/Box03_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "stuff/meshes/Box03_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "stuff/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "stuff/entities/RootNode.entity",
+                "rotation": [
+                    90.0,
+                    89.99999099336239,
+                    0.0
+                ],
+                "scale": [
+                    0.626197338104256,
+                    0.6261973381042489,
+                    1.00000000000001
+                ],
+                "translation": [
+                    -7.3682804107666,
+                    13.3551397323608,
+                    -14.0018539428711
+                ]
+            }
+        },
+        "name": "Box03",
+        "nodeType": "Mesh"
+    },
+    "stuff/entities/Box05_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "stuff/meshes/Box05_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "stuff/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "stuff/entities/RootNode.entity",
+                "rotation": [
+                    90.0,
+                    89.99999099336239,
+                    0.0
+                ],
+                "scale": [
+                    0.626197338104256,
+                    0.6261973381042489,
+                    1.00000000000001
+                ],
+                "translation": [
+                    7.96555519104004,
+                    13.3551397323608,
+                    -14.0018539428711
+                ]
+            }
+        },
+        "name": "Box05",
+        "nodeType": "Mesh"
+    },
+    "stuff/entities/Cone01_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "stuff/meshes/Cone01_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "stuff/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "stuff/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    23.0646915435791,
+                    0.0,
+                    1.3319091796875
+                ]
+            }
+        },
+        "name": "Cone01",
+        "nodeType": "Mesh"
+    },
+    "stuff/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "stuff",
+        "nodeType": "Null"
+    },
+    "stuff/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "CustomBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "stuff/materials/DefaultMaterial.material",
+        "renderQueue": 2000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.36082644628099175,
+                    0.39657220135236665,
+                    0.5363636363636364,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 0.8
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "stuff/meshes/Box02_0.mesh": {
+        "binaryRef": "stuff/binaries/1384590197_data.bin",
+        "boundingVolume": {
+            "max": [
+                9.77874755859375,
+                9.10101127624512,
+                13.3610610961914
+            ],
+            "min": [
+                -9.77874851226807,
+                -9.10101127624512,
+                0.986608982086182
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            8816,
+            328,
+            "float32"
+        ],
+        "indexLengths": [
+            144
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            5392,
+            144,
+            "uint8"
+        ],
+        "name": "Box02",
+        "normals": [
+            6520,
+            246,
+            "float32"
+        ],
+        "tangents": [
+            7504,
+            328,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                10128,
+                164,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 82,
+        "vertices": [
+            5536,
+            246,
+            "float32"
+        ]
+    },
+    "stuff/meshes/Box03_0.mesh": {
+        "binaryRef": "stuff/binaries/1384590197_data.bin",
+        "boundingVolume": {
+            "max": [
+                9.77874755859375,
+                9.10101127624512,
+                13.3610610961914
+            ],
+            "min": [
+                -9.77874851226807,
+                -9.10101127624512,
+                0.986608982086182
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            14208,
+            328,
+            "float32"
+        ],
+        "indexLengths": [
+            144
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            10784,
+            144,
+            "uint8"
+        ],
+        "name": "Box03",
+        "normals": [
+            11912,
+            246,
+            "float32"
+        ],
+        "tangents": [
+            12896,
+            328,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                15520,
+                164,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 82,
+        "vertices": [
+            10928,
+            246,
+            "float32"
+        ]
+    },
+    "stuff/meshes/Box05_0.mesh": {
+        "binaryRef": "stuff/binaries/1384590197_data.bin",
+        "boundingVolume": {
+            "max": [
+                9.77874755859375,
+                9.10101127624512,
+                13.3610610961914
+            ],
+            "min": [
+                -9.77874851226807,
+                -9.10101127624512,
+                0.986608982086182
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            3424,
+            328,
+            "float32"
+        ],
+        "indexLengths": [
+            144
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            144,
+            "uint8"
+        ],
+        "name": "Box05",
+        "normals": [
+            1128,
+            246,
+            "float32"
+        ],
+        "tangents": [
+            2112,
+            328,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                4736,
+                164,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 82,
+        "vertices": [
+            144,
+            246,
+            "float32"
+        ]
+    },
+    "stuff/meshes/Cone01_0.mesh": {
+        "binaryRef": "stuff/binaries/1384590197_data.bin",
+        "boundingVolume": {
+            "max": [
+                4.81305551528931,
+                4.81305551528931,
+                20.1050968170166
+            ],
+            "min": [
+                -4.81305551528931,
+                -4.81305551528931,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            714
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            16176,
+            714,
+            "uint8"
+        ],
+        "name": "Cone01",
+        "normals": [
+            19544,
+            663,
+            "float32"
+        ],
+        "tangents": [
+            22196,
+            884,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                25732,
+                442,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 221,
+        "vertices": [
+            16892,
+            663,
+            "float32"
+        ]
+    },
+    "stuff/stuff.group": {
+        "libraryRefs": [
+            "stuff/meshes/Box05_0.mesh",
+            "stuff/entities/Box03_0.entity",
+            "stuff/meshes/Box02_0.mesh",
+            "stuff/meshes/Box03_0.mesh",
+            "stuff/meshes/Cone01_0.mesh",
+            "stuff/entities/RootNode.entity",
+            "stuff/entities/Box02_0.entity",
+            "stuff/entities/Cone01_0.entity",
+            "stuff/materials/DefaultMaterial.material",
+            "stuff/entities/Box05_0.entity",
+            "stuff/binaries/1384590197_data.bin"
+        ],
+        "name": "stuff",
+        "ref": "stuff/stuff.group"
+    }
+}
