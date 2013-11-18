@@ -280,6 +280,7 @@ require([
         	this._process();
         }
         goo.world.setSystem(picking);
+        Game.picking = picking;
 
 
 /*viewCam.cameraComponent.camera.getPickRay(
@@ -363,16 +364,22 @@ picking.castRay(ray, function(hit){
 				return path;
 			}
 		}
-
+		Vector3.UP = new Vector3(0,1,0);
+		Object.freeze(Vector3.UP);
+		Vector3.DOWN = new Vector3(0,-1,0);
+		Object.freeze(Vector3.DOWN);
 		function ZombieIdle(entity, node){
 			switch(node.state){
 				case 0:
 				case null:
 				case undefined:
-					//console.log(entity.transformComponent.transform.translation);
-					entity.room = Game.getRoomID(entity.transformComponent.transform.translation);
-					//console.log("zombie in room:"+entity.room);
-					//console.log(entity.transformComponent.transform.translation);
+					Vector3.add(entity.transformComponent.transform.translation, Vector3.UP, ray.origin);
+					ray.direction = Vector3.DOWN;
+					picking.castRay(ray, function(hit){
+						if(null != hit){
+							entity.room = hit.entity.navID;
+						}
+					}, 1);
 					node.state = 1;
 					break;
 				case 1:
@@ -401,16 +408,21 @@ picking.castRay(ray, function(hit){
 					entity.transformComponent.transform.applyForwardVector(Vector3.UNIT_Z, node.dir);
 					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
 					
-					if(entity.transformComponent.transform.translation.distance(node.doorPos) <= 0.25){
-						entity.room = node.curNode.room;
-						if(entity.room == node.goalRoom){
-							// go to goalPos, not room
-							node.state = 2;
-							return;
+					Vector3.add(entity.transformComponent.transform.translation, Vector3.UP, ray.origin);
+					ray.direction = Vector3.DOWN;
+					picking.castRay(ray, function(hit){
+						if(null != hit){
+							entity.room = hit.entity.navID;
 						}
+					}, 1);
+					if(entity.room == node.goalRoom){
+						node.state = 2;
+						return;
+					}
+					if(entity.room == node.curNode.room){
 						node.curNode = node.curNode.next;
 						if(node.curNode != null){
-							node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
+							node.doorPos = navMesh.room[node.curNode.previous.room].door[node.curNode.door].center;
 						}
 					}
 					break;
@@ -435,15 +447,12 @@ picking.castRay(ray, function(hit){
 			}
 			function playerMoved(room, pos){
 				node.goalRoom = room;
-				//node.goalPos = pos;
-
 
 				if(node.goalRoom == entity.room){
 					node.state = 2;
 					return;
 				}
 				node.path = getPathRoomToRoom(entity.room, node.goalRoom);
-				//console.log(node.path);
 				node.curNode = node.path.first;
 				node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 				entity.aIComponent.setActiveByName("Zombie-Idle", false);
@@ -459,6 +468,7 @@ picking.castRay(ray, function(hit){
 				var room = {id:i, center:new Vector3(), vert:[], door:[]};
 
 				var entity = navRootEntity.transformComponent.children[i].entity;
+				entity.navID = i;
 				entity.hitMask = 1;
 
 				
