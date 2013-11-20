@@ -124,13 +124,15 @@ require([
 			Game.userEntity.setComponent(new FlashlightComponent());
 
 			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			zombie.removeFromWorld();
-			var z2 = EntityUtils.clone(goo.world, zombie);
+			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
+			var z2 = zombie; // EntityUtils.clone(goo.world, zombie);
 			z2.transformComponent.setTranslation(-2,0,2);
 			z2.setComponent(new AIComponent(z2));
 			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			z2.addToWorld();
+			// z2.addToWorld();
+			Game.zombie = zombie;
+			Game.zombieRoot = zombie.transformComponent.parent.entity;
 
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
@@ -342,6 +344,8 @@ require([
 				node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 				entity.aIComponent.setActiveByName("Zombie-Idle", false);
 				node.state = 1;
+				var eac = Game.zombieRoot.animationComponent;
+				eac.transitionTo( eac.getStates()[1]);
 			}
 		}
 
