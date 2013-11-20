@@ -23,7 +23,8 @@ require([
 
 	'goo/util/rsvp',
 	'lib/ShotgunComponent',
-	'lib/FlashlightComponent'
+	'lib/FlashlightComponent',
+	'goo/math/Plane'
 
 ], function (
 	GooRunner,
@@ -51,7 +52,8 @@ require([
 	//SpotLight,
 	RSVP,
 	ShotgunComponent,
-	FlashlightComponent
+	FlashlightComponent,
+	Plane
 
 ) {
 	'use strict';
@@ -82,8 +84,9 @@ require([
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
 		var promises = [];
-		promises.push(loader.loadFromBundle('project.project', 'NavMesh.bundle'));
+		promises.push(loader.loadFromBundle('project.project', 'root.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
+		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
 		RSVP.all(promises)
 		.then(function(){
 			initGoobers(goo);
@@ -94,13 +97,24 @@ require([
 
 		function initGoobers(goo){
 			console.log(loader._configs);
+			var point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
+			point.transformComponent.setScale(0.01, 0.01, 0.01);
+			point.removeFromWorld();
 			//viewCam = loader.getCachedObjectForRef("MultiLevel-1/entities/Camera.entity");
 			//viewCam.transformComponent.transform.translation.y = 2.8;
 
-			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("MultiLevel-1/entities/RootNode.entity"));
+			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
+			for(var i in navMesh.vert){
+				var p = EntityUtils.clone(goo.world, point);
+				p.transformComponent.setTranslation(navMesh.vert[i]);
+				//p.transformComponent.setScale(0.1, 0.2, 0.1);
+				p.addToWorld();
+			}
+
 			generateDoors(navMesh);
 
 			Game.userEntity = goo.world.createEntity("User");
+			Game.userEntity.transformComponent.transform.translation.y = 1;
 			Game.userEntity.addToWorld();
 			Game.userEntity.setComponent(new FPSCamComponent());
 			Game.userEntity.fPSCamComponent.setHeight(2.9);
@@ -110,18 +124,14 @@ require([
 
 			Game.userEntity.setComponent(new FlashlightComponent());
 
-			/*var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			zombie.transformComponent.setScale(0.02, 0.02, 0.02);
+			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			zombie.removeFromWorld();
 			var z2 = EntityUtils.clone(goo.world, zombie);
-
-			z2.transformComponent.setTranslation(15,0,0);
+			z2.transformComponent.setTranslation(-2,0,2);
 			z2.setComponent(new AIComponent(z2));
 			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			z2.addToWorld();*/
-
-
+			z2.addToWorld();
 
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
@@ -136,6 +146,7 @@ require([
         picking.castRay = function(ray, callback, mask){
         	this.pickRay = ray;
         	this.onPick = function(result){
+        		//console.log(result);
         		if(null != result && result.length > 0){
         			for(var i = 0, ilen = result.length; i < ilen; i++){
         				if(null != result[i].entity.hitMask){
@@ -143,6 +154,7 @@ require([
     							callback({
     								entity:result[i].entity,
     								point:result[i].intersection.points[0],
+    								vertex:result[i].intersection.vertices[0],
     								distance:result[i].intersection.distances[0]
     							});
     							return;
@@ -227,6 +239,8 @@ require([
 		Object.freeze(Vector3.UP);
 		Vector3.DOWN = new Vector3(0,-1,0);
 		Object.freeze(Vector3.DOWN);
+		Vector3.FORWARD = new Vector3(0,0,1);
+		Object.freeze(Vector3.FORWARD);
 		function ZombieIdle(entity, node){
 			switch(node.state){
 				case 0:
@@ -237,6 +251,8 @@ require([
 					picking.castRay(ray, function(hit){
 						if(null != hit){
 							entity.room = hit.entity.navID;
+							console.log("I am in room "+entity.room);
+							//console.log(hit);
 						}
 					}, 1);
 					node.state = 1;
@@ -259,58 +275,71 @@ require([
 				case 0:
 					break;
 				case 1:
-
-					Vector3.sub(node.doorPos, entity.transformComponent.transform.translation, node.dir);
-					node.dir.normalize();
-					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UNIT_Y);
-					entity.transformComponent.setUpdated();
-					entity.transformComponent.transform.applyForwardVector(Vector3.UNIT_Z, node.dir);
-					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
-					
 					Vector3.add(entity.transformComponent.transform.translation, Vector3.UP, ray.origin);
 					ray.direction = Vector3.DOWN;
 					picking.castRay(ray, function(hit){
 						if(null != hit){
-							entity.room = hit.entity.navID;
+							//console.log("I am in room "+hit.entity.navID+" goal is "+node.curNode.room);
+							//entity.room = hit.entity.navID;
+							entity.transformComponent.transform.translation.y = hit.point.y;
 						}
 					}, 1);
+
 					if(entity.room == node.goalRoom){
 						node.state = 2;
+						console.log("Going to player position...");
 						return;
 					}
-					if(entity.room == node.curNode.room){
+					if(entity.transformComponent.transform.translation.distance(node.doorPos) <= 0.1){
+					//if(entity.room == node.curNode.room){
+						console.log("got to room "+node.curNode.room);
+						entity.room = node.curNode.room;
 						node.curNode = node.curNode.next;
 						if(node.curNode != null){
-							node.doorPos = navMesh.room[node.curNode.previous.room].door[node.curNode.door].center;
+							console.log("going to room "+node.curNode.room+" from room "+node.curNode.previous.room);
+							node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 						}
 					}
-					break;
-				case 2:
 
-					Vector3.sub(viewCam.transformComponent.transform.translation, entity.transformComponent.transform.translation, node.dir);
+					Vector3.sub(node.doorPos, entity.transformComponent.transform.translation, node.dir);
 					node.dir.normalize();
 					node.dir.y = 0;
-					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UNIT_Y);
 
-					entity.transformComponent.setUpdated();
-					entity.transformComponent.transform.applyForwardVector(Vector3.UNIT_Z, node.dir);
+					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UP);
+					entity.transformComponent.transform.applyForwardVector(Vector3.FORWARD, node.dir);
 					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
+					entity.transformComponent.setUpdated();
 
-					if(entity.transformComponent.transform.translation.distance(viewCam.transformComponent.transform.translation) <= 3.5){
+					break;
+				case 2:
+					if(entity.transformComponent.transform.translation.distance(Game.userEntity.transformComponent.transform.translation) <= 1.0){
+						console.log("at player position...");
 						node.state = 3;
 					}
+
+					Vector3.sub(Game.userEntity.transformComponent.transform.translation, entity.transformComponent.transform.translation, node.dir);
+					node.dir.normalize();
+					node.dir.y = 0;
+			
+					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UP);
+					entity.transformComponent.transform.applyForwardVector(Vector3.FORWARD, node.dir);
+					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
+					entity.transformComponent.setUpdated();
 					break;
 				case 3:
 					entity.aIComponent.setActiveByName("Zombie-Idle", true);
 					break;
 			}
 			function playerMoved(room, pos){
+				console.log("playerMoved:"+room+","+pos);
 				node.goalRoom = room;
 
 				if(node.goalRoom == entity.room){
+					console.log("I am already in "+node.goalRoom);
 					node.state = 2;
 					return;
 				}
+				console.log("I am not in "+node.goalRoom+" getting path.");
 				node.path = getPathRoomToRoom(entity.room, node.goalRoom);
 				node.curNode = node.path.first;
 				node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
@@ -328,7 +357,7 @@ require([
 				var entity = navRootEntity.transformComponent.children[i].entity;
 				entity.navID = i;
 				entity.hitMask = 1;
-				//entity.skip = true;
+				entity.skip = true;
 
 				
 				// track which vertices we have already used

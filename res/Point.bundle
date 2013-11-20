@@ -1,0 +1,270 @@
+{
+    "Point/Point.group": {
+        "libraryRefs": [
+            "Point/materials/DefaultMaterial.material",
+            "Point/entities/RootNode.entity",
+            "Point/entities/Plane01_0.entity",
+            "Point/meshes/Plane01_0.mesh",
+            "Point/binaries/1384939524_data.bin"
+        ],
+        "name": "Point",
+        "ref": "Point/Point.group"
+    },
+    "Point/entities/Plane01_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "Point/meshes/Plane01_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "Point/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "Point/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    9.41476059779234e-07
+                ]
+            }
+        },
+        "name": "Plane01",
+        "nodeType": "Mesh"
+    },
+    "Point/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Point",
+        "nodeType": "Null"
+    },
+    "Point/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": false,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "Point/materials/DefaultMaterial.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "Point/meshes/Plane01_0.mesh": {
+        "binaryRef": "Point/binaries/1384939524_data.bin",
+        "boundingVolume": {
+            "max": [
+                1.0,
+                1.0,
+                20.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            504,
+            48,
+            "float32"
+        ],
+        "indexLengths": [
+            24
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            24,
+            "uint8"
+        ],
+        "name": "Plane01",
+        "normals": [
+            168,
+            36,
+            "float32"
+        ],
+        "tangents": [
+            312,
+            48,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                696,
+                24,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 12,
+        "vertices": [
+            24,
+            36,
+            "float32"
+        ]
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2013-11-20T09:24:41.286330",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "Point/entities/Plane01_0.entity",
+            "Point/entities/RootNode.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "Point/Point.group"
+        ],
+        "id": "tScQnIhhS6q1hODgjS2U6w",
+        "licenseType": "CC0",
+        "modified": "2013-11-20T09:24:41.286330",
+        "name": "Default Goo Project",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    }
+}
