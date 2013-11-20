@@ -69,7 +69,6 @@ require([
 
 		// Create typical goo application
 		var goo = new GooRunner({
-			antialias: true,
 			manuallyStartGameLoop: true,
 			tpfSmoothingCount:1
 		});
@@ -235,12 +234,10 @@ require([
 				return path;
 			}
 		}
-		Vector3.UP = new Vector3(0,1,0);
-		Object.freeze(Vector3.UP);
-		Vector3.DOWN = new Vector3(0,-1,0);
-		Object.freeze(Vector3.DOWN);
-		Vector3.FORWARD = new Vector3(0,0,1);
-		Object.freeze(Vector3.FORWARD);
+		Vector3.UP = Object.freeze(new Vector3(0,1,0));
+		Vector3.DOWN = Object.freeze(new Vector3(0,-1,0));
+		Vector3.FORWARD = Object.freeze(new Vector3(0,0,1));
+		
 		function ZombieIdle(entity, node){
 			switch(node.state){
 				case 0:
