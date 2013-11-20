@@ -6,14 +6,10 @@ require([
 	'goo/loaders/DynamicLoader',
 	'goo/math/Vector3',
 
-	'goo/renderer/Camera',
-	'goo/entities/components/CameraComponent',
+	//'goo/entities/components/ScriptComponent',
 
-	'goo/entities/components/ScriptComponent',
-	'goo/scripts/OrbitCamControlScript',
-
-	'goo/renderer/light/DirectionalLight',
-	'goo/entities/components/LightComponent',
+	//'goo/renderer/light/DirectionalLight',
+	//'goo/entities/components/LightComponent',
 	'goo/entities/EntityUtils',
 	'lib/Input',
 	'lib/Game',
@@ -23,13 +19,11 @@ require([
 	'goo/math/Ray',
 	'goo/entities/systems/PickingSystem',
 	'goo/picking/PrimitivePickLogic',
-	'lib/FPSCamControlScript',
+	'lib/FPSCamComponent',
 
-	'goo/renderer/light/SpotLight',
-	'goo/renderer/shaders/ShaderLib',
-	'goo/renderer/TextureCreator',
-	'goo/shapes/ShapeCreator',
-	'goo/renderer/Material'
+	'goo/util/rsvp',
+	'lib/ShotgunComponent',
+	'lib/FlashlightComponent'
 
 ], function (
 	GooRunner,
@@ -39,14 +33,10 @@ require([
 	DynamicLoader,
 	Vector3,
 
-	Camera,
-	CameraComponent,
+	//ScriptComponent,
 
-	ScriptComponent,
-	OrbitCamControlScript,
-
-	DirectionalLight,
-	LightComponent,
+	//DirectionalLight,
+	//LightComponent,
 	EntityUtils,
 	Input,
 	Game,
@@ -56,13 +46,12 @@ require([
 	Ray,
 	PickingSystem,
 	PrimitivePickLogic,
-	FPSCamControlScript,
+	FPSCamComponent,
 
-	SpotLight,
-	ShaderLib,
-	TextureCreator,
-	ShapeCreator,
-	Material
+	//SpotLight,
+	RSVP,
+	ShotgunComponent,
+	FlashlightComponent
 
 ) {
 	'use strict';
@@ -73,32 +62,6 @@ require([
 		if (window.location.protocol==='file:') {
 			alert('You need to run this webpage on a server. Check the code for links and details.');
 			return;
-
-			/*
-
-			Loading scenes uses AJAX requests, which require that the webpage is accessed via http. Setting up 
-			a web server is not very complicated, and there are lots of free options. Here are some suggestions 
-			that will do the job and do it well, but there are lots of other options.
-
-			- Windows
-
-			There's Apache (http://httpd.apache.org/docs/current/platform/windows.html)
-			There's nginx (http://nginx.org/en/docs/windows.html)
-			And for the truly lightweight, there's mongoose (https://code.google.com/p/mongoose/)
-
-			- Linux
-			Most distributions have neat packages for Apache (http://httpd.apache.org/) and nginx
-			(http://nginx.org/en/docs/windows.html) and about a gazillion other options that didn't 
-			fit in here. 
-			One option is calling 'python -m SimpleHTTPServer' inside the unpacked folder if you have python installed.
-
-
-			- Mac OS X
-
-			Most Mac users will have Apache web server bundled with the OS. 
-			Read this to get started: http://osxdaily.com/2012/09/02/start-apache-web-server-mac-os-x/
-
-			*/
 		}
 
 
@@ -108,62 +71,46 @@ require([
 			manuallyStartGameLoop: true,
 			tpfSmoothingCount:1
 		});
+		Game.goo = goo;
 		goo.world.setSystem(new Time(goo));
 		Input.init(goo);
 
 		goo.world.setSystem(new HowlerSystem());
 
 		var navMesh;
-		//var goal;
-		var point;
+		//var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
-
-		loader.loadFromBundle('project.project', 'root.bundle')
-		.then(function(result) {
-			// This function is called when the project has finished loading.
-			loader.loadFromBundle('project.project', 'zombie.bundle')
-			.then(function(result){
-				console.log(result);
-
-				initGoobers(goo);
-
-				goo.renderer.domElement.id = 'goo';
-				document.body.appendChild(goo.renderer.domElement);
-				goo.startGameLoop();
-			})
-			.then(null, function(e){});
+		var promises = [];
+		promises.push(loader.loadFromBundle('project.project', 'NavMesh.bundle'));
+		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
+		RSVP.all(promises)
+		.then(function(){
+			initGoobers(goo);
 		})
-		.then(null, function(e) {
-			// The second parameter of 'then' is an error handling function.
-			// We just pop up an error message in case the scene fails to load.
-			alert('Failed to load scene: ' + e);
+		.then(null, function(e){
+			alert (e);
 		});
 
-		//var zombie;
-
-		
-
 		function initGoobers(goo){
-			//goo.world.entityManager.getEntityByName
-			//entities/DefaultToolCamera.entity
-			viewCam = loader.getCachedObjectForRef("entities/DefaultToolCamera.entity");
-			viewCam.transformComponent.transform.translation.y = 2.8;
+			console.log(loader._configs);
+			//viewCam = loader.getCachedObjectForRef("MultiLevel-1/entities/Camera.entity");
+			//viewCam.transformComponent.transform.translation.y = 2.8;
 
-			//goal = loader.getCachedObjectForRef("diamond/entities/RootNode.entity");
-			point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
-			point.removeFromWorld();
-
-			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
-			for(var i in navMesh.vert){
-				var p = EntityUtils.clone(goo.world, point);
-				p.transformComponent.setTranslation(navMesh.vert[i]);
-				p.transformComponent.setScale(0.1, 0.2, 0.1);
-				p.addToWorld();
-			}
-
+			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("MultiLevel-1/entities/RootNode.entity"));
 			generateDoors(navMesh);
-			var zombie = loader.getCachedObjectForRef("zombie_injured_walk/entities/RootNode.entity");
+
+			Game.userEntity = goo.world.createEntity("User");
+			Game.userEntity.addToWorld();
+			Game.userEntity.setComponent(new FPSCamComponent());
+			Game.userEntity.fPSCamComponent.setHeight(2.9);
+
+			Game.currentGun = new ShotgunComponent();
+			Game.userEntity.setComponent(Game.currentGun);
+
+			Game.userEntity.setComponent(new FlashlightComponent());
+
+			/*var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			zombie.transformComponent.setScale(0.02, 0.02, 0.02);
 			zombie.removeFromWorld();
 			var z2 = EntityUtils.clone(goo.world, zombie);
@@ -172,85 +119,13 @@ require([
 			z2.setComponent(new AIComponent(z2));
 			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			z2.addToWorld();
+			z2.addToWorld();*/
 
-			var sound = new Howl({urls: ["res/sounds/ssg.ogg", "res/sounds/ssg.mp3"], volume:1.0});
 
-			// make a cheap shotgun
-			function createShotgun() {
-				var mesh = ShapeCreator.createCylinder( 30, 2);
-				var mat = Material.createMaterial( ShaderLib.simpleLit, 'BoxMaterial');
-				var barrelLeft = EntityUtils.createTypicalEntity( goo.world, mesh, mat);
-				barrelLeft.addToWorld();
-				barrelLeft.transformComponent.setTranslation( 1.5, 0, 0);
 
-				var barrelRight = EntityUtils.createTypicalEntity( goo.world, mesh, mat);
-				barrelRight.addToWorld();
-				barrelRight.transformComponent.setTranslation( -1.5, 0, 0 );
-
-				var shotgun = EntityUtils.createTypicalEntity( goo.world);
-				shotgun.addToWorld();
-
-				shotgun.transformComponent.attachChild( barrelLeft.transformComponent);
-				shotgun.transformComponent.attachChild( barrelRight.transformComponent);
-
-				shotgun.transformComponent.setTranslation( .2, -.23, -.55 );
-				shotgun.transformComponent.setScale( .01, .01, .55); // make the barrels long
-
-				shotgun.transformComponent.setRotation( 0.15, 0.1, 0); // rotate the shotty a bit.
-				
-				//var howlerComponent = new HowlerComponent(); // results in an exception...
-				//howlerComponent.addSound('shotx', sound);
-				//shotgun.setComponent(howlerComponent);
-
-				
-				return shotgun;
-			}
-
-			var shotgun = createShotgun();
-			viewCam.transformComponent.attachChild( shotgun.transformComponent);
-			
-			var spotLight = new SpotLight();
-			spotLight.angle = 25;
-			//spotLight.range = 10;
-			spotLight.penumbra = 5;
-			spotLight.intensity = 1;
-
-			var spotLightEntity = goo.world.createEntity('spotLight');
-			spotLightEntity.setComponent(new LightComponent(spotLight));
-			spotLightEntity.addToWorld();
-
-			viewCam.transformComponent.attachChild( spotLightEntity.transformComponent);
-
-			
-			function resetSSG() {
-				shotgun.transformComponent.setRotation( 0.15, 0.1, 0);
-			}
-			function mouseButton1(bool0){
-				//console.log(bool0);
-				if(true == bool0){
-					//console.log("bam");
-					if(document.pointerLockElement) {
-						sound.play();
-						shotgun.transformComponent.setRotation( 0.35, 0.1, 0);
-						setTimeout( resetSSG, 250);
-						var w = goo.renderer.viewportWidth;
-						var h = goo.renderer.viewportHeight;
-						var x = w / 2;
-						var y = h / 2;
-						goo.pick( x, y, function( id, depth){
-							if( id < 0)
-								return;
-							console.log( depth);
-							var pos = viewCam.cameraComponent.camera.getWorldCoordinates( x, y, w, h, depth);
-							//blood.spawn([pos.x,pos.y,pos.z]);
-							var entity = goo.world.entityManager.getEntityById(id);
-						});
-					}
-				}
-			}
-			viewCam.getComponent('ScriptComponent').scripts = [new FPSCamControlScript(viewCam)];
-			Game.register("MouseButton1", Game, mouseButton1);
+			goo.renderer.domElement.id = 'goo';
+			document.body.appendChild(goo.renderer.domElement);
+			goo.startGameLoop();
 		}
 
 		var goal;
@@ -282,23 +157,6 @@ require([
         goo.world.setSystem(picking);
         Game.picking = picking;
 
-
-/*viewCam.cameraComponent.camera.getPickRay(
-	Input.mousePosition.x,
-	Input.mousePosition.y,
-	goo.renderer.viewportWidth,
-	goo.renderer.viewportHeight,
-	ray);
-picking.castRay(ray, function(hit){
-	if(null != hit){
-		var hitPos = Game.getRoomID(hit.point);
-		if(hitPos != -1){
-			Game.raiseEvent("DiamondMoved", hitPos, hit.point);
-			goal.transformComponent.setTranslation(hit.point);
-			goal.transformComponent.setUpdated();
-		}
-	}
-},1);*/
 		Game.getRoomID = function(pos){
 			//console.log(pos.x+","+pos.y+","+pos.z);
 			//var p = new Vector3(pos.x, pos.y, pos.z);
@@ -330,6 +188,7 @@ picking.castRay(ray, function(hit){
 		// 
 		var currentRoom;
 		function getPathRoomToRoom(roomStart, roomGoal){
+			console.log("start:"+roomStart+" goal:"+roomGoal);
 			openList.push({room:roomStart, parent:null});
 			var pathFound = false;
 			while(openList.length > 0 && false == pathFound){
@@ -462,7 +321,6 @@ picking.castRay(ray, function(hit){
 
 		function generateRoomsFromMesh(navRootEntity){
 			var nav = {room:[], vert:{}}
-			//var navArr = [];
 			for(var i = 0, ilen = navRootEntity.transformComponent.children.length; i < ilen; i++){
 				// create a new 'room'(convex polygon)
 				var room = {id:i, center:new Vector3(), vert:[], door:[]};
@@ -470,6 +328,7 @@ picking.castRay(ray, function(hit){
 				var entity = navRootEntity.transformComponent.children[i].entity;
 				entity.navID = i;
 				entity.hitMask = 1;
+				//entity.skip = true;
 
 				
 				// track which vertices we have already used
@@ -560,10 +419,10 @@ picking.castRay(ray, function(hit){
 													room2.door.push(door2);
 
 
-													var p = EntityUtils.clone(goo.world, point);
-													p.transformComponent.setTranslation(door1.center);
-													p.transformComponent.setScale(0.5, 0.3, 0.5);
-													p.addToWorld();
+												//	var p = EntityUtils.clone(goo.world, point);
+												//	p.transformComponent.setTranslation(door1.center);
+												//	p.transformComponent.setScale(0.5, 0.3, 0.5);
+												//	p.addToWorld();
 												}
 											}
 										}

@@ -1,0 +1,1039 @@
+{
+    "MultiLevel-1/MultiLevel-1.group": {
+        "libraryRefs": [
+            "MultiLevel-1/entities/BigArea_0.entity",
+            "MultiLevel-1/entities/RootNode.entity",
+            "MultiLevel-1/entities/Door1_0.entity",
+            "MultiLevel-1/meshes/Room1_0.mesh",
+            "MultiLevel-1/materials/DefaultMaterial.material",
+            "MultiLevel-1/meshes/SmallRoom1_0.mesh",
+            "MultiLevel-1/meshes/UpperHall_0.mesh",
+            "MultiLevel-1/meshes/BigArea_0.mesh",
+            "MultiLevel-1/meshes/Stairs2_0.mesh",
+            "MultiLevel-1/meshes/Door1_0.mesh",
+            "MultiLevel-1/entities/UpperHall_0.entity",
+            "MultiLevel-1/entities/Platform1_0.entity",
+            "MultiLevel-1/entities/SmallRoom2_0.entity",
+            "MultiLevel-1/entities/Room1_0.entity",
+            "MultiLevel-1/entities/SmallRoom1_0.entity",
+            "MultiLevel-1/meshes/Stairs1_0.mesh",
+            "MultiLevel-1/entities/Stairs1_0.entity",
+            "MultiLevel-1/meshes/Platform1_0.mesh",
+            "MultiLevel-1/entities/Stairs2_0.entity",
+            "MultiLevel-1/meshes/SmallRoom2_0.mesh",
+            "MultiLevel-1/binaries/1384916278_data.bin"
+        ],
+        "name": "MultiLevel-1",
+        "ref": "MultiLevel-1/MultiLevel-1.group"
+    },
+    "MultiLevel-1/entities/BigArea_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/BigArea_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "BigArea",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/Door1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/Door1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Door1",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/Platform1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/Platform1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Platform1",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/Room1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/Room1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Room1",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    2,
+                    2,
+                    2
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "MultiLevel-1",
+        "nodeType": "Null",
+        "ref": "MultiLevel-1/entities/RootNode.entity"
+    },
+    "MultiLevel-1/entities/SmallRoom1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/SmallRoom1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "SmallRoom1",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/SmallRoom2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/SmallRoom2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "SmallRoom2",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/Stairs1_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/Stairs1_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Stairs1",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/Stairs2_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/Stairs2_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "Stairs2",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/entities/UpperHall_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "MultiLevel-1/meshes/UpperHall_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "MultiLevel-1/materials/DefaultMaterial.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "MultiLevel-1/entities/RootNode.entity",
+                "rotation": [
+                    -90.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "UpperHall",
+        "nodeType": "Mesh"
+    },
+    "MultiLevel-1/materials/DefaultMaterial.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "DefaultMaterial",
+        "ref": "MultiLevel-1/materials/DefaultMaterial.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {},
+        "type": "Phong",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    1,
+                    0.3927272727272727,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0.2,
+                    0.2,
+                    0.2,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 20
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "MultiLevel-1/meshes/BigArea_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                12.0539855957031,
+                7.52157402038574,
+                3.0
+            ],
+            "min": [
+                1.05585980415344,
+                2.70031261444092,
+                2.99999976158142
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            1620,
+            40,
+            "float32"
+        ],
+        "indexLengths": [
+            27
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            1192,
+            27,
+            "uint8"
+        ],
+        "name": "BigArea",
+        "normals": [
+            1340,
+            30,
+            "float32"
+        ],
+        "tangents": [
+            1460,
+            40,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                1780,
+                20,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 10,
+        "vertices": [
+            1220,
+            30,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/Door1_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                9.13935661315918,
+                8.24374580383301,
+                3.00000071525574
+            ],
+            "min": [
+                8.58913612365723,
+                7.52157402038574,
+                3.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2292,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2124,
+            6,
+            "uint8"
+        ],
+        "name": "Door1",
+        "normals": [
+            2180,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            2228,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2356,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            2132,
+            12,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/Platform1_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                5.96489334106445,
+                0.618409037590027,
+                1.50001561641693
+            ],
+            "min": [
+                4.82863187789917,
+                -0.550746738910675,
+                1.49998438358307
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2820,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2652,
+            6,
+            "uint8"
+        ],
+        "name": "Platform1",
+        "normals": [
+            2708,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            2756,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2884,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            2660,
+            12,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/Room1_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                2.3419554233551,
+                2.06829357147217,
+                0.0
+            ],
+            "min": [
+                -2.23397302627563,
+                -2.00083637237549,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            340,
+            32,
+            "float32"
+        ],
+        "indexLengths": [
+            18
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            18,
+            "uint8"
+        ],
+        "name": "Room1",
+        "normals": [
+            116,
+            24,
+            "float32"
+        ],
+        "tangents": [
+            212,
+            32,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                468,
+                16,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 8,
+        "vertices": [
+            20,
+            24,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/SmallRoom1_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                10.1136436462402,
+                10.898003578186,
+                3.00000071525574
+            ],
+            "min": [
+                7.63127279281616,
+                8.24374580383301,
+                3.00000047683716
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            784,
+            24,
+            "float32"
+        ],
+        "indexLengths": [
+            12
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            532,
+            12,
+            "uint8"
+        ],
+        "name": "SmallRoom1",
+        "normals": [
+            616,
+            18,
+            "float32"
+        ],
+        "tangents": [
+            688,
+            24,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                880,
+                12,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 6,
+        "vertices": [
+            544,
+            18,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/SmallRoom2_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                3.26555562019348,
+                -3.0934886932373,
+                2.99999952316284
+            ],
+            "min": [
+                -0.0807497501373291,
+                -6.10651206970215,
+                2.99999928474426
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            3168,
+            24,
+            "float32"
+        ],
+        "indexLengths": [
+            12
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2916,
+            12,
+            "uint8"
+        ],
+        "name": "SmallRoom2",
+        "normals": [
+            3000,
+            18,
+            "float32"
+        ],
+        "tangents": [
+            3072,
+            24,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                3264,
+                12,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 6,
+        "vertices": [
+            2928,
+            18,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/Stairs1_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                4.82863187789917,
+                0.618409037590027,
+                1.49998438358307
+            ],
+            "min": [
+                2.3419554233551,
+                -0.550746738910675,
+                0.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2556,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            2388,
+            6,
+            "uint8"
+        ],
+        "name": "Stairs1",
+        "normals": [
+            2444,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            2492,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2620,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            2396,
+            12,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/Stairs2_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                5.96489334106445,
+                2.70031261444092,
+                2.99999976158142
+            ],
+            "min": [
+                4.82863187789917,
+                0.618409037590027,
+                1.49998438358307
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            2028,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            1860,
+            6,
+            "uint8"
+        ],
+        "name": "Stairs2",
+        "normals": [
+            1916,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            1964,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                2092,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            1868,
+            12,
+            "float32"
+        ]
+    },
+    "MultiLevel-1/meshes/UpperHall_0.mesh": {
+        "binaryRef": "MultiLevel-1/binaries/1384916278_data.bin",
+        "boundingVolume": {
+            "max": [
+                2.23959922790527,
+                2.7005181312561,
+                2.99999976158142
+            ],
+            "min": [
+                1.04185509681702,
+                -3.0934886932373,
+                2.99999952316284
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [
+            1096,
+            16,
+            "float32"
+        ],
+        "indexLengths": [
+            6
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            928,
+            6,
+            "uint8"
+        ],
+        "name": "UpperHall",
+        "normals": [
+            984,
+            12,
+            "float32"
+        ],
+        "tangents": [
+            1032,
+            16,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                1160,
+                8,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 4,
+        "vertices": [
+            936,
+            12,
+            "float32"
+        ]
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2013-11-20T02:57:58.789156",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "MultiLevel-1/entities/BigArea_0.entity",
+            "MultiLevel-1/entities/Door1_0.entity",
+            "MultiLevel-1/entities/UpperHall_0.entity",
+            "MultiLevel-1/entities/Platform1_0.entity",
+            "MultiLevel-1/entities/SmallRoom2_0.entity",
+            "MultiLevel-1/entities/Room1_0.entity",
+            "MultiLevel-1/entities/SmallRoom1_0.entity",
+            "MultiLevel-1/entities/Stairs1_0.entity",
+            "MultiLevel-1/entities/Stairs2_0.entity",
+            "MultiLevel-1/entities/RootNode.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "MultiLevel-1/MultiLevel-1.group"
+        ],
+        "id": "RZeyegI2SFaoMHDK7xBY6A",
+        "licenseType": "CC0",
+        "modified": "2013-11-20T02:57:58.789156",
+        "name": "Default Goo Project",
+        "originalLicenseType": null,
+        "own": [
+            "h9AeW1X3S1WZYADWuViCyw"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    }
+}
