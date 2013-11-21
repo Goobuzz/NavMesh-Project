@@ -70,7 +70,8 @@ require([
 		// Create typical goo application
 		var goo = new GooRunner({
 			manuallyStartGameLoop: true,
-			tpfSmoothingCount:1
+			tpfSmoothingCount:3,
+			showStats:true
 		});
 		Game.goo = goo;
 		goo.world.setSystem(new Time(goo));
@@ -99,18 +100,22 @@ require([
 			var point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
 			point.transformComponent.setScale(0.01, 0.01, 0.01);
 			point.removeFromWorld();
-			//viewCam = loader.getCachedObjectForRef("MultiLevel-1/entities/Camera.entity");
-			//viewCam.transformComponent.transform.translation.y = 2.8;
 
 			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
 			for(var i in navMesh.vert){
 				var p = EntityUtils.clone(goo.world, point);
 				p.transformComponent.setTranslation(navMesh.vert[i]);
-				//p.transformComponent.setScale(0.1, 0.2, 0.1);
 				p.addToWorld();
 			}
 
 			generateDoors(navMesh);
+
+			var physHull = loader.getCachedObjectForRef("PhysicsHull/entities/RootNode.entity");
+			for(var i = 0, ilen = physHull.transformComponent.children.length; i < ilen; i++){
+				console.log(physHull.transformComponent.children[i].entity.name);
+				physHull.transformComponent.children[i].entity.hitMask = 2;
+				physHull.transformComponent.children[i].entity.skip = true;
+			}
 
 			Game.userEntity = goo.world.createEntity("User");
 			Game.userEntity.transformComponent.transform.translation.y = 1;
@@ -134,6 +139,8 @@ require([
 			Game.zombie = zombie;
 			Game.zombieRoot = zombie.transformComponent.parent.entity;
 
+			//console.log(navRef);
+
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
 			goo.startGameLoop();
@@ -148,22 +155,47 @@ require([
         	this.pickRay = ray;
         	this.onPick = function(result){
         		//console.log(result);
+        		var hit = null;
         		if(null != result && result.length > 0){
+        			var distance = Infinity;
         			for(var i = 0, ilen = result.length; i < ilen; i++){
+        				//console.log(result[i].entity.name);
         				if(null != result[i].entity.hitMask){
         					if((result[i].entity.hitMask & mask) != 0){
-    							callback({
-    								entity:result[i].entity,
-    								point:result[i].intersection.points[0],
-    								vertex:result[i].intersection.vertices[0],
-    								distance:result[i].intersection.distances[0]
-    							});
-    							return;
+        						for(var j = 0, jlen = result[i].intersection.distances.length; j < jlen; j++){
+        							var v1 = new Vector3(
+										result[i].intersection.vertices[j][1].x - result[i].intersection.vertices[j][0].x,
+										result[i].intersection.vertices[j][1].y - result[i].intersection.vertices[j][0].y,
+										result[i].intersection.vertices[j][1].z - result[i].intersection.vertices[j][0].z);
+
+									var v2 = new Vector3(
+										result[i].intersection.vertices[j][1].x - result[i].intersection.vertices[j][2].x,
+										result[i].intersection.vertices[j][1].y - result[i].intersection.vertices[j][2].y,
+										result[i].intersection.vertices[j][1].z - result[i].intersection.vertices[j][2].z);
+
+									var c = new Vector3(
+										(v1.y * v2.z) - (v1.z * v2.y),
+										(v1.z * v2.x) - (v1.x * v2.z),
+										(v1.x * v2.y) - (v1.y * v2.x));
+									c.normalize();
+									var dp = (this.pickRay.direction.x*c.x)+(this.pickRay.direction.y*c.y)+(this.pickRay.direction.z*c.z);
+									console.log(dp);
+								//	if(dp >= 0){
+										if(result[i].intersection.distances[j] < distance){
+	        								distance = result[i].intersection.distances[j];
+	        								hit = hit || {entity:null,point:null,vertex:null,distance:null};
+	        								hit.entity = result[i].entity;
+	        								hit.point =result[i].intersection.points[j];
+	        								hit.normal = c;
+	        								hit.distance = result[i].intersection.distances[j];
+	        							}
+								//	}	
+        						}
         					}
         				}
         			}
         		}
-        		callback(null);
+        		callback(hit);
         	};
         	this._process();
         }
