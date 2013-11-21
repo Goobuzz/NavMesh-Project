@@ -83,10 +83,15 @@ require([
 		//var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
+		//var loader2 = new DynamicLoader({world: goo.world, rootPath: 'res'});
+		//var loader3 = new DynamicLoader({world: goo.world, rootPath: 'res'});
+		
 		var promises = [];
 		promises.push(loader.loadFromBundle('project.project', 'root.bundle'));
-		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
+		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
+		//promises.push(loader2.loadFromBundle('project.project', 'zombie.bundle'));
+		//promises.push(loader3.loadFromBundle('project.project', 'zombie.bundle'));
 		RSVP.all(promises)
 		.then(function(){
 			initGoobers(goo);
@@ -128,17 +133,20 @@ require([
 
 			Game.userEntity.setComponent(new FlashlightComponent());
 
-			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
-			var z2 = zombie; // EntityUtils.clone(goo.world, zombie);
-			z2.transformComponent.setTranslation(-2,0,2);
-			z2.setComponent(new AIComponent(z2));
-			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			// z2.addToWorld();
-			Game.zombie = zombie;
-			Game.zombieRoot = zombie.transformComponent.parent.entity;
-
+			function addZombie( loader, x, y, z ) {
+				var z = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+				//zombie.removeFromWorld(); EntityUtils.clone(goo.world, zombie); // this breaks the parent child relationship, the parent has the animation that I need...
+				z.transformComponent.setTranslation( x, y, z);
+				z.setComponent(new AIComponent(z));
+				z.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+				z.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+			}
+			// var z3 = EntityUtils.clone(goo.world, zombie.transformComponent.parent.entity); z3.addToWorld(); // shares animation... this sucks...
+			
+			addZombie( loader,   7, 0, -50);
+			//addZombie( loader2,  50, 0, -50);
+			//addZombie( loader3, -50, 0, -50);
+			
 			//console.log(navRef);
 
 			goo.renderer.domElement.id = 'goo';
@@ -179,7 +187,7 @@ require([
 										(v1.x * v2.y) - (v1.y * v2.x));
 									c.normalize();
 									var dp = (this.pickRay.direction.x*c.x)+(this.pickRay.direction.y*c.y)+(this.pickRay.direction.z*c.z);
-									console.log(dp);
+									//console.log(dp);
 								//	if(dp >= 0){
 										if(result[i].intersection.distances[j] < distance){
 	        								distance = result[i].intersection.distances[j];
@@ -376,7 +384,7 @@ require([
 				node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 				entity.aIComponent.setActiveByName("Zombie-Idle", false);
 				node.state = 1;
-				var eac = Game.zombieRoot.animationComponent;
+				var eac = entity.transformComponent.parent.entity.animationComponent;
 				eac.transitionTo( eac.getStates()[1]);
 			}
 		}
