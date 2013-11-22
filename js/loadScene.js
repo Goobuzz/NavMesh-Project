@@ -144,8 +144,6 @@ require([
 			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 			// z2.addToWorld();
-			Game.zombie = zombie;
-			Game.zombieRoot = zombie.transformComponent.parent.entity;
 
 			//console.log(navRef);
 
@@ -387,7 +385,7 @@ require([
 						node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 						entity.aIComponent.setActiveByName("Zombie-Idle", false);
 						node.state = 1;
-						var eac = Game.zombieRoot.animationComponent;
+						var eac = entity.transformComponent.parent.entity.animationComponent;
 						eac.transitionTo( eac.getStates()[1]);
 					}
 					break;
@@ -408,7 +406,7 @@ require([
 					node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 					entity.aIComponent.setActiveByName("Zombie-Idle", false);
 					node.state = 1;
-					var eac = Game.zombieRoot.animationComponent;
+					var eac = entity.transformComponent.parent.entity.animationComponent;
 					eac.transitionTo( eac.getStates()[1]);
 				}
 				else{
