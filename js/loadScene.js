@@ -83,9 +83,13 @@ require([
 		var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
+		var loader2 = new DynamicLoader({world: goo.world, rootPath: 'res'});
+		var loader3 = new DynamicLoader({world: goo.world, rootPath: 'res'});
 		var promises = [];
 		promises.push(loader.loadFromBundle('project.project', 'root.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
+		promises.push(loader2.loadFromBundle('project.project', 'zombie.bundle'));
+		promises.push(loader3.loadFromBundle('project.project', 'zombie.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
 		RSVP.all(promises)
 		.then(function(){
@@ -145,12 +149,34 @@ require([
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 			// z2.addToWorld();
 
+			var z3 = loader2.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+			z3.transformComponent.setTranslation(-50,0,-50);
+			z3.transformComponent.setUpdated();
+			z3.setComponent(new AIComponent(z3));
+			z3.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+			z3.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+
+			var z4 = loader3.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+			z4.transformComponent.setTranslation(50,0,-50);
+			z4.transformComponent.setUpdated();
+			z4.setComponent(new AIComponent(z4));
+			z4.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+			z4.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+
 			//console.log(navRef);
 
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
 			goo.startGameLoop();
 		}
+			function addZombie( loader, x, y, z ) {
+				var z = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+				z.transformComponent.setTranslation( x, y, z);
+				z.transformComponent.setUpdated();
+				z.setComponent(new AIComponent(z));
+				z.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+				z.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+			}
 
 		var goal;
 		var viewCam;
