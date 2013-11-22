@@ -99,7 +99,7 @@ require([
 			alert (e);
 		});
 		
-		window.spawnZombie = function () {
+		var spawnZombie = function () {
 			var loader_ = new DynamicLoader({world: goo.world, rootPath: 'res'});
 			loader_.loadFromBundle('project.project', 'zombie.bundle').then( function() {
 				var z2 = loader_.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
@@ -110,10 +110,32 @@ require([
 				z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 			});
 		}
+
+		var respawnZombie = function ( zx) {
+			if( zx.dmg > 100 ) {
+				zx.dmg = 0;
+				var p = zx.transformComponent.parent.entity;
+				var eac = p.animationComponent;
+				eac.layers[0]._steadyStates['mixamo_com__']._sourceTree._clipInstance._loopCount=-1;
+				//eac.transitionTo( eac.getStates()[1]);
+				eac.layers[0].setCurrentStateByName(eac.getStates()[1]);
+				zx.aIComponent.setActiveByName("Zombie-PathFind", true);
+				zx.transformComponent.setTranslation(50,0,0);
+			}
+		};
+		
+		var respawnZombie2 = function () {
+			respawnZombie( window.z2);
+			respawnZombie( window.z3);
+			respawnZombie( window.z4);
+		};
+
+		setInterval( respawnZombie2, 17000);
 		
 		document.addEventListener('keypress', function(e){
 			if( e.keyCode == 114) { // r
-				spawnZombie();
+				//spawnZombie();
+				respawnZombie2();
 			}
 		}, false);
 
@@ -159,7 +181,7 @@ require([
 
 			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
-			var z2 = zombie; // EntityUtils.clone(goo.world, zombie);
+			window.z2 = zombie; // EntityUtils.clone(goo.world, zombie);
 			z2.transformComponent.setTranslation(50,0,50);
 			z2.transformComponent.setUpdated();
 			z2.setComponent(new AIComponent(z2));
@@ -167,14 +189,14 @@ require([
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 			// z2.addToWorld();
 
-			var z3 = loader2.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+			window.z3 = loader2.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			z3.transformComponent.setTranslation(-50,0,-50);
 			z3.transformComponent.setUpdated();
 			z3.setComponent(new AIComponent(z3));
 			z3.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z3.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 
-			var z4 = loader3.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+			window.z4 = loader3.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			z4.transformComponent.setTranslation(50,0,-50);
 			z4.transformComponent.setUpdated();
 			z4.setComponent(new AIComponent(z4));
