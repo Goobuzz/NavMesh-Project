@@ -452,7 +452,8 @@ require([
 						entity.aIComponent.setActiveByName("Zombie-Idle", false);
 						node.state = 1;
 						var eac = entity.transformComponent.parent.entity.animationComponent;
-						eac.transitionTo( eac.getStates()[1]);
+						if( !entity.dmg || entity.dmg < 100)
+							eac.transitionTo( eac.getStates()[1]);
 					}
 					break;
 			}
@@ -473,7 +474,8 @@ require([
 					entity.aIComponent.setActiveByName("Zombie-Idle", false);
 					node.state = 1;
 					var eac = entity.transformComponent.parent.entity.animationComponent;
-					eac.transitionTo( eac.getStates()[1]);
+					if( !entity.dmg || entity.dmg < 100)
+						eac.transitionTo( eac.getStates()[1]);
 				}
 				else{
 					node.state = 4;
