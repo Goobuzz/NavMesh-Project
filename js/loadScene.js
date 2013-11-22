@@ -164,7 +164,7 @@ require([
 			z4.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
 
 			//console.log(navRef);
-
+			goo.renderer.setClearColor(0, 0, 0, 1); 
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
 			goo.startGameLoop();

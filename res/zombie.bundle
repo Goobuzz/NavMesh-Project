@@ -14,11 +14,11 @@
             "zombie_idle/entities/RootNode.entity"
         ],
         "fogColor": [
-            1,
-            1,
-            1
+            0.08429752066115702,
+            0.10739594290007513,
+            0.13636363636363635
         ],
-        "fogFar": 1000,
+        "fogFar": 50,
         "fogNear": 0,
         "globalAmbient": [
             0,
@@ -56,7 +56,7 @@
             "rotation": 0,
             "shape": "Box"
         },
-        "useFog": false,
+        "useFog": true,
         "view": []
     },
     "root.group": {
