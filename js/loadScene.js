@@ -70,7 +70,7 @@ require([
 		// Create typical goo application
 		var goo = new GooRunner({
 			manuallyStartGameLoop: true,
-			tpfSmoothingCount:3,
+			tpfSmoothingCount:1,
 			showStats:true
 		});
 		Game.goo = goo;
@@ -80,7 +80,7 @@ require([
 		goo.world.setSystem(new HowlerSystem());
 
 		var navMesh;
-		//var point;
+		var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
 		var promises = [];
@@ -97,16 +97,16 @@ require([
 
 		function initGoobers(goo){
 			console.log(loader._configs);
-			var point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
-			point.transformComponent.setScale(0.01, 0.01, 0.01);
+			point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
+			point.transformComponent.setScale(0.03, 0.03, 0.03);
 			point.removeFromWorld();
 
 			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
-			/*for(var i in navMesh.vert){
-				var p = EntityUtils.clone(goo.world, point);
-				p.transformComponent.setTranslation(navMesh.vert[i]);
-				p.addToWorld();
-			}*/
+			//for(var i in navMesh.vert){
+			//	var p = EntityUtils.clone(goo.world, point);
+			//	p.transformComponent.setTranslation(navMesh.vert[i]);
+			//	p.addToWorld();
+			//}
 
 			generateDoors(navMesh);
 
@@ -138,7 +138,8 @@ require([
 			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
 			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
 			var z2 = zombie; // EntityUtils.clone(goo.world, zombie);
-			z2.transformComponent.setTranslation(-2,0,2);
+			z2.transformComponent.setTranslation(50,0,50);
+			z2.transformComponent.setUpdated();
 			z2.setComponent(new AIComponent(z2));
 			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
 			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
@@ -244,7 +245,7 @@ require([
 		var currentRoom;
 		function getPathRoomToRoom(roomStart, roomGoal){
 			if(null == roomStart || null == roomGoal){return null;}
-			console.log("start:"+roomStart+" goal:"+roomGoal);
+		//	console.log("Getting Path from start:"+roomStart+" to goal:"+roomGoal);
 			openList.push({room:roomStart, parent:null});
 			var pathFound = false;
 			while(openList.length > 0 && false == pathFound){
@@ -293,7 +294,7 @@ require([
 					picking.castRay(ray, function(hit){
 						if(null != hit){
 							entity.room = hit.entity.navID;
-							console.log("I am in room "+entity.room);
+			//				console.log("I am in room "+entity.room);
 							//console.log(hit);
 						}
 					}, 1);
@@ -334,11 +335,11 @@ require([
 					}
 					if(entity.transformComponent.transform.translation.distance(node.doorPos) <= 0.1){
 					//if(entity.room == node.curNode.room){
-						console.log("got to room "+node.curNode.room);
+					//	console.log("got to room "+node.curNode.room);
 						entity.room = node.curNode.room;
 						node.curNode = node.curNode.next;
 						if(node.curNode != null){
-							console.log("going to room "+node.curNode.room+" from room "+node.curNode.previous.room);
+					//		console.log("going to room "+node.curNode.room+" from room "+node.curNode.previous.room);
 							node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
 						}
 					}
@@ -379,7 +380,7 @@ require([
 						node.state = 2;
 						return;
 					}
-					console.log("I am not in "+node.goalRoom+" getting path.");
+					//console.log("(case 4)I am not in "+node.goalRoom+" getting path.");
 					node.path = getPathRoomToRoom(entity.room, node.goalRoom);
 					if(node.path != null){
 						node.curNode = node.path.first;
@@ -392,7 +393,7 @@ require([
 					break;
 			}
 			function playerMoved(room, pos){
-				console.log("playerMoved:"+room+","+pos);
+			//	console.log("playerMoved:"+room+","+pos);
 				node.goalRoom = room;
 
 				if(node.goalRoom == entity.room){
@@ -400,7 +401,7 @@ require([
 					node.state = 2;
 					return;
 				}
-				console.log("I am not in "+node.goalRoom+" getting path.");
+				//console.log("playerMoved():I am not in "+node.goalRoom+" getting path.");
 				node.path = getPathRoomToRoom(entity.room, node.goalRoom);
 				if(node.path != null){
 					node.curNode = node.path.first;
@@ -425,7 +426,7 @@ require([
 				var entity = navRootEntity.transformComponent.children[i].entity;
 				entity.navID = i;
 				entity.hitMask = 1;
-				entity.skip = true;
+				//entity.skip = true;
 
 				
 				// track which vertices we have already used
@@ -434,18 +435,20 @@ require([
 				var verts = entity.meshDataComponent.meshData.dataViews.POSITION;
 
 				for(var v = 0, vlen = verts.length; v < vlen; v+=3){
-					var x = verts[v];
-					var y = verts[v+2];
-					var z = -verts[v+1];
-					
-					room.center.x += x;
-					room.center.y += y;
-					room.center.z += z;
+					var x = ~~(verts[v]*1000000);
+					var y = ~~(verts[v+2]*1000000);
+					var z = -(~~(verts[v+1]*1000000));
+
+					room.center.x += verts[v];
+					room.center.y += verts[v+2];
+					room.center.z += -verts[v+1];
+
+					//console.log(x+","+y+","+z);
 
 					// see if we have already added this vert or not
 					if(null == roomVert[x+"_"+y+"_"+z]){
 						if(null == nav.vert[x+"_"+y+"_"+z]){
-							nav.vert[x+"_"+y+"_"+z] = new Vector3(x, y, z);
+							nav.vert[x+"_"+y+"_"+z] = new Vector3(verts[v], verts[v+2], -verts[v+1]);
 						}
 						// if not, add it ot the room.point array
 						room.vert.push(nav.vert[x+"_"+y+"_"+z]);
@@ -460,13 +463,23 @@ require([
 				room.center.z /= room.vert.length;
 
 				room.vert.sort(function (v1, v2){
-					var rad1 = Math.atan2(room.center.z - v1.z, room.center.x - v1.x);
-					var rad2 = Math.atan2(room.center.z - v2.z, room.center.x - v2.x);
+
+					var cos1 = (Math.atan((v1.z - room.center.z)/(v1.x - room.center.x)) * (180 / Math.PI));
+					var cos2 = (Math.atan((v2.z - room.center.z)/(v2.x - room.center.x)) * (180 / Math.PI));
+
+					if(cos1 < 0){cos1 += 360;}
+
+					if(cos2 < 0){cos2 += 360;}
+
+
+					//console.log("rad1:"+(cos1)+" rad2:"+(cos2));
 					// if you want ccw, swap 1 and -1
-					if(rad1 > rad2){return 1;}
-					if(rad2 > rad1){return -1;}
+					if(cos1 > cos2){return 1;}
+					if(cos2 > cos1){return -1;}
 					return 0;
+					return cos1-cos2;
 				});
+				//console.log(room.vert);
 
 				// add the room to the 'nav' array.
 				nav.room.push(room);
@@ -476,55 +489,50 @@ require([
 		function generateDoors(nav){
 			for(var i = 0, ilen = nav.room.length; i < ilen; i++){
 				for(var j = i+1, jlen = nav.room.length; j < jlen; j++){
+					//if(i == j){continue;}
 					var room1 = nav.room[i];
 					var room2 = nav.room[j];
 
 					for(var l1 = 0, l1Max = room1.vert.length; l1 < l1Max; l1++){
 						for(var r2 = 0, r2Max = room2.vert.length; r2 < r2Max; r2++){
-							if(room1.vert[l1].x === room2.vert[r2].x){
-								if(room1.vert[l1].y === room2.vert[r2].y){
-									if(room1.vert[l1].z === room2.vert[r2].z){
+							if(room1.vert[l1] === room2.vert[r2]){
 
-										var r1 = -1;
-										var l2 = -1;
-
-										if(l1 == room1.vert.length-1){
-											r1 = 0;
-										}
-										else{
-											r1 = l1+1;
-										}
-										if(r2 == 0){
-											l2 = room2.vert.length-1;
-										}
-										else{
-											l2 = r2-1;
-										}
-										if(room1.vert[r1].x === room2.vert[l2].x){
-											if(room1.vert[r1].y === room2.vert[l2].y){
-												if(room1.vert[r1].z === room2.vert[l2].z){
-													
-													var dir = Vector3.sub(room1.vert[l1], room1.vert[r1]);
-													var radius = room1.vert[l1].distance(room1.vert[r1]) * 0.5;
-													dir.scale(0.5);
-													var center = new Vector3();
-													Vector3.add(room1.vert[r1], dir, center);
-													var door1 = {center:center, left:room1.vert[l1], right:room1.vert[r1], to:room2.id, radius:radius};
-													var door2 = {center:center, left:room2.vert[l2], right:room2.vert[r2], to:room1.id, radius:radius};
-
-													room1.door.push(door1);
-													room2.door.push(door2);
+								var r1 = -1;
+								//var l2 = -1;
 
 
-												//	var p = EntityUtils.clone(goo.world, point);
-												//	p.transformComponent.setTranslation(door1.center);
-												//	p.transformComponent.setScale(0.5, 0.3, 0.5);
-												//	p.addToWorld();
-												}
-											}
-										}
-									}
+
+								if(l1 == room1.vert.length-1){
+									r1 = 0;
 								}
+								else{
+									r1 = l1+1;
+								}
+
+								var l2 = room2.vert.indexOf(room1.vert[r1]);
+
+								if(l2 != -1){
+								if(room1.vert[r1] === room2.vert[l2]){
+											
+									var dir = Vector3.sub(room1.vert[l1], room1.vert[r1]);
+									var radius = room1.vert[l1].distance(room1.vert[r1]) * 0.5;
+									dir.scale(0.5);
+									var center = new Vector3();
+									Vector3.add(room1.vert[r1], dir, center);
+									var door1 = {center:center, left:room1.vert[l1], right:room1.vert[r1], to:room2.id, radius:radius};
+									var door2 = {center:center, left:room2.vert[l2], right:room2.vert[r2], to:room1.id, radius:radius};
+
+									room1.door.push(door1);
+									room2.door.push(door2);
+
+
+									//var p = EntityUtils.clone(goo.world, point);
+									//p.transformComponent.setTranslation(door1.center);
+									//p.transformComponent.setScale(0.1, 0.2, 0.1);
+									//p.addToWorld();
+								}
+							}
+
 							}
 						}
 					}
