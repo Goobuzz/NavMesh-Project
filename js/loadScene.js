@@ -98,6 +98,24 @@ require([
 		.then(null, function(e){
 			alert (e);
 		});
+		
+		window.spawnZombie = function () {
+			var loader_ = new DynamicLoader({world: goo.world, rootPath: 'res'});
+			loader_.loadFromBundle('project.project', 'zombie.bundle').then( function() {
+				var z2 = loader_.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+				z2.transformComponent.setTranslation(0,0,0);
+				z2.transformComponent.setUpdated();
+				z2.setComponent(new AIComponent(z2));
+				z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+				z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+			});
+		}
+		
+		document.addEventListener('keypress', function(e){
+			if( e.keyCode == 114) { // r
+				spawnZombie();
+			}
+		}, false);
 
 		function initGoobers(goo){
 			console.log(loader._configs);
