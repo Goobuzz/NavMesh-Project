@@ -83,15 +83,10 @@ require([
 		//var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
-		//var loader2 = new DynamicLoader({world: goo.world, rootPath: 'res'});
-		//var loader3 = new DynamicLoader({world: goo.world, rootPath: 'res'});
-		
 		var promises = [];
 		promises.push(loader.loadFromBundle('project.project', 'root.bundle'));
-		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
-		//promises.push(loader2.loadFromBundle('project.project', 'zombie.bundle'));
-		//promises.push(loader3.loadFromBundle('project.project', 'zombie.bundle'));
+		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
 		RSVP.all(promises)
 		.then(function(){
 			initGoobers(goo);
@@ -107,19 +102,26 @@ require([
 			point.removeFromWorld();
 
 			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
-			for(var i in navMesh.vert){
+			/*for(var i in navMesh.vert){
 				var p = EntityUtils.clone(goo.world, point);
 				p.transformComponent.setTranslation(navMesh.vert[i]);
 				p.addToWorld();
-			}
+			}*/
 
 			generateDoors(navMesh);
 
 			var physHull = loader.getCachedObjectForRef("PhysicsHull/entities/RootNode.entity");
 			for(var i = 0, ilen = physHull.transformComponent.children.length; i < ilen; i++){
-				console.log(physHull.transformComponent.children[i].entity.name);
 				physHull.transformComponent.children[i].entity.hitMask = 2;
-				physHull.transformComponent.children[i].entity.skip = true;
+				//physHull.transformComponent.children[i].entity.skip = true;
+			}
+
+			var groundPhys = loader.getCachedObjectForRef("GroundPhys/entities/RootNode.entity");
+			//groundPhys.transformComponent.transform.translation.y = -0.3;
+			//groundPhys.transformComponent.setUpdated();
+			for(var i = 0, ilen = groundPhys.transformComponent.children.length; i < ilen; i++){
+				groundPhys.transformComponent.children[i].entity.hitMask = 4;
+				//groundPhys.transformComponent.children[i].entity.skip = true;
 			}
 
 			Game.userEntity = goo.world.createEntity("User");
@@ -133,20 +135,17 @@ require([
 
 			Game.userEntity.setComponent(new FlashlightComponent());
 
-			function addZombie( loader, x, y, z ) {
-				var z = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-				//zombie.removeFromWorld(); EntityUtils.clone(goo.world, zombie); // this breaks the parent child relationship, the parent has the animation that I need...
-				z.transformComponent.setTranslation( x, y, z);
-				z.setComponent(new AIComponent(z));
-				z.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-				z.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			}
-			// var z3 = EntityUtils.clone(goo.world, zombie.transformComponent.parent.entity); z3.addToWorld(); // shares animation... this sucks...
-			
-			addZombie( loader,   7, 0, -50);
-			//addZombie( loader2,  50, 0, -50);
-			//addZombie( loader3, -50, 0, -50);
-			
+			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
+			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
+			var z2 = zombie; // EntityUtils.clone(goo.world, zombie);
+			z2.transformComponent.setTranslation(-2,0,2);
+			z2.setComponent(new AIComponent(z2));
+			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
+			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
+			// z2.addToWorld();
+			Game.zombie = zombie;
+			Game.zombieRoot = zombie.transformComponent.parent.entity;
+
 			//console.log(navRef);
 
 			goo.renderer.domElement.id = 'goo';
@@ -157,6 +156,10 @@ require([
 		var goal;
 		var viewCam;
 		var ray = new Ray();
+		var v1 = new Vector3();
+		var v2 = new Vector3();
+		var cross = new Vector3();
+		//var localPos = new Vector3();
 		// Add PickingSystem
         var picking = new PickingSystem({pickLogic: new PrimitivePickLogic()});
         picking.castRay = function(ray, callback, mask){
@@ -167,37 +170,36 @@ require([
         		if(null != result && result.length > 0){
         			var distance = Infinity;
         			for(var i = 0, ilen = result.length; i < ilen; i++){
-        				//console.log(result[i].entity.name);
         				if(null != result[i].entity.hitMask){
         					if((result[i].entity.hitMask & mask) != 0){
         						for(var j = 0, jlen = result[i].intersection.distances.length; j < jlen; j++){
-        							var v1 = new Vector3(
-										result[i].intersection.vertices[j][1].x - result[i].intersection.vertices[j][0].x,
-										result[i].intersection.vertices[j][1].y - result[i].intersection.vertices[j][0].y,
-										result[i].intersection.vertices[j][1].z - result[i].intersection.vertices[j][0].z);
+        							if(result[i].intersection.distances[j] < distance){
 
-									var v2 = new Vector3(
-										result[i].intersection.vertices[j][1].x - result[i].intersection.vertices[j][2].x,
-										result[i].intersection.vertices[j][1].y - result[i].intersection.vertices[j][2].y,
-										result[i].intersection.vertices[j][1].z - result[i].intersection.vertices[j][2].z);
+        							
+										v1.x = result[i].intersection.vertices[j][0].x - result[i].intersection.vertices[j][1].x;
+										v1.y = result[i].intersection.vertices[j][0].y - result[i].intersection.vertices[j][1].y;
+										v1.z = result[i].intersection.vertices[j][0].z - result[i].intersection.vertices[j][1].z;
 
-									var c = new Vector3(
-										(v1.y * v2.z) - (v1.z * v2.y),
-										(v1.z * v2.x) - (v1.x * v2.z),
-										(v1.x * v2.y) - (v1.y * v2.x));
-									c.normalize();
-									var dp = (this.pickRay.direction.x*c.x)+(this.pickRay.direction.y*c.y)+(this.pickRay.direction.z*c.z);
-									//console.log(dp);
-								//	if(dp >= 0){
-										if(result[i].intersection.distances[j] < distance){
-	        								distance = result[i].intersection.distances[j];
-	        								hit = hit || {entity:null,point:null,vertex:null,distance:null};
-	        								hit.entity = result[i].entity;
-	        								hit.point =result[i].intersection.points[j];
-	        								hit.normal = c;
-	        								hit.distance = result[i].intersection.distances[j];
-	        							}
-								//	}	
+									
+										v2.x = result[i].intersection.vertices[j][2].x - result[i].intersection.vertices[j][0].x;
+										v2.y = result[i].intersection.vertices[j][2].y - result[i].intersection.vertices[j][0].y;
+										v2.z = result[i].intersection.vertices[j][2].z - result[i].intersection.vertices[j][0].z;
+
+										cross.x = (v1.y * v2.z) - (v1.z * v2.y);
+										cross.y = (v1.z * v2.x) - (v1.x * v2.z);
+										cross.z = (v1.x * v2.y) - (v1.y * v2.x);
+										cross.normalize();
+
+										//if(dp <=0){
+											
+		        							distance = result[i].intersection.distances[j];
+		        							hit = hit || {entity:null,point:null,vertex:null,distance:null};
+		        							hit.entity = result[i].entity;
+		        							hit.point =result[i].intersection.points[j];
+		        							hit.normal = cross;
+		        							hit.distance = result[i].intersection.distances[j];
+	        							//}
+	        						}
         						}
         					}
         				}
@@ -241,6 +243,7 @@ require([
 		// 
 		var currentRoom;
 		function getPathRoomToRoom(roomStart, roomGoal){
+			if(null == roomStart || null == roomGoal){return null;}
 			console.log("start:"+roomStart+" goal:"+roomGoal);
 			openList.push({room:roomStart, parent:null});
 			var pathFound = false;
@@ -368,6 +371,25 @@ require([
 				case 3:
 					entity.aIComponent.setActiveByName("Zombie-Idle", true);
 					break;
+				case 4:
+					node.goalRoom = Game.userEntity.room;
+
+					if(node.goalRoom == entity.room){
+						console.log("I am already in "+node.goalRoom);
+						node.state = 2;
+						return;
+					}
+					console.log("I am not in "+node.goalRoom+" getting path.");
+					node.path = getPathRoomToRoom(entity.room, node.goalRoom);
+					if(node.path != null){
+						node.curNode = node.path.first;
+						node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
+						entity.aIComponent.setActiveByName("Zombie-Idle", false);
+						node.state = 1;
+						var eac = Game.zombieRoot.animationComponent;
+						eac.transitionTo( eac.getStates()[1]);
+					}
+					break;
 			}
 			function playerMoved(room, pos){
 				console.log("playerMoved:"+room+","+pos);
@@ -380,12 +402,17 @@ require([
 				}
 				console.log("I am not in "+node.goalRoom+" getting path.");
 				node.path = getPathRoomToRoom(entity.room, node.goalRoom);
-				node.curNode = node.path.first;
-				node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
-				entity.aIComponent.setActiveByName("Zombie-Idle", false);
-				node.state = 1;
-				var eac = entity.transformComponent.parent.entity.animationComponent;
-				eac.transitionTo( eac.getStates()[1]);
+				if(node.path != null){
+					node.curNode = node.path.first;
+					node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
+					entity.aIComponent.setActiveByName("Zombie-Idle", false);
+					node.state = 1;
+					var eac = Game.zombieRoot.animationComponent;
+					eac.transitionTo( eac.getStates()[1]);
+				}
+				else{
+					node.state = 4;
+				}
 			}
 		}
 
