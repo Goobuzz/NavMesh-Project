@@ -130,7 +130,7 @@ require([
 			respawnZombie( window.z4);
 		};
 
-		setInterval( respawnZombie2, 17000);
+		//setInterval( respawnZombie2, 17000);
 		
 		document.addEventListener('keypress', function(e){
 			if( e.keyCode == 114) { // r
