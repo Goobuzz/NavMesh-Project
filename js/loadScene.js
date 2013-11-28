@@ -24,7 +24,8 @@ require([
 	'goo/util/rsvp',
 	'lib/ShotgunComponent',
 	'lib/FlashlightComponent',
-	'goo/math/Plane'
+	'goo/math/Plane',
+	'lib/Zombie'
 
 ], function (
 	GooRunner,
@@ -53,11 +54,14 @@ require([
 	RSVP,
 	ShotgunComponent,
 	FlashlightComponent,
-	Plane
+	Plane,
+	Zombie
 
 ) {
 	'use strict';
-
+	Vector3.UP = Object.freeze(new Vector3(0,1,0));
+	Vector3.DOWN = Object.freeze(new Vector3(0,-1,0));
+	Vector3.FORWARD = Object.freeze(new Vector3(0,0,1));
 	function init() {
 
 		// If you try to load a scene without a server, you're gonna have a bad time
@@ -83,74 +87,31 @@ require([
 		var point;
 		// The Loader takes care of loading data from a URL...
 		var loader = new DynamicLoader({world: goo.world, rootPath: 'res'});
-		var loader2 = new DynamicLoader({world: goo.world, rootPath: 'res'});
-		var loader3 = new DynamicLoader({world: goo.world, rootPath: 'res'});
 		var promises = [];
 		promises.push(loader.loadFromBundle('project.project', 'root.bundle'));
-		promises.push(loader.loadFromBundle('project.project', 'zombie.bundle'));
-		promises.push(loader2.loadFromBundle('project.project', 'zombie.bundle'));
-		promises.push(loader3.loadFromBundle('project.project', 'zombie.bundle'));
 		promises.push(loader.loadFromBundle('project.project', 'Point.bundle'));
+		Zombie.setupRefs(promises);
 		RSVP.all(promises)
 		.then(function(){
 			initGoobers(goo);
 		})
 		.then(null, function(e){
-			alert (e);
+			console.log(e.stack);
 		});
-		
-		var spawnZombie = function () {
-			var loader_ = new DynamicLoader({world: goo.world, rootPath: 'res'});
-			loader_.loadFromBundle('project.project', 'zombie.bundle').then( function() {
-				var z2 = loader_.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-				z2.transformComponent.setTranslation(0,0,0);
-				z2.transformComponent.setUpdated();
-				z2.setComponent(new AIComponent(z2));
-				z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-				z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			});
-		}
 
-		var respawnZombie = function ( zx) {
-			if( zx.dmg > 100 ) {
-				zx.dmg = 0;
-				var p = zx.transformComponent.parent.entity;
-				var eac = p.animationComponent;
-				eac.layers[0]._steadyStates['mixamo_com__']._sourceTree._clipInstance._loopCount=-1;
-				//eac.transitionTo( eac.getStates()[1]);
-				eac.layers[0].setCurrentStateByName(eac.getStates()[1]);
-				zx.aIComponent.setActiveByName("Zombie-PathFind", true);
-				zx.transformComponent.setTranslation(50,0,0);
-			}
-		};
-		
-		var respawnZombie2 = function () {
-			respawnZombie( window.z2);
-			respawnZombie( window.z3);
-			respawnZombie( window.z4);
-		};
-
-		//setInterval( respawnZombie2, 17000);
-		
-		document.addEventListener('keypress', function(e){
-			if( e.keyCode == 114) { // r
-				//spawnZombie();
-				respawnZombie2();
-			}
-		}, false);
-
-		function initGoobers(goo){
+		function initGoobers(){
 			console.log(loader._configs);
 			point = loader.getCachedObjectForRef("Point/entities/RootNode.entity");
 			point.transformComponent.setScale(0.03, 0.03, 0.03);
 			point.removeFromWorld();
 
 			navMesh = generateRoomsFromMesh(loader.getCachedObjectForRef("NavMesh/entities/RootNode.entity"));
-			//for(var i in navMesh.vert){
-			//	var p = EntityUtils.clone(goo.world, point);
-			//	p.transformComponent.setTranslation(navMesh.vert[i]);
-			//	p.addToWorld();
-			//}
+			Game.navMesh = navMesh;
+			for(var i in navMesh.vert){
+				var p = EntityUtils.clone(goo.world, point);
+				p.transformComponent.setTranslation(navMesh.vert[i]);
+				p.addToWorld();
+			}
 
 			generateDoors(navMesh);
 
@@ -179,44 +140,26 @@ require([
 
 			Game.userEntity.setComponent(new FlashlightComponent());
 
-			var zombie = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			//zombie.removeFromWorld(); // this breaks the parent child relationship, the parent has the animation that I need...
-			window.z2 = zombie; // EntityUtils.clone(goo.world, zombie);
-			z2.transformComponent.setTranslation(50,0,50);
-			z2.transformComponent.setUpdated();
-			z2.setComponent(new AIComponent(z2));
-			z2.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-			z2.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			// z2.addToWorld();
-
-			window.z3 = loader2.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			z3.transformComponent.setTranslation(-50,0,-50);
-			z3.transformComponent.setUpdated();
-			z3.setComponent(new AIComponent(z3));
-			z3.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-			z3.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-
-			window.z4 = loader3.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-			z4.transformComponent.setTranslation(50,0,-50);
-			z4.transformComponent.setUpdated();
-			z4.setComponent(new AIComponent(z4));
-			z4.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-			z4.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-
 			//console.log(navRef);
+
+			var z1 = Zombie.getRef();
+			z1.transformComponent.setTranslation(4,0,4);
+			z1.transformComponent.setUpdated();
+			z1.skip = false;
+
+			var z2 = Zombie.getRef();
+			z2.transformComponent.setTranslation(-4,0,-4);
+			z2.transformComponent.setUpdated();
+			z2.skip = false;
+
 			goo.renderer.setClearColor(0, 0, 0, 1); 
 			goo.renderer.domElement.id = 'goo';
 			document.body.appendChild(goo.renderer.domElement);
+
 			goo.startGameLoop();
+
+
 		}
-			function addZombie( loader, x, y, z ) {
-				var z = loader.getCachedObjectForRef("zombie_idle/entities/Zombie_Geo_0.entity");
-				z.transformComponent.setTranslation( x, y, z);
-				z.transformComponent.setUpdated();
-				z.setComponent(new AIComponent(z));
-				z.aIComponent.addBehavior({name:"Zombie-Idle", update:ZombieIdle}, 0);
-				z.aIComponent.addBehavior({name:"Zombie-PathFind", update:ZombiePathFind}, 1);
-			}
 
 		var goal;
 		var viewCam;
@@ -307,7 +250,7 @@ require([
 		var closedList = {};
 		// 
 		var currentRoom;
-		function getPathRoomToRoom(roomStart, roomGoal){
+		Game.getPathRoomToRoom = function(roomStart, roomGoal){
 			if(null == roomStart || null == roomGoal){return null;}
 		//	console.log("Getting Path from start:"+roomStart+" to goal:"+roomGoal);
 			openList.push({room:roomStart, parent:null});
@@ -344,145 +287,7 @@ require([
 				return path;
 			}
 		}
-		Vector3.UP = Object.freeze(new Vector3(0,1,0));
-		Vector3.DOWN = Object.freeze(new Vector3(0,-1,0));
-		Vector3.FORWARD = Object.freeze(new Vector3(0,0,1));
 		
-		function ZombieIdle(entity, node){
-			switch(node.state){
-				case 0:
-				case null:
-				case undefined:
-					Vector3.add(entity.transformComponent.transform.translation, Vector3.UP, ray.origin);
-					ray.direction = Vector3.DOWN;
-					picking.castRay(ray, function(hit){
-						if(null != hit){
-							entity.room = hit.entity.navID;
-			//				console.log("I am in room "+entity.room);
-							//console.log(hit);
-						}
-					}, 1);
-					node.state = 1;
-					break;
-				case 1:
-					// if player near...
-					break;
-			}
-		}
-		function ZombiePathFind(entity, node){
-			switch(node.state){
-				case -1:
-				case null:
-				case undefined:
-					Game.register("PlayerMoved", this, playerMoved);
-					node.dir = new Vector3();
-					node.state = 0;
-					node.speed = 100;
-					break;
-				case 0:
-					break;
-				case 1:
-					Vector3.add(entity.transformComponent.transform.translation, Vector3.UP, ray.origin);
-					ray.direction = Vector3.DOWN;
-					picking.castRay(ray, function(hit){
-						if(null != hit){
-							//console.log("I am in room "+hit.entity.navID+" goal is "+node.curNode.room);
-							//entity.room = hit.entity.navID;
-							entity.transformComponent.transform.translation.y = hit.point.y;
-						}
-					}, 1);
-
-					if(entity.room == node.goalRoom){
-						node.state = 2;
-						console.log("Going to player position...");
-						return;
-					}
-					if(entity.transformComponent.transform.translation.distance(node.doorPos) <= 0.1){
-					//if(entity.room == node.curNode.room){
-					//	console.log("got to room "+node.curNode.room);
-						entity.room = node.curNode.room;
-						node.curNode = node.curNode.next;
-						if(node.curNode != null){
-					//		console.log("going to room "+node.curNode.room+" from room "+node.curNode.previous.room);
-							node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
-						}
-					}
-
-					Vector3.sub(node.doorPos, entity.transformComponent.transform.translation, node.dir);
-					node.dir.normalize();
-					node.dir.y = 0;
-
-					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UP);
-					entity.transformComponent.transform.applyForwardVector(Vector3.FORWARD, node.dir);
-					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
-					entity.transformComponent.setUpdated();
-
-					break;
-				case 2:
-					if(entity.transformComponent.transform.translation.distance(Game.userEntity.transformComponent.transform.translation) <= 1.0){
-						console.log("at player position...");
-						node.state = 3;
-					}
-
-					Vector3.sub(Game.userEntity.transformComponent.transform.translation, entity.transformComponent.transform.translation, node.dir);
-					node.dir.normalize();
-					node.dir.y = 0;
-			
-					entity.transformComponent.transform.rotation.lookAt(node.dir, Vector3.UP);
-					entity.transformComponent.transform.applyForwardVector(Vector3.FORWARD, node.dir);
-					entity.transformComponent.addTranslation(Vector3.mul(node.dir, node.speed * Time.dt ));
-					entity.transformComponent.setUpdated();
-					break;
-				case 3:
-					entity.aIComponent.setActiveByName("Zombie-Idle", true);
-					break;
-				case 4:
-					node.goalRoom = Game.userEntity.room;
-
-					if(node.goalRoom == entity.room){
-						console.log("I am already in "+node.goalRoom);
-						node.state = 2;
-						return;
-					}
-					//console.log("(case 4)I am not in "+node.goalRoom+" getting path.");
-					node.path = getPathRoomToRoom(entity.room, node.goalRoom);
-					if(node.path != null){
-						node.curNode = node.path.first;
-						node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
-						entity.aIComponent.setActiveByName("Zombie-Idle", false);
-						node.state = 1;
-						var eac = entity.transformComponent.parent.entity.animationComponent;
-						if( !entity.dmg || entity.dmg < 100)
-							eac.transitionTo( eac.getStates()[1]);
-					}
-					break;
-			}
-			function playerMoved(room, pos){
-			//	console.log("playerMoved:"+room+","+pos);
-				node.goalRoom = room;
-
-				if(node.goalRoom == entity.room){
-					console.log("I am already in "+node.goalRoom);
-					node.state = 2;
-					return;
-				}
-				//console.log("playerMoved():I am not in "+node.goalRoom+" getting path.");
-				node.path = getPathRoomToRoom(entity.room, node.goalRoom);
-				if(node.path != null){
-					node.curNode = node.path.first;
-					node.doorPos = navMesh.room[entity.room].door[node.curNode.door].center;
-					entity.aIComponent.setActiveByName("Zombie-Idle", false);
-					node.state = 1;
-					var eac = entity.transformComponent.parent.entity.animationComponent;
-					if( !entity.dmg || entity.dmg < 100)
-						eac.transitionTo( eac.getStates()[1]);
-				}
-				else{
-					node.state = 4;
-				}
-			}
-		}
-
 		function generateRoomsFromMesh(navRootEntity){
 			var nav = {room:[], vert:{}}
 			for(var i = 0, ilen = navRootEntity.transformComponent.children.length; i < ilen; i++){
@@ -592,10 +397,10 @@ require([
 									room2.door.push(door2);
 
 
-									//var p = EntityUtils.clone(goo.world, point);
-									//p.transformComponent.setTranslation(door1.center);
-									//p.transformComponent.setScale(0.1, 0.2, 0.1);
-									//p.addToWorld();
+									var p = EntityUtils.clone(goo.world, point);
+									p.transformComponent.setTranslation(door1.center);
+									p.transformComponent.setScale(0.1, 0.2, 0.1);
+									p.addToWorld();
 								}
 							}
 
