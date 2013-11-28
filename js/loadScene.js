@@ -145,11 +145,13 @@ require([
 			var z1 = Zombie.getRef();
 			z1.transformComponent.setTranslation(4,0,4);
 			z1.transformComponent.setUpdated();
+			z1.aIComponent.getBehaviorByName("Idle").state = 0;
 			z1.skip = false;
 
 			var z2 = Zombie.getRef();
 			z2.transformComponent.setTranslation(-4,0,-4);
 			z2.transformComponent.setUpdated();
+			z2.aIComponent.getBehaviorByName("Idle").state = 0;
 			z2.skip = false;
 
 			goo.renderer.setClearColor(0, 0, 0, 1); 
