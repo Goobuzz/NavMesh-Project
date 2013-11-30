@@ -19,7 +19,7 @@ require([
 	'goo/shapes/ShapeCreator',
 	'goo/renderer/Material',
 	'goo/renderer/shaders/ShaderLib',
-    'js/sphereSpatial',
+    'js/SphereSpatial',
 	'goo/util/rsvp',
 
 	'js/FPSCamComponent',
