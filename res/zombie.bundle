@@ -1,4 +1,71 @@
 {
+    "entities/DefaultToolCamera.entity": {
+        "components": {
+            "camera": {
+                "aspect": 1.4705014749262537,
+                "far": 10000,
+                "fov": 45,
+                "near": 1
+            },
+            "script": {
+                "scriptRefs": [
+                    "scripts/DefaultToolCameraScript.script"
+                ]
+            }
+        },
+        "name": "DefaultToolCamera.entity",
+        "ref": "entities/DefaultToolCamera.entity"
+    },
+    "entities/default_light.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.8,
+                    0.8,
+                    0.8
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    -0.557,
+                    0.557,
+                    0.557
+                ]
+            }
+        }
+    },
+    "entities/default_light_2.entity": {
+        "components": {
+            "light": {
+                "color": [
+                    0.2,
+                    0.2,
+                    0.3
+                ],
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0.557,
+                    -0.557,
+                    -0.557
+                ]
+            }
+        }
+    },
     "project.project": {
         "backgroundColor": [
             0.75,
@@ -6,19 +73,22 @@
             0.78,
             1
         ],
-        "created": "2013-11-19T11:42:03.595452",
+        "created": "2013-11-28T15:14:40.735801",
         "deleted": false,
         "edit": [],
         "entityRefs": [
-            "zombie_idle/entities/Zombie_Geo_0.entity",
-            "zombie_idle/entities/RootNode.entity"
+            "entities/DefaultToolCamera.entity",
+            "walking/entities/Zombie_Geo_0.entity",
+            "walking/entities/RootNode.entity",
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
         ],
         "fogColor": [
-            0.08429752066115702,
-            0.10739594290007513,
-            0.13636363636363635
+            0,
+            0,
+            0
         ],
-        "fogFar": 50,
+        "fogFar": 30,
         "fogNear": 0,
         "globalAmbient": [
             0,
@@ -26,23 +96,21 @@
             0
         ],
         "groupRefs": [
-            "zombie_idle/zombie_idle.group",
-            "zombie_injured_walk/zombie_injured_walk.group",
-            "root.group",
-            "zombie_uppercut_jab/zombie_uppercut_jab.group",
-            "zombie_dying_1/zombie_dying_1.group"
+            "walking/walking.group",
+            "root.group"
         ],
-        "id": "0psr567VTEKr7wpBptefmA",
+        "id": "ZzF21ddVRPOyw-09EtEauw",
         "licenseType": "CC0",
-        "modified": "2013-11-19T11:42:03.595452",
-        "name": "Default Goo Project",
+        "modified": "2013-11-28T15:14:40.735801",
+        "name": "zwalk",
         "originalLicenseType": null,
         "own": [
-            "h9AeW1X3S1WZYADWuViCyw"
+            "wea-6RsRQo-ziGjYWuLmwg"
         ],
         "parent": null,
         "public": true,
         "ref": "project.project",
+        "screenshot": "images/screenshot.png",
         "skybox": {
             "environmentType": 1,
             "imageUrls": [
@@ -61,1497 +129,53 @@
     },
     "root.group": {
         "libraryRefs": [
-            "zombie_injured_walk/animations/mixamo_com.animstate",
-            "zombie_uppercut_jab/animations/mixamo_com.animstate",
-            "zombie_dying_1/animations/mixamo_com.animstate"
+            "scripts/DefaultToolCameraScript.script",
+            "entities/DefaultToolCamera.entity",
+            "images/screenshot.png",
+            "entities/default_light.entity",
+            "entities/default_light_2.entity"
         ],
         "name": "root",
         "ref": "root.group"
     },
-    "zombie_dying_1/animations/mixamo_com.animstate": {
-        "clipSource": {
-            "clipRef": "zombie_dying_1/animations/mixamo_com.clip",
-            "loopCount": -1,
-            "timeScale": 1,
-            "type": "Clip"
+    "scripts/DefaultToolCameraScript.script": {
+        "className": "OrbitNPanControlScript",
+        "name": "DefaultToolCameraScript.script",
+        "options": {
+            "clampAzimuth": false,
+            "detailZoom": 0.15,
+            "dragOnly": true,
+            "invertedWheel": true,
+            "invertedX": false,
+            "invertedY": false,
+            "lookAtPoint": [
+                0,
+                0,
+                0
+            ],
+            "maxAscent": 1.5699236621688994,
+            "maxAzimuth": 4.71238898038469,
+            "maxZoomDistance": 6000,
+            "minAscent": -1.5699236621688994,
+            "minAzimuth": 1.5707963267948966,
+            "minZoomDistance": 0.1,
+            "spherical": [
+                51.21012496948242,
+                1.380797028541565,
+                0.5849999785423279
+            ],
+            "turnSpeedHorizontal": 0.005,
+            "turnSpeedVertical": 0.005,
+            "worldUpVector": [
+                0,
+                1,
+                0
+            ],
+            "zoomSpeed": 0.3
         },
-        "name": "Dead",
-        "ref": "zombie_dying_1/animations/mixamo_com.animstate"
+        "ref": "scripts/DefaultToolCameraScript.script"
     },
-    "zombie_dying_1/animations/mixamo_com.clip": {
-        "binaryRef": "zombie_dying_1/binaries/1384862412_zombie_dying_1_mixamo_com.bin",
-        "channels": [
-            {
-                "blendType": "Linear",
-                "jointIndex": 0,
-                "jointName": "Zombie:Hips",
-                "name": "_jnt0",
-                "rotationSamples": [
-                    0,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    1616,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    4040,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    2828,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 1,
-                "jointName": "Zombie:Spine",
-                "name": "_jnt1",
-                "rotationSamples": [
-                    4444,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    6060,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    8484,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    7272,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 2,
-                "jointName": "Zombie:Spine1",
-                "name": "_jnt2",
-                "rotationSamples": [
-                    8888,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    10504,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    12928,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    11716,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 3,
-                "jointName": "Zombie:Spine2",
-                "name": "_jnt3",
-                "rotationSamples": [
-                    13332,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    14948,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    17372,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    16160,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 4,
-                "jointName": "Zombie:Neck",
-                "name": "_jnt4",
-                "rotationSamples": [
-                    17776,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    19392,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    21816,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    20604,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 5,
-                "jointName": "Zombie:Neck1",
-                "name": "_jnt5",
-                "rotationSamples": [
-                    22220,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    22236,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    22260,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    22248,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 6,
-                "jointName": "Zombie:Head",
-                "name": "_jnt6",
-                "rotationSamples": [
-                    22264,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    23880,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    26304,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    25092,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 9,
-                "jointName": "Zombie:Jaw",
-                "name": "_jnt9",
-                "rotationSamples": [
-                    26708,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    26724,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    26748,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    26736,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 31,
-                "jointName": "Zombie:LeftShoulder",
-                "name": "_jnt31",
-                "rotationSamples": [
-                    26752,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    28368,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    30792,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    29580,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 32,
-                "jointName": "Zombie:LeftArm",
-                "name": "_jnt32",
-                "rotationSamples": [
-                    31196,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    32812,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    35236,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    34024,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 33,
-                "jointName": "Zombie:LeftForeArm",
-                "name": "_jnt33",
-                "rotationSamples": [
-                    35640,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    37256,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    39680,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    38468,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 34,
-                "jointName": "Zombie:LeftHand",
-                "name": "_jnt34",
-                "rotationSamples": [
-                    40084,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    41700,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    44124,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    42912,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 35,
-                "jointName": "Zombie:LeftHandThumb1",
-                "name": "_jnt35",
-                "rotationSamples": [
-                    44528,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    46144,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    48568,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    47356,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 36,
-                "jointName": "Zombie:LeftHandThumb2",
-                "name": "_jnt36",
-                "rotationSamples": [
-                    48972,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    50588,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    53012,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    51800,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 37,
-                "jointName": "Zombie:LeftHandThumb3",
-                "name": "_jnt37",
-                "rotationSamples": [
-                    53416,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    55032,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    57456,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    56244,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 38,
-                "jointName": "Zombie:LeftHandMiddle1",
-                "name": "_jnt38",
-                "rotationSamples": [
-                    57860,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    59476,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    61900,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    60688,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 39,
-                "jointName": "Zombie:LeftHandMiddle2",
-                "name": "_jnt39",
-                "rotationSamples": [
-                    62304,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    63920,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    66344,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    65132,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 40,
-                "jointName": "Zombie:LeftHandMiddle3",
-                "name": "_jnt40",
-                "rotationSamples": [
-                    66748,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    68364,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    70788,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    69576,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 41,
-                "jointName": "Zombie:LeftHandIndex1",
-                "name": "_jnt41",
-                "rotationSamples": [
-                    71192,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    72808,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    75232,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    74020,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 42,
-                "jointName": "Zombie:LeftHandIndex2",
-                "name": "_jnt42",
-                "rotationSamples": [
-                    75636,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    77252,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    79676,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    78464,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 43,
-                "jointName": "Zombie:LeftHandIndex3",
-                "name": "_jnt43",
-                "rotationSamples": [
-                    80080,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    81696,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    84120,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    82908,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 44,
-                "jointName": "Zombie:LeftHandRing1",
-                "name": "_jnt44",
-                "rotationSamples": [
-                    84524,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    86140,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    88564,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    87352,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 45,
-                "jointName": "Zombie:LeftHandRing2",
-                "name": "_jnt45",
-                "rotationSamples": [
-                    88968,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    90584,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    93008,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    91796,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 46,
-                "jointName": "Zombie:LeftHandRing3",
-                "name": "_jnt46",
-                "rotationSamples": [
-                    93412,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    95028,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    97452,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    96240,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 47,
-                "jointName": "Zombie:LeftHandPinky1",
-                "name": "_jnt47",
-                "rotationSamples": [
-                    97856,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    99472,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    101896,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    100684,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 48,
-                "jointName": "Zombie:LeftHandPinky2",
-                "name": "_jnt48",
-                "rotationSamples": [
-                    102300,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    103916,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    106340,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    105128,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 49,
-                "jointName": "Zombie:LeftHandPinky3",
-                "name": "_jnt49",
-                "rotationSamples": [
-                    106744,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    108360,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    110784,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    109572,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 50,
-                "jointName": "Zombie:RightShoulder",
-                "name": "_jnt50",
-                "rotationSamples": [
-                    111188,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    112804,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    115228,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    114016,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 51,
-                "jointName": "Zombie:RightArm",
-                "name": "_jnt51",
-                "rotationSamples": [
-                    115632,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    117248,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    119672,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    118460,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 52,
-                "jointName": "Zombie:RightForeArm",
-                "name": "_jnt52",
-                "rotationSamples": [
-                    120076,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    121692,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    124116,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    122904,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 53,
-                "jointName": "Zombie:RightHand",
-                "name": "_jnt53",
-                "rotationSamples": [
-                    124520,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    126136,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    128560,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    127348,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 54,
-                "jointName": "Zombie:RightHandThumb1",
-                "name": "_jnt54",
-                "rotationSamples": [
-                    128964,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    130580,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    133004,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    131792,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 55,
-                "jointName": "Zombie:RightHandThumb2",
-                "name": "_jnt55",
-                "rotationSamples": [
-                    133408,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    135024,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    137448,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    136236,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 56,
-                "jointName": "Zombie:RightHandThumb3",
-                "name": "_jnt56",
-                "rotationSamples": [
-                    137852,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    139468,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    141892,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    140680,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 57,
-                "jointName": "Zombie:RightHandIndex1",
-                "name": "_jnt57",
-                "rotationSamples": [
-                    142296,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    143912,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    146336,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    145124,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 58,
-                "jointName": "Zombie:RightHandIndex2",
-                "name": "_jnt58",
-                "rotationSamples": [
-                    146740,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    148356,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    150780,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    149568,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 59,
-                "jointName": "Zombie:RightHandIndex3",
-                "name": "_jnt59",
-                "rotationSamples": [
-                    151184,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    152800,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    155224,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    154012,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 60,
-                "jointName": "Zombie:RightHandMiddle1",
-                "name": "_jnt60",
-                "rotationSamples": [
-                    155628,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    157244,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    159668,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    158456,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 61,
-                "jointName": "Zombie:RightHandMiddle2",
-                "name": "_jnt61",
-                "rotationSamples": [
-                    160072,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    161688,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    164112,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    162900,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 62,
-                "jointName": "Zombie:RightHandMiddle3",
-                "name": "_jnt62",
-                "rotationSamples": [
-                    164516,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    166132,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    168556,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    167344,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 63,
-                "jointName": "Zombie:RightHandRing1",
-                "name": "_jnt63",
-                "rotationSamples": [
-                    168960,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    170576,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    173000,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    171788,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 64,
-                "jointName": "Zombie:RightHandRing2",
-                "name": "_jnt64",
-                "rotationSamples": [
-                    173404,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    175020,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    177444,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    176232,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 65,
-                "jointName": "Zombie:RightHandRing3",
-                "name": "_jnt65",
-                "rotationSamples": [
-                    177848,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    179464,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    181888,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    180676,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 66,
-                "jointName": "Zombie:RightHandPinky1",
-                "name": "_jnt66",
-                "rotationSamples": [
-                    182292,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    183908,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    186332,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    185120,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 67,
-                "jointName": "Zombie:RightHandPinky2",
-                "name": "_jnt67",
-                "rotationSamples": [
-                    186736,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    188352,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    190776,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    189564,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 68,
-                "jointName": "Zombie:RightHandPinky3",
-                "name": "_jnt68",
-                "rotationSamples": [
-                    191180,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    192796,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    195220,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    194008,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 69,
-                "jointName": "Zombie:LeftUpLeg",
-                "name": "_jnt69",
-                "rotationSamples": [
-                    195624,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    197240,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    199664,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    198452,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 70,
-                "jointName": "Zombie:LeftLeg",
-                "name": "_jnt70",
-                "rotationSamples": [
-                    200068,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    201684,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    204108,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    202896,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 71,
-                "jointName": "Zombie:LeftFoot",
-                "name": "_jnt71",
-                "rotationSamples": [
-                    204512,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    206128,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    208552,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    207340,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 72,
-                "jointName": "Zombie:LeftToeBase",
-                "name": "_jnt72",
-                "rotationSamples": [
-                    208956,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    210572,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    212996,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    211784,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 73,
-                "jointName": "Zombie:RightUpLeg",
-                "name": "_jnt73",
-                "rotationSamples": [
-                    213400,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    215016,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    217440,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    216228,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 74,
-                "jointName": "Zombie:RightLeg",
-                "name": "_jnt74",
-                "rotationSamples": [
-                    217844,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    219460,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    221884,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    220672,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 75,
-                "jointName": "Zombie:RightFoot",
-                "name": "_jnt75",
-                "rotationSamples": [
-                    222288,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    223904,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    226328,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    225116,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 76,
-                "jointName": "Zombie:RightToeBase",
-                "name": "_jnt76",
-                "rotationSamples": [
-                    226732,
-                    404,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    228348,
-                    303,
-                    "float32"
-                ],
-                "times": [
-                    230772,
-                    101,
-                    "float32"
-                ],
-                "translationSamples": [
-                    229560,
-                    303,
-                    "float32"
-                ],
-                "type": "Joint"
-            }
-        ],
-        "name": "mixamo.com",
-        "ref": "zombie_dying_1/animations/mixamo_com.clip"
-    },
-    "zombie_dying_1/zombie_dying_1.group": {
-        "libraryRefs": [
-            "zombie_dying_1/animations/mixamo_com.clip",
-            "zombie_dying_1/binaries/1384862412_zombie_dying_1_mixamo_com.bin"
-        ],
-        "name": "zombie_dying_1",
-        "ref": "zombie_dying_1/zombie_dying_1.group"
-    },
-    "zombie_idle/animations/Animations.animation": {
+    "walking/animations/Animations.animation": {
         "layers": [
             {
                 "blendWeight": 1,
@@ -1559,40 +183,25 @@
                 "name": "Default animation layer",
                 "states": {
                     "mixamo.com": {
-                        "stateRef": "zombie_idle/animations/mixamo_com.animstate"
-                    },
-                    "mixamo_com": {
-                        "stateRef": "zombie_injured_walk/animations/mixamo_com.animstate"
-                    },
-                    "mixamo_com_": {
-                        "stateRef": "zombie_uppercut_jab/animations/mixamo_com.animstate"
-                    },
-                    "mixamo_com__": {
-                        "stateRef": "zombie_dying_1/animations/mixamo_com.animstate"
-                    }
-                },
-                "transitions": {
-                    "*": {
-                        "fadeTime": 1,
-                        "type": "Fade"
+                        "stateRef": "walking/animations/mixamo_com.animstate"
                     }
                 }
             }
         ],
-        "ref": "zombie_idle/animations/Animations.animation"
+        "ref": "walking/animations/Animations.animation"
     },
-    "zombie_idle/animations/mixamo_com.animstate": {
+    "walking/animations/mixamo_com.animstate": {
         "clipSource": {
-            "clipRef": "zombie_idle/animations/mixamo_com.clip",
+            "clipRef": "walking/animations/mixamo_com.clip",
             "loopCount": -1,
             "timeScale": 1,
             "type": "Clip"
         },
-        "name": "Idle",
-        "ref": "zombie_idle/animations/mixamo_com.animstate"
+        "name": "walk",
+        "ref": "walking/animations/mixamo_com.animstate"
     },
-    "zombie_idle/animations/mixamo_com.clip": {
-        "binaryRef": "zombie_idle/binaries/1384861343_zombie_idle_mixamo_com.bin",
+    "walking/animations/mixamo_com.clip": {
+        "binaryRef": "walking/binaries/1385651707_walking_mixamo_com.bin",
         "channels": [
             {
                 "blendType": "Linear",
@@ -1601,22 +210,22 @@
                 "name": "_jnt0",
                 "rotationSamples": [
                     0,
-                    484,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    1936,
-                    363,
+                    1952,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    4840,
-                    121,
+                    4880,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    3388,
-                    363,
+                    3416,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1627,23 +236,23 @@
                 "jointName": "Zombie:Spine",
                 "name": "_jnt1",
                 "rotationSamples": [
-                    5324,
-                    484,
+                    5368,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    7260,
-                    363,
+                    7320,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    10164,
-                    121,
+                    10248,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    8712,
-                    363,
+                    8784,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1654,23 +263,23 @@
                 "jointName": "Zombie:Spine1",
                 "name": "_jnt2",
                 "rotationSamples": [
-                    10648,
-                    484,
+                    10736,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    12584,
-                    363,
+                    12688,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    15488,
-                    121,
+                    15616,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    14036,
-                    363,
+                    14152,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1681,23 +290,23 @@
                 "jointName": "Zombie:Spine2",
                 "name": "_jnt3",
                 "rotationSamples": [
-                    15972,
-                    484,
+                    16104,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    17908,
-                    363,
+                    18056,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    20812,
-                    121,
+                    20984,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    19360,
-                    363,
+                    19520,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1708,23 +317,23 @@
                 "jointName": "Zombie:Neck",
                 "name": "_jnt4",
                 "rotationSamples": [
-                    21296,
-                    484,
+                    21472,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    23232,
-                    363,
+                    23424,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    26136,
-                    121,
+                    26352,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    24684,
-                    363,
+                    24888,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1735,22 +344,22 @@
                 "jointName": "Zombie:Neck1",
                 "name": "_jnt5",
                 "rotationSamples": [
-                    26620,
+                    26840,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    26636,
+                    26856,
                     3,
                     "float32"
                 ],
                 "times": [
-                    26660,
+                    26880,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    26648,
+                    26868,
                     3,
                     "float32"
                 ],
@@ -1762,23 +371,23 @@
                 "jointName": "Zombie:Head",
                 "name": "_jnt6",
                 "rotationSamples": [
-                    26664,
-                    484,
+                    26884,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    28600,
-                    363,
+                    28836,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    31504,
-                    121,
+                    31764,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    30052,
-                    363,
+                    30300,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1789,22 +398,22 @@
                 "jointName": "Zombie:Jaw",
                 "name": "_jnt9",
                 "rotationSamples": [
-                    31988,
+                    32252,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    32004,
+                    32268,
                     3,
                     "float32"
                 ],
                 "times": [
-                    32028,
+                    32292,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    32016,
+                    32280,
                     3,
                     "float32"
                 ],
@@ -1816,23 +425,23 @@
                 "jointName": "Zombie:LeftShoulder",
                 "name": "_jnt31",
                 "rotationSamples": [
-                    32032,
-                    484,
+                    32296,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    33968,
-                    363,
+                    34248,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    36872,
-                    121,
+                    37176,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    35420,
-                    363,
+                    35712,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1843,23 +452,23 @@
                 "jointName": "Zombie:LeftArm",
                 "name": "_jnt32",
                 "rotationSamples": [
-                    37356,
-                    484,
+                    37664,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    39292,
-                    363,
+                    39616,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    42196,
-                    121,
+                    42544,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    40744,
-                    363,
+                    41080,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1870,23 +479,23 @@
                 "jointName": "Zombie:LeftForeArm",
                 "name": "_jnt33",
                 "rotationSamples": [
-                    42680,
-                    484,
+                    43032,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    44616,
-                    363,
+                    44984,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    47520,
-                    121,
+                    47912,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    46068,
-                    363,
+                    46448,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1897,23 +506,23 @@
                 "jointName": "Zombie:LeftHand",
                 "name": "_jnt34",
                 "rotationSamples": [
-                    48004,
-                    484,
+                    48400,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    49940,
-                    363,
+                    50352,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    52844,
-                    121,
+                    53280,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    51392,
-                    363,
+                    51816,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1924,23 +533,23 @@
                 "jointName": "Zombie:LeftHandThumb1",
                 "name": "_jnt35",
                 "rotationSamples": [
-                    53328,
-                    484,
+                    53768,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    55264,
-                    363,
+                    53784,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    58168,
-                    121,
+                    53808,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    56716,
-                    363,
+                    53796,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1951,23 +560,23 @@
                 "jointName": "Zombie:LeftHandThumb2",
                 "name": "_jnt36",
                 "rotationSamples": [
-                    58652,
-                    484,
+                    53812,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    60588,
-                    363,
+                    53828,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    63492,
-                    121,
+                    53852,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    62040,
-                    363,
+                    53840,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -1978,22 +587,22 @@
                 "jointName": "Zombie:LeftHandThumb3",
                 "name": "_jnt37",
                 "rotationSamples": [
-                    63976,
+                    53856,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    63992,
+                    53872,
                     3,
                     "float32"
                 ],
                 "times": [
-                    64016,
+                    53896,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    64004,
+                    53884,
                     3,
                     "float32"
                 ],
@@ -2005,23 +614,23 @@
                 "jointName": "Zombie:LeftHandMiddle1",
                 "name": "_jnt38",
                 "rotationSamples": [
-                    64020,
-                    484,
+                    53900,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    65956,
-                    363,
+                    53916,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    68860,
-                    121,
+                    53940,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    67408,
-                    363,
+                    53928,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2032,23 +641,23 @@
                 "jointName": "Zombie:LeftHandMiddle2",
                 "name": "_jnt39",
                 "rotationSamples": [
-                    69344,
-                    484,
+                    53944,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    71280,
-                    363,
+                    53960,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    74184,
-                    121,
+                    53984,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    72732,
-                    363,
+                    53972,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2059,22 +668,22 @@
                 "jointName": "Zombie:LeftHandMiddle3",
                 "name": "_jnt40",
                 "rotationSamples": [
-                    74668,
+                    53988,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    74684,
+                    54004,
                     3,
                     "float32"
                 ],
                 "times": [
-                    74708,
+                    54028,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    74696,
+                    54016,
                     3,
                     "float32"
                 ],
@@ -2086,23 +695,23 @@
                 "jointName": "Zombie:LeftHandIndex1",
                 "name": "_jnt41",
                 "rotationSamples": [
-                    74712,
-                    484,
+                    54032,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    76648,
-                    363,
+                    54048,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    79552,
-                    121,
+                    54072,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    78100,
-                    363,
+                    54060,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2113,23 +722,23 @@
                 "jointName": "Zombie:LeftHandIndex2",
                 "name": "_jnt42",
                 "rotationSamples": [
-                    80036,
-                    484,
+                    54076,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    81972,
-                    363,
+                    54092,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    84876,
-                    121,
+                    54116,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    83424,
-                    363,
+                    54104,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2140,22 +749,22 @@
                 "jointName": "Zombie:LeftHandIndex3",
                 "name": "_jnt43",
                 "rotationSamples": [
-                    85360,
+                    54120,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    85376,
+                    54136,
                     3,
                     "float32"
                 ],
                 "times": [
-                    85400,
+                    54160,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    85388,
+                    54148,
                     3,
                     "float32"
                 ],
@@ -2167,23 +776,23 @@
                 "jointName": "Zombie:LeftHandRing1",
                 "name": "_jnt44",
                 "rotationSamples": [
-                    85404,
-                    484,
+                    54164,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    87340,
-                    363,
+                    54180,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    90244,
-                    121,
+                    54204,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    88792,
-                    363,
+                    54192,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2194,23 +803,23 @@
                 "jointName": "Zombie:LeftHandRing2",
                 "name": "_jnt45",
                 "rotationSamples": [
-                    90728,
-                    484,
+                    54208,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    92664,
-                    363,
+                    54224,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    95568,
-                    121,
+                    54248,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    94116,
-                    363,
+                    54236,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2221,22 +830,22 @@
                 "jointName": "Zombie:LeftHandRing3",
                 "name": "_jnt46",
                 "rotationSamples": [
-                    96052,
+                    54252,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    96068,
+                    54268,
                     3,
                     "float32"
                 ],
                 "times": [
-                    96092,
+                    54292,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    96080,
+                    54280,
                     3,
                     "float32"
                 ],
@@ -2248,23 +857,23 @@
                 "jointName": "Zombie:LeftHandPinky1",
                 "name": "_jnt47",
                 "rotationSamples": [
-                    96096,
-                    484,
+                    54296,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    98032,
-                    363,
+                    54312,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    100936,
-                    121,
+                    54336,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    99484,
-                    363,
+                    54324,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2275,23 +884,23 @@
                 "jointName": "Zombie:LeftHandPinky2",
                 "name": "_jnt48",
                 "rotationSamples": [
-                    101420,
-                    484,
+                    54340,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    103356,
-                    363,
+                    54356,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    106260,
-                    121,
+                    54380,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    104808,
-                    363,
+                    54368,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2302,22 +911,22 @@
                 "jointName": "Zombie:LeftHandPinky3",
                 "name": "_jnt49",
                 "rotationSamples": [
-                    106744,
+                    54384,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    106760,
+                    54400,
                     3,
                     "float32"
                 ],
                 "times": [
-                    106784,
+                    54424,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    106772,
+                    54412,
                     3,
                     "float32"
                 ],
@@ -2329,23 +938,23 @@
                 "jointName": "Zombie:RightShoulder",
                 "name": "_jnt50",
                 "rotationSamples": [
-                    106788,
-                    484,
+                    54428,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    108724,
-                    363,
+                    56380,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    111628,
-                    121,
+                    59308,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    110176,
-                    363,
+                    57844,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2356,23 +965,23 @@
                 "jointName": "Zombie:RightArm",
                 "name": "_jnt51",
                 "rotationSamples": [
-                    112112,
-                    484,
+                    59796,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    114048,
-                    363,
+                    61748,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    116952,
-                    121,
+                    64676,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    115500,
-                    363,
+                    63212,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2383,23 +992,23 @@
                 "jointName": "Zombie:RightForeArm",
                 "name": "_jnt52",
                 "rotationSamples": [
-                    117436,
-                    484,
+                    65164,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    119372,
-                    363,
+                    67116,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    122276,
-                    121,
+                    70044,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    120824,
-                    363,
+                    68580,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2410,23 +1019,23 @@
                 "jointName": "Zombie:RightHand",
                 "name": "_jnt53",
                 "rotationSamples": [
-                    122760,
-                    484,
+                    70532,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    124696,
-                    363,
+                    72484,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    127600,
-                    121,
+                    75412,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    126148,
-                    363,
+                    73948,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2437,23 +1046,23 @@
                 "jointName": "Zombie:RightHandThumb1",
                 "name": "_jnt54",
                 "rotationSamples": [
-                    128084,
-                    484,
+                    75900,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    130020,
-                    363,
+                    75916,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    132924,
-                    121,
+                    75940,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    131472,
-                    363,
+                    75928,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2464,23 +1073,23 @@
                 "jointName": "Zombie:RightHandThumb2",
                 "name": "_jnt55",
                 "rotationSamples": [
-                    133408,
-                    484,
+                    75944,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    135344,
-                    363,
+                    75960,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    138248,
-                    121,
+                    75984,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    136796,
-                    363,
+                    75972,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2491,22 +1100,22 @@
                 "jointName": "Zombie:RightHandThumb3",
                 "name": "_jnt56",
                 "rotationSamples": [
-                    138732,
+                    75988,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    138748,
+                    76004,
                     3,
                     "float32"
                 ],
                 "times": [
-                    138772,
+                    76028,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    138760,
+                    76016,
                     3,
                     "float32"
                 ],
@@ -2518,23 +1127,23 @@
                 "jointName": "Zombie:RightHandIndex1",
                 "name": "_jnt57",
                 "rotationSamples": [
-                    138776,
-                    484,
+                    76032,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    140712,
-                    363,
+                    76048,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    143616,
-                    121,
+                    76072,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    142164,
-                    363,
+                    76060,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2545,23 +1154,23 @@
                 "jointName": "Zombie:RightHandIndex2",
                 "name": "_jnt58",
                 "rotationSamples": [
-                    144100,
-                    484,
+                    76076,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    146036,
-                    363,
+                    76092,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    148940,
-                    121,
+                    76116,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    147488,
-                    363,
+                    76104,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2572,22 +1181,22 @@
                 "jointName": "Zombie:RightHandIndex3",
                 "name": "_jnt59",
                 "rotationSamples": [
-                    149424,
+                    76120,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    149440,
+                    76136,
                     3,
                     "float32"
                 ],
                 "times": [
-                    149464,
+                    76160,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    149452,
+                    76148,
                     3,
                     "float32"
                 ],
@@ -2599,23 +1208,23 @@
                 "jointName": "Zombie:RightHandMiddle1",
                 "name": "_jnt60",
                 "rotationSamples": [
-                    149468,
-                    484,
+                    76164,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    151404,
-                    363,
+                    76180,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    154308,
-                    121,
+                    76204,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    152856,
-                    363,
+                    76192,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2626,23 +1235,23 @@
                 "jointName": "Zombie:RightHandMiddle2",
                 "name": "_jnt61",
                 "rotationSamples": [
-                    154792,
-                    484,
+                    76208,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    156728,
-                    363,
+                    76224,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    159632,
-                    121,
+                    76248,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    158180,
-                    363,
+                    76236,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2653,22 +1262,22 @@
                 "jointName": "Zombie:RightHandMiddle3",
                 "name": "_jnt62",
                 "rotationSamples": [
-                    160116,
+                    76252,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    160132,
+                    76268,
                     3,
                     "float32"
                 ],
                 "times": [
-                    160156,
+                    76292,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    160144,
+                    76280,
                     3,
                     "float32"
                 ],
@@ -2680,23 +1289,23 @@
                 "jointName": "Zombie:RightHandRing1",
                 "name": "_jnt63",
                 "rotationSamples": [
-                    160160,
-                    484,
+                    76296,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    162096,
-                    363,
+                    76312,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    165000,
-                    121,
+                    76336,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    163548,
-                    363,
+                    76324,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2707,23 +1316,23 @@
                 "jointName": "Zombie:RightHandRing2",
                 "name": "_jnt64",
                 "rotationSamples": [
-                    165484,
-                    484,
+                    76340,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    167420,
-                    363,
+                    76356,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    170324,
-                    121,
+                    76380,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    168872,
-                    363,
+                    76368,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2734,22 +1343,22 @@
                 "jointName": "Zombie:RightHandRing3",
                 "name": "_jnt65",
                 "rotationSamples": [
-                    170808,
+                    76384,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    170824,
+                    76400,
                     3,
                     "float32"
                 ],
                 "times": [
-                    170848,
+                    76424,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    170836,
+                    76412,
                     3,
                     "float32"
                 ],
@@ -2761,23 +1370,23 @@
                 "jointName": "Zombie:RightHandPinky1",
                 "name": "_jnt66",
                 "rotationSamples": [
-                    170852,
-                    484,
+                    76428,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    172788,
-                    363,
+                    76444,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    175692,
-                    121,
+                    76468,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    174240,
-                    363,
+                    76456,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2788,23 +1397,23 @@
                 "jointName": "Zombie:RightHandPinky2",
                 "name": "_jnt67",
                 "rotationSamples": [
-                    176176,
-                    484,
+                    76472,
+                    4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    178112,
-                    363,
+                    76488,
+                    3,
                     "float32"
                 ],
                 "times": [
-                    181016,
-                    121,
+                    76512,
+                    1,
                     "float32"
                 ],
                 "translationSamples": [
-                    179564,
-                    363,
+                    76500,
+                    3,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2815,22 +1424,22 @@
                 "jointName": "Zombie:RightHandPinky3",
                 "name": "_jnt68",
                 "rotationSamples": [
-                    181500,
+                    76516,
                     4,
                     "float32"
                 ],
                 "scaleSamples": [
-                    181516,
+                    76532,
                     3,
                     "float32"
                 ],
                 "times": [
-                    181540,
+                    76556,
                     1,
                     "float32"
                 ],
                 "translationSamples": [
-                    181528,
+                    76544,
                     3,
                     "float32"
                 ],
@@ -2842,23 +1451,23 @@
                 "jointName": "Zombie:LeftUpLeg",
                 "name": "_jnt69",
                 "rotationSamples": [
-                    181544,
-                    484,
+                    76560,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    183480,
-                    363,
+                    78512,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    186384,
-                    121,
+                    81440,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    184932,
-                    363,
+                    79976,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2869,23 +1478,23 @@
                 "jointName": "Zombie:LeftLeg",
                 "name": "_jnt70",
                 "rotationSamples": [
-                    186868,
-                    484,
+                    81928,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    188804,
-                    363,
+                    83880,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    191708,
-                    121,
+                    86808,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    190256,
-                    363,
+                    85344,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2896,23 +1505,23 @@
                 "jointName": "Zombie:LeftFoot",
                 "name": "_jnt71",
                 "rotationSamples": [
-                    192192,
-                    484,
+                    87296,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    194128,
-                    363,
+                    89248,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    197032,
-                    121,
+                    92176,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    195580,
-                    363,
+                    90712,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2923,23 +1532,23 @@
                 "jointName": "Zombie:LeftToeBase",
                 "name": "_jnt72",
                 "rotationSamples": [
-                    197516,
-                    484,
+                    92664,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    199452,
-                    363,
+                    94616,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    202356,
-                    121,
+                    97544,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    200904,
-                    363,
+                    96080,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2950,23 +1559,23 @@
                 "jointName": "Zombie:RightUpLeg",
                 "name": "_jnt73",
                 "rotationSamples": [
-                    202840,
-                    484,
+                    98032,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    204776,
-                    363,
+                    99984,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    207680,
-                    121,
+                    102912,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    206228,
-                    363,
+                    101448,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -2977,23 +1586,23 @@
                 "jointName": "Zombie:RightLeg",
                 "name": "_jnt74",
                 "rotationSamples": [
-                    208164,
-                    484,
+                    103400,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    210100,
-                    363,
+                    105352,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    213004,
-                    121,
+                    108280,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    211552,
-                    363,
+                    106816,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -3004,23 +1613,23 @@
                 "jointName": "Zombie:RightFoot",
                 "name": "_jnt75",
                 "rotationSamples": [
-                    213488,
-                    484,
+                    108768,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    215424,
-                    363,
+                    110720,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    218328,
-                    121,
+                    113648,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    216876,
-                    363,
+                    112184,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -3031,23 +1640,23 @@
                 "jointName": "Zombie:RightToeBase",
                 "name": "_jnt76",
                 "rotationSamples": [
-                    218812,
-                    484,
+                    114136,
+                    488,
                     "float32"
                 ],
                 "scaleSamples": [
-                    220748,
-                    363,
+                    116088,
+                    366,
                     "float32"
                 ],
                 "times": [
-                    223652,
-                    121,
+                    119016,
+                    122,
                     "float32"
                 ],
                 "translationSamples": [
-                    222200,
-                    363,
+                    117552,
+                    366,
                     "float32"
                 ],
                 "type": "Joint"
@@ -3055,13 +1664,51 @@
         ],
         "name": "mixamo.com"
     },
-    "zombie_idle/entities/RootNode.entity": {
+    "walking/entities/RootNode.entity": {
         "components": {
             "animation": {
-                "layersRef": "zombie_idle/animations/Animations.animation",
-                "poseRef": "zombie_idle/skeletons/Skeleton.skeleton"
+                "layersRef": "walking/animations/Animations.animation",
+                "poseRef": "walking/skeletons/Skeleton.skeleton"
             },
             "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "walking",
+        "nodeType": "Null",
+        "ref": "walking/entities/RootNode.entity"
+    },
+    "walking/entities/Zombie_Geo_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "walking/meshes/Zombie_Geo_0.mesh",
+                "poseRef": "walking/skeletons/Skeleton.skeleton"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "walking/materials/Zombie_COL.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "walking/entities/RootNode.entity",
                 "rotation": [
                     0.0,
                     -0.0,
@@ -3079,126 +1726,77 @@
                 ]
             }
         },
-        "name": "zombie_idle",
-        "nodeType": "Null"
-    },
-    "zombie_idle/entities/Zombie_Geo_0.entity": {
-        "components": {
-            "meshData": {
-                "meshRef": "zombie_idle/meshes/Zombie_Geo_0.mesh",
-                "poseRef": "zombie_idle/skeletons/Skeleton.skeleton"
-            },
-            "meshRenderer": {
-                "castShadows": true,
-                "cullMode": "Dynamic",
-                "hidden": false,
-                "materialRefs": [
-                    "zombie_idle/materials/Zombie_COL.material"
-                ],
-                "receiveShadows": true,
-                "reflectable": false
-            },
-            "transform": {
-                "parentRef": "zombie_idle/entities/RootNode.entity",
-                "rotation": [
-                    0,
-                    0,
-                    0
-                ],
-                "scale": [
-                    0.02,
-                    0.02,
-                    0.02
-                ],
-                "translation": [
-                    0,
-                    0,
-                    0
-                ]
-            }
-        },
         "name": "Zombie_Geo",
-        "nodeType": "Mesh",
-        "ref": "zombie_idle/entities/Zombie_Geo_0.entity"
+        "nodeType": "Mesh"
     },
-    "zombie_idle/materials/Zombie_COL.material": {
+    "walking/materials/Zombie_COL.material": {
         "blendState": {
             "blendDst": "OneMinusSrcAlphaFactor",
             "blendEquation": "AddEquation",
             "blendSrc": "SrcAlphaFactor",
             "blending": "NoBlending"
         },
-        "cullState": {
-            "cullFace": "Back",
-            "enabled": true,
-            "frontFace": "CCW"
-        },
-        "depthState": {
-            "enabled": true,
-            "write": true
-        },
         "name": "Zombie_COL",
-        "ref": "zombie_idle/materials/Zombie_COL.material",
-        "renderQueue": 1000,
+        "renderQueue": -1,
         "shaderRef": "GOO_ENGINE_SHADERS/uber",
         "texturesMapping": {
             "DIFFUSE_MAP": {
                 "enabled": true,
-                "textureRef": "zombie_idle/textures/Zombie_diffuse.texture"
+                "textureRef": "walking/textures/Zombie_diffuse.texture"
             },
             "NORMAL_MAP": {
                 "enabled": true,
-                "textureRef": "zombie_idle/textures/Zombie_normal.texture"
+                "textureRef": "walking/textures/Zombie_normal.texture"
             },
             "SPECULAR_MAP": {
                 "enabled": true,
-                "textureRef": "zombie_idle/textures/Zombie_specular.texture"
+                "textureRef": "walking/textures/Zombie_specular.texture"
             }
         },
         "type": "Phong",
         "uniforms": {
             "discardThreshold": {
                 "enabled": false,
-                "value": 0
+                "value": 0.0
             },
             "fresnel": {
                 "enabled": true,
-                "value": 0
+                "value": 0.0
             },
             "materialAmbient": {
                 "enabled": true,
                 "value": [
-                    0.6181818181818182,
-                    0.6181818181818182,
-                    0.6181818181818182,
-                    1
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
                 ]
             },
             "materialDiffuse": {
                 "enabled": true,
                 "value": [
-                    1,
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
                 ]
             },
             "materialEmissive": {
                 "enabled": true,
                 "value": [
-                    0,
-                    0,
-                    0,
-                    1
+                    0.0,
+                    0.0,
+                    0.0,
+                    1.0
                 ]
             },
             "materialSpecular": {
                 "enabled": true,
                 "value": [
-                    0.3545454545454545,
-                    0.3545454545454545,
-                    0.3545454545454545,
-                    1
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
                 ]
             },
             "materialSpecularPower": {
@@ -3207,20 +1805,20 @@
             },
             "normalMultiplier": {
                 "enabled": true,
-                "value": 1
+                "value": 1.0
             },
             "opacity": {
                 "enabled": true,
-                "value": 1
+                "value": 1.0
             },
             "reflectivity": {
                 "enabled": true,
-                "value": 0
+                "value": 0.0
             }
         }
     },
-    "zombie_idle/meshes/Zombie_Geo_0.mesh": {
-        "binaryRef": "zombie_idle/binaries/1384861343_data.bin",
+    "walking/meshes/Zombie_Geo_0.mesh": {
+        "binaryRef": "walking/binaries/1385651707_data.bin",
         "boundingVolume": {
             "max": [
                 95.90518188476562,
@@ -3302,7 +1900,7 @@
             "float32"
         ]
     },
-    "zombie_idle/skeletons/Skeleton.skeleton": {
+    "walking/skeletons/Skeleton.skeleton": {
         "joints": [
             {
                 "index": 0,
@@ -5232,7 +3830,7 @@
         ],
         "name": "Skeleton"
     },
-    "zombie_idle/textures/Zombie_diffuse.texture": {
+    "walking/textures/Zombie_diffuse.texture": {
         "fileName": "Zombie_diffuse.png",
         "magFilter": "Bilinear",
         "minFilter": "Trilinear",
@@ -5245,11 +3843,11 @@
             1.0,
             1.0
         ],
-        "url": "zombie_idle/images/Zombie_diffuse.png",
+        "url": "walking/images/Zombie_diffuse.png",
         "wrapU": "Repeat",
         "wrapV": "Repeat"
     },
-    "zombie_idle/textures/Zombie_normal.texture": {
+    "walking/textures/Zombie_normal.texture": {
         "fileName": "Zombie_normal.png",
         "magFilter": "Bilinear",
         "minFilter": "Trilinear",
@@ -5262,11 +3860,11 @@
             1.0,
             1.0
         ],
-        "url": "zombie_idle/images/Zombie_normal.png",
+        "url": "walking/images/Zombie_normal.png",
         "wrapU": "Repeat",
         "wrapV": "Repeat"
     },
-    "zombie_idle/textures/Zombie_specular.texture": {
+    "walking/textures/Zombie_specular.texture": {
         "fileName": "Zombie_specular.png",
         "magFilter": "Bilinear",
         "minFilter": "Trilinear",
@@ -5279,2999 +3877,33 @@
             1.0,
             1.0
         ],
-        "url": "zombie_idle/images/Zombie_specular.png",
+        "url": "walking/images/Zombie_specular.png",
         "wrapU": "Repeat",
         "wrapV": "Repeat"
     },
-    "zombie_idle/zombie_idle.group": {
+    "walking/walking.group": {
         "libraryRefs": [
-            "zombie_idle/textures/Zombie_specular.texture",
-            "zombie_idle/images/Zombie_specular.png",
-            "zombie_idle/textures/Zombie_diffuse.texture",
-            "zombie_idle/images/Zombie_diffuse.png",
-            "zombie_idle/animations/mixamo_com.animstate",
-            "zombie_idle/animations/mixamo_com.clip",
-            "zombie_idle/meshes/Zombie_Geo_0.mesh",
-            "zombie_idle/materials/Zombie_COL.material",
-            "zombie_idle/animations/Animations.animation",
-            "zombie_idle/entities/RootNode.entity",
-            "zombie_idle/entities/Zombie_Geo_0.entity",
-            "zombie_idle/skeletons/Skeleton.skeleton",
-            "zombie_idle/textures/Zombie_normal.texture",
-            "zombie_idle/images/Zombie_normal.png",
-            "zombie_idle/binaries/1384861343_data.bin",
-            "zombie_idle/binaries/1384861343_zombie_idle_mixamo_com.bin",
-            "zombie_idle/images/Zombie_specular.png",
-            "zombie_idle/images/Zombie_diffuse.png",
-            "zombie_idle/images/Zombie_normal.png"
+            "walking/materials/Zombie_COL.material",
+            "walking/skeletons/Skeleton.skeleton",
+            "walking/animations/Animations.animation",
+            "walking/meshes/Zombie_Geo_0.mesh",
+            "walking/textures/Zombie_normal.texture",
+            "walking/images/Zombie_normal.png",
+            "walking/textures/Zombie_diffuse.texture",
+            "walking/images/Zombie_diffuse.png",
+            "walking/entities/Zombie_Geo_0.entity",
+            "walking/animations/mixamo_com.animstate",
+            "walking/entities/RootNode.entity",
+            "walking/textures/Zombie_specular.texture",
+            "walking/images/Zombie_specular.png",
+            "walking/animations/mixamo_com.clip",
+            "walking/binaries/1385651707_data.bin",
+            "walking/binaries/1385651707_walking_mixamo_com.bin",
+            "walking/images/Zombie_normal.png",
+            "walking/images/Zombie_diffuse.png",
+            "walking/images/Zombie_specular.png"
         ],
-        "name": "zombie_idle",
-        "ref": "zombie_idle/zombie_idle.group"
-    },
-    "zombie_injured_walk/animations/mixamo_com.animstate": {
-        "clipSource": {
-            "clipRef": "zombie_injured_walk/animations/mixamo_com.clip",
-            "loopCount": -1,
-            "timeScale": 1,
-            "type": "Clip"
-        },
-        "name": "Walk",
-        "ref": "zombie_injured_walk/animations/mixamo_com.animstate"
-    },
-    "zombie_injured_walk/animations/mixamo_com.clip": {
-        "binaryRef": "zombie_injured_walk/binaries/1384861945_zombie_injured_walk_mixamo_com.bin",
-        "channels": [
-            {
-                "blendType": "Linear",
-                "jointIndex": 0,
-                "jointName": "Zombie:Hips",
-                "name": "_jnt0",
-                "rotationSamples": [
-                    0,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    576,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    1440,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    1008,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 1,
-                "jointName": "Zombie:Spine",
-                "name": "_jnt1",
-                "rotationSamples": [
-                    1584,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    2160,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    3024,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    2592,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 2,
-                "jointName": "Zombie:Spine1",
-                "name": "_jnt2",
-                "rotationSamples": [
-                    3168,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    3744,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    4608,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    4176,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 3,
-                "jointName": "Zombie:Spine2",
-                "name": "_jnt3",
-                "rotationSamples": [
-                    4752,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    5328,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    6192,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    5760,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 4,
-                "jointName": "Zombie:Neck",
-                "name": "_jnt4",
-                "rotationSamples": [
-                    6336,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    6912,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    7776,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    7344,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 5,
-                "jointName": "Zombie:Neck1",
-                "name": "_jnt5",
-                "rotationSamples": [
-                    7920,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    7936,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    7960,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    7948,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 6,
-                "jointName": "Zombie:Head",
-                "name": "_jnt6",
-                "rotationSamples": [
-                    7964,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    8540,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    9404,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    8972,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 9,
-                "jointName": "Zombie:Jaw",
-                "name": "_jnt9",
-                "rotationSamples": [
-                    9548,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    9564,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    9588,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    9576,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 31,
-                "jointName": "Zombie:LeftShoulder",
-                "name": "_jnt31",
-                "rotationSamples": [
-                    9592,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    10168,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    11032,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    10600,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 32,
-                "jointName": "Zombie:LeftArm",
-                "name": "_jnt32",
-                "rotationSamples": [
-                    11176,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    11752,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    12616,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    12184,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 33,
-                "jointName": "Zombie:LeftForeArm",
-                "name": "_jnt33",
-                "rotationSamples": [
-                    12760,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    13336,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    14200,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    13768,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 34,
-                "jointName": "Zombie:LeftHand",
-                "name": "_jnt34",
-                "rotationSamples": [
-                    14344,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    14920,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    15784,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    15352,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 35,
-                "jointName": "Zombie:LeftHandThumb1",
-                "name": "_jnt35",
-                "rotationSamples": [
-                    15928,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    16504,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    17368,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    16936,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 36,
-                "jointName": "Zombie:LeftHandThumb2",
-                "name": "_jnt36",
-                "rotationSamples": [
-                    17512,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    17528,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    17552,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    17540,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 37,
-                "jointName": "Zombie:LeftHandThumb3",
-                "name": "_jnt37",
-                "rotationSamples": [
-                    17556,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    18132,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    18996,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    18564,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 38,
-                "jointName": "Zombie:LeftHandMiddle1",
-                "name": "_jnt38",
-                "rotationSamples": [
-                    19140,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    19716,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    20580,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    20148,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 39,
-                "jointName": "Zombie:LeftHandMiddle2",
-                "name": "_jnt39",
-                "rotationSamples": [
-                    20724,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    21300,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    22164,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    21732,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 40,
-                "jointName": "Zombie:LeftHandMiddle3",
-                "name": "_jnt40",
-                "rotationSamples": [
-                    22308,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    22884,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    23748,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    23316,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 41,
-                "jointName": "Zombie:LeftHandIndex1",
-                "name": "_jnt41",
-                "rotationSamples": [
-                    23892,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    24468,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    25332,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    24900,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 42,
-                "jointName": "Zombie:LeftHandIndex2",
-                "name": "_jnt42",
-                "rotationSamples": [
-                    25476,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    26052,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    26916,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    26484,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 43,
-                "jointName": "Zombie:LeftHandIndex3",
-                "name": "_jnt43",
-                "rotationSamples": [
-                    27060,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    27636,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    28500,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    28068,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 44,
-                "jointName": "Zombie:LeftHandRing1",
-                "name": "_jnt44",
-                "rotationSamples": [
-                    28644,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    29220,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    30084,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    29652,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 45,
-                "jointName": "Zombie:LeftHandRing2",
-                "name": "_jnt45",
-                "rotationSamples": [
-                    30228,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    30804,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    31668,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    31236,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 46,
-                "jointName": "Zombie:LeftHandRing3",
-                "name": "_jnt46",
-                "rotationSamples": [
-                    31812,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    32388,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    33252,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    32820,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 47,
-                "jointName": "Zombie:LeftHandPinky1",
-                "name": "_jnt47",
-                "rotationSamples": [
-                    33396,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    33972,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    34836,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    34404,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 48,
-                "jointName": "Zombie:LeftHandPinky2",
-                "name": "_jnt48",
-                "rotationSamples": [
-                    34980,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    35556,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    36420,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    35988,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 49,
-                "jointName": "Zombie:LeftHandPinky3",
-                "name": "_jnt49",
-                "rotationSamples": [
-                    36564,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    37140,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    38004,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    37572,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 50,
-                "jointName": "Zombie:RightShoulder",
-                "name": "_jnt50",
-                "rotationSamples": [
-                    38148,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    38724,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    39588,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    39156,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 51,
-                "jointName": "Zombie:RightArm",
-                "name": "_jnt51",
-                "rotationSamples": [
-                    39732,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    40308,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    41172,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    40740,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 52,
-                "jointName": "Zombie:RightForeArm",
-                "name": "_jnt52",
-                "rotationSamples": [
-                    41316,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    41892,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    42756,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    42324,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 53,
-                "jointName": "Zombie:RightHand",
-                "name": "_jnt53",
-                "rotationSamples": [
-                    42900,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    43476,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    44340,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    43908,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 54,
-                "jointName": "Zombie:RightHandThumb1",
-                "name": "_jnt54",
-                "rotationSamples": [
-                    44484,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    45060,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    45924,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    45492,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 55,
-                "jointName": "Zombie:RightHandThumb2",
-                "name": "_jnt55",
-                "rotationSamples": [
-                    46068,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    46084,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    46108,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    46096,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 56,
-                "jointName": "Zombie:RightHandThumb3",
-                "name": "_jnt56",
-                "rotationSamples": [
-                    46112,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    46688,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    47552,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    47120,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 57,
-                "jointName": "Zombie:RightHandIndex1",
-                "name": "_jnt57",
-                "rotationSamples": [
-                    47696,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    48272,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    49136,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    48704,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 58,
-                "jointName": "Zombie:RightHandIndex2",
-                "name": "_jnt58",
-                "rotationSamples": [
-                    49280,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    49296,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    49320,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    49308,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 59,
-                "jointName": "Zombie:RightHandIndex3",
-                "name": "_jnt59",
-                "rotationSamples": [
-                    49324,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    49900,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    50764,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    50332,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 60,
-                "jointName": "Zombie:RightHandMiddle1",
-                "name": "_jnt60",
-                "rotationSamples": [
-                    50908,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    51484,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    52348,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    51916,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 61,
-                "jointName": "Zombie:RightHandMiddle2",
-                "name": "_jnt61",
-                "rotationSamples": [
-                    52492,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    53068,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    53932,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    53500,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 62,
-                "jointName": "Zombie:RightHandMiddle3",
-                "name": "_jnt62",
-                "rotationSamples": [
-                    54076,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    54652,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    55516,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    55084,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 63,
-                "jointName": "Zombie:RightHandRing1",
-                "name": "_jnt63",
-                "rotationSamples": [
-                    55660,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    56236,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    57100,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    56668,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 64,
-                "jointName": "Zombie:RightHandRing2",
-                "name": "_jnt64",
-                "rotationSamples": [
-                    57244,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    57820,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    58684,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    58252,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 65,
-                "jointName": "Zombie:RightHandRing3",
-                "name": "_jnt65",
-                "rotationSamples": [
-                    58828,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    59404,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    60268,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    59836,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 66,
-                "jointName": "Zombie:RightHandPinky1",
-                "name": "_jnt66",
-                "rotationSamples": [
-                    60412,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    60988,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    61852,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    61420,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 67,
-                "jointName": "Zombie:RightHandPinky2",
-                "name": "_jnt67",
-                "rotationSamples": [
-                    61996,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    62012,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    62036,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    62024,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 68,
-                "jointName": "Zombie:RightHandPinky3",
-                "name": "_jnt68",
-                "rotationSamples": [
-                    62040,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    62616,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    63480,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    63048,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 69,
-                "jointName": "Zombie:LeftUpLeg",
-                "name": "_jnt69",
-                "rotationSamples": [
-                    63624,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    64200,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    65064,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    64632,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 70,
-                "jointName": "Zombie:LeftLeg",
-                "name": "_jnt70",
-                "rotationSamples": [
-                    65208,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    65784,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    66648,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    66216,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 71,
-                "jointName": "Zombie:LeftFoot",
-                "name": "_jnt71",
-                "rotationSamples": [
-                    66792,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    67368,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    68232,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    67800,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 72,
-                "jointName": "Zombie:LeftToeBase",
-                "name": "_jnt72",
-                "rotationSamples": [
-                    68376,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    68952,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    69816,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    69384,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 73,
-                "jointName": "Zombie:RightUpLeg",
-                "name": "_jnt73",
-                "rotationSamples": [
-                    69960,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    70536,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    71400,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    70968,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 74,
-                "jointName": "Zombie:RightLeg",
-                "name": "_jnt74",
-                "rotationSamples": [
-                    71544,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    72120,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    72984,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    72552,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 75,
-                "jointName": "Zombie:RightFoot",
-                "name": "_jnt75",
-                "rotationSamples": [
-                    73128,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    73704,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    74568,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    74136,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 76,
-                "jointName": "Zombie:RightToeBase",
-                "name": "_jnt76",
-                "rotationSamples": [
-                    74712,
-                    144,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    75288,
-                    108,
-                    "float32"
-                ],
-                "times": [
-                    76152,
-                    36,
-                    "float32"
-                ],
-                "translationSamples": [
-                    75720,
-                    108,
-                    "float32"
-                ],
-                "type": "Joint"
-            }
-        ],
-        "name": "mixamo.com",
-        "ref": "zombie_injured_walk/animations/mixamo_com.clip"
-    },
-    "zombie_injured_walk/zombie_injured_walk.group": {
-        "libraryRefs": [
-            "zombie_injured_walk/animations/mixamo_com.clip",
-            "zombie_injured_walk/binaries/1384861945_zombie_injured_walk_mixamo_com.bin"
-        ],
-        "name": "zombie_injured_walk",
-        "ref": "zombie_injured_walk/zombie_injured_walk.group"
-    },
-    "zombie_uppercut_jab/animations/mixamo_com.animstate": {
-        "clipSource": {
-            "clipRef": "zombie_uppercut_jab/animations/mixamo_com.clip",
-            "loopCount": -1,
-            "timeScale": 1,
-            "type": "Clip"
-        },
-        "name": "Attack",
-        "ref": "zombie_uppercut_jab/animations/mixamo_com.animstate"
-    },
-    "zombie_uppercut_jab/animations/mixamo_com.clip": {
-        "binaryRef": "zombie_uppercut_jab/binaries/1384861995_zombie_uppercut_jab_mixamo_com.bin",
-        "channels": [
-            {
-                "blendType": "Linear",
-                "jointIndex": 0,
-                "jointName": "Zombie:Hips",
-                "name": "_jnt0",
-                "rotationSamples": [
-                    0,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    1744,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    4360,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    3052,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 1,
-                "jointName": "Zombie:Spine",
-                "name": "_jnt1",
-                "rotationSamples": [
-                    4796,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    6540,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    9156,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    7848,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 2,
-                "jointName": "Zombie:Spine1",
-                "name": "_jnt2",
-                "rotationSamples": [
-                    9592,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    11336,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    13952,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    12644,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 3,
-                "jointName": "Zombie:Spine2",
-                "name": "_jnt3",
-                "rotationSamples": [
-                    14388,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    16132,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    18748,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    17440,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 4,
-                "jointName": "Zombie:Neck",
-                "name": "_jnt4",
-                "rotationSamples": [
-                    19184,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    20928,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    23544,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    22236,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 5,
-                "jointName": "Zombie:Neck1",
-                "name": "_jnt5",
-                "rotationSamples": [
-                    23980,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    23996,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    24020,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    24008,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 6,
-                "jointName": "Zombie:Head",
-                "name": "_jnt6",
-                "rotationSamples": [
-                    24024,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    25768,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    28384,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    27076,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 9,
-                "jointName": "Zombie:Jaw",
-                "name": "_jnt9",
-                "rotationSamples": [
-                    28820,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    28836,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    28860,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    28848,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 31,
-                "jointName": "Zombie:LeftShoulder",
-                "name": "_jnt31",
-                "rotationSamples": [
-                    28864,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    30608,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    33224,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    31916,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 32,
-                "jointName": "Zombie:LeftArm",
-                "name": "_jnt32",
-                "rotationSamples": [
-                    33660,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    35404,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    38020,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    36712,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 33,
-                "jointName": "Zombie:LeftForeArm",
-                "name": "_jnt33",
-                "rotationSamples": [
-                    38456,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    40200,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    42816,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    41508,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 34,
-                "jointName": "Zombie:LeftHand",
-                "name": "_jnt34",
-                "rotationSamples": [
-                    43252,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    44996,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    47612,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    46304,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 35,
-                "jointName": "Zombie:LeftHandThumb1",
-                "name": "_jnt35",
-                "rotationSamples": [
-                    48048,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    49792,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    52408,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    51100,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 36,
-                "jointName": "Zombie:LeftHandThumb2",
-                "name": "_jnt36",
-                "rotationSamples": [
-                    52844,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    54588,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    57204,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    55896,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 37,
-                "jointName": "Zombie:LeftHandThumb3",
-                "name": "_jnt37",
-                "rotationSamples": [
-                    57640,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    57656,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    57680,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    57668,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 38,
-                "jointName": "Zombie:LeftHandMiddle1",
-                "name": "_jnt38",
-                "rotationSamples": [
-                    57684,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    59428,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    62044,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    60736,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 39,
-                "jointName": "Zombie:LeftHandMiddle2",
-                "name": "_jnt39",
-                "rotationSamples": [
-                    62480,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    62496,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    62520,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    62508,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 40,
-                "jointName": "Zombie:LeftHandMiddle3",
-                "name": "_jnt40",
-                "rotationSamples": [
-                    62524,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    64268,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    66884,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    65576,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 41,
-                "jointName": "Zombie:LeftHandIndex1",
-                "name": "_jnt41",
-                "rotationSamples": [
-                    67320,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    69064,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    71680,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    70372,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 42,
-                "jointName": "Zombie:LeftHandIndex2",
-                "name": "_jnt42",
-                "rotationSamples": [
-                    72116,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    72132,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    72156,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    72144,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 43,
-                "jointName": "Zombie:LeftHandIndex3",
-                "name": "_jnt43",
-                "rotationSamples": [
-                    72160,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    73904,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    76520,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    75212,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 44,
-                "jointName": "Zombie:LeftHandRing1",
-                "name": "_jnt44",
-                "rotationSamples": [
-                    76956,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    78700,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    81316,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    80008,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 45,
-                "jointName": "Zombie:LeftHandRing2",
-                "name": "_jnt45",
-                "rotationSamples": [
-                    81752,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    81768,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    81792,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    81780,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 46,
-                "jointName": "Zombie:LeftHandRing3",
-                "name": "_jnt46",
-                "rotationSamples": [
-                    81796,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    81812,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    81836,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    81824,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 47,
-                "jointName": "Zombie:LeftHandPinky1",
-                "name": "_jnt47",
-                "rotationSamples": [
-                    81840,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    83584,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    86200,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    84892,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 48,
-                "jointName": "Zombie:LeftHandPinky2",
-                "name": "_jnt48",
-                "rotationSamples": [
-                    86636,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    86652,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    86676,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    86664,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 49,
-                "jointName": "Zombie:LeftHandPinky3",
-                "name": "_jnt49",
-                "rotationSamples": [
-                    86680,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    86696,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    86720,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    86708,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 50,
-                "jointName": "Zombie:RightShoulder",
-                "name": "_jnt50",
-                "rotationSamples": [
-                    86724,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    88468,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    91084,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    89776,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 51,
-                "jointName": "Zombie:RightArm",
-                "name": "_jnt51",
-                "rotationSamples": [
-                    91520,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    93264,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    95880,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    94572,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 52,
-                "jointName": "Zombie:RightForeArm",
-                "name": "_jnt52",
-                "rotationSamples": [
-                    96316,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    98060,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    100676,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    99368,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 53,
-                "jointName": "Zombie:RightHand",
-                "name": "_jnt53",
-                "rotationSamples": [
-                    101112,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    102856,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    105472,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    104164,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 54,
-                "jointName": "Zombie:RightHandThumb1",
-                "name": "_jnt54",
-                "rotationSamples": [
-                    105908,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    107652,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    110268,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    108960,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 55,
-                "jointName": "Zombie:RightHandThumb2",
-                "name": "_jnt55",
-                "rotationSamples": [
-                    110704,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    112448,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    115064,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    113756,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 56,
-                "jointName": "Zombie:RightHandThumb3",
-                "name": "_jnt56",
-                "rotationSamples": [
-                    115500,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    115516,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    115540,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    115528,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 57,
-                "jointName": "Zombie:RightHandIndex1",
-                "name": "_jnt57",
-                "rotationSamples": [
-                    115544,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    117288,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    119904,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    118596,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 58,
-                "jointName": "Zombie:RightHandIndex2",
-                "name": "_jnt58",
-                "rotationSamples": [
-                    120340,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    120356,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    120380,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    120368,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 59,
-                "jointName": "Zombie:RightHandIndex3",
-                "name": "_jnt59",
-                "rotationSamples": [
-                    120384,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    120400,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    120424,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    120412,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 60,
-                "jointName": "Zombie:RightHandMiddle1",
-                "name": "_jnt60",
-                "rotationSamples": [
-                    120428,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    122172,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    124788,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    123480,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 61,
-                "jointName": "Zombie:RightHandMiddle2",
-                "name": "_jnt61",
-                "rotationSamples": [
-                    125224,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    125240,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    125264,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    125252,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 62,
-                "jointName": "Zombie:RightHandMiddle3",
-                "name": "_jnt62",
-                "rotationSamples": [
-                    125268,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    125284,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    125308,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    125296,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 63,
-                "jointName": "Zombie:RightHandRing1",
-                "name": "_jnt63",
-                "rotationSamples": [
-                    125312,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    127056,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    129672,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    128364,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 64,
-                "jointName": "Zombie:RightHandRing2",
-                "name": "_jnt64",
-                "rotationSamples": [
-                    130108,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    130124,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    130148,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    130136,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 65,
-                "jointName": "Zombie:RightHandRing3",
-                "name": "_jnt65",
-                "rotationSamples": [
-                    130152,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    130168,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    130192,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    130180,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 66,
-                "jointName": "Zombie:RightHandPinky1",
-                "name": "_jnt66",
-                "rotationSamples": [
-                    130196,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    131940,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    134556,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    133248,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 67,
-                "jointName": "Zombie:RightHandPinky2",
-                "name": "_jnt67",
-                "rotationSamples": [
-                    134992,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    135008,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    135032,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    135020,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 68,
-                "jointName": "Zombie:RightHandPinky3",
-                "name": "_jnt68",
-                "rotationSamples": [
-                    135036,
-                    4,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    135052,
-                    3,
-                    "float32"
-                ],
-                "times": [
-                    135076,
-                    1,
-                    "float32"
-                ],
-                "translationSamples": [
-                    135064,
-                    3,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 69,
-                "jointName": "Zombie:LeftUpLeg",
-                "name": "_jnt69",
-                "rotationSamples": [
-                    135080,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    136824,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    139440,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    138132,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 70,
-                "jointName": "Zombie:LeftLeg",
-                "name": "_jnt70",
-                "rotationSamples": [
-                    139876,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    141620,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    144236,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    142928,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 71,
-                "jointName": "Zombie:LeftFoot",
-                "name": "_jnt71",
-                "rotationSamples": [
-                    144672,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    146416,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    149032,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    147724,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 72,
-                "jointName": "Zombie:LeftToeBase",
-                "name": "_jnt72",
-                "rotationSamples": [
-                    149468,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    151212,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    153828,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    152520,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 73,
-                "jointName": "Zombie:RightUpLeg",
-                "name": "_jnt73",
-                "rotationSamples": [
-                    154264,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    156008,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    158624,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    157316,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 74,
-                "jointName": "Zombie:RightLeg",
-                "name": "_jnt74",
-                "rotationSamples": [
-                    159060,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    160804,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    163420,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    162112,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 75,
-                "jointName": "Zombie:RightFoot",
-                "name": "_jnt75",
-                "rotationSamples": [
-                    163856,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    165600,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    168216,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    166908,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            },
-            {
-                "blendType": "Linear",
-                "jointIndex": 76,
-                "jointName": "Zombie:RightToeBase",
-                "name": "_jnt76",
-                "rotationSamples": [
-                    168652,
-                    436,
-                    "float32"
-                ],
-                "scaleSamples": [
-                    170396,
-                    327,
-                    "float32"
-                ],
-                "times": [
-                    173012,
-                    109,
-                    "float32"
-                ],
-                "translationSamples": [
-                    171704,
-                    327,
-                    "float32"
-                ],
-                "type": "Joint"
-            }
-        ],
-        "name": "mixamo.com",
-        "ref": "zombie_uppercut_jab/animations/mixamo_com.clip"
-    },
-    "zombie_uppercut_jab/zombie_uppercut_jab.group": {
-        "libraryRefs": [
-            "zombie_uppercut_jab/animations/mixamo_com.clip",
-            "zombie_uppercut_jab/binaries/1384861995_zombie_uppercut_jab_mixamo_com.bin"
-        ],
-        "name": "zombie_uppercut_jab",
-        "ref": "zombie_uppercut_jab/zombie_uppercut_jab.group"
+        "name": "walking",
+        "ref": "walking/walking.group"
     }
 }

@@ -1,0 +1,366 @@
+{
+    "entities/DirectionalLight.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 1,
+                "lightCookie": null,
+                "shadowCaster": true,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 1000,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Parallel",
+                    "resolution": [
+                        512,
+                        512
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    -38.46926465091261,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    7.895118713378906,
+                    21.684419631958008,
+                    26.26848030090332
+                ]
+            }
+        },
+        "name": "DirectionalLight",
+        "ref": "entities/DirectionalLight.entity"
+    },
+    "level_v03/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "level_v03",
+        "nodeType": "Null"
+    },
+    "level_v03/entities/polySurface24_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "level_v03/meshes/polySurface24_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "hidden": false,
+                "materialRefs": [
+                    "level_v03/materials/lambert7.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "level_v03/entities/RootNode.entity",
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "polySurface24",
+        "nodeType": "Mesh",
+        "ref": "level_v03/entities/polySurface24_0.entity"
+    },
+    "level_v03/level_v03.group": {
+        "libraryRefs": [
+            "level_v03/entities/RootNode.entity",
+            "level_v03/meshes/polySurface24_0.mesh",
+            "level_v03/textures/level_color.texture",
+            "level_v03/materials/lambert7.material",
+            "level_v03/entities/polySurface24_0.entity",
+            "level_v03/binaries/1385654412_data.bin",
+            "level_v03/images/level_color.png"
+        ],
+        "name": "level_v03",
+        "ref": "level_v03/level_v03.group"
+    },
+    "level_v03/materials/lambert7.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "lambert7",
+        "ref": "level_v03/materials/lambert7.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {
+            "DIFFUSE_MAP": {
+                "enabled": true,
+                "textureRef": "level_v03/textures/level_color.texture"
+            }
+        },
+        "type": "Lambert",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 1
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0
+            }
+        }
+    },
+    "level_v03/meshes/polySurface24_0.mesh": {
+        "binaryRef": "level_v03/binaries/1385654412_data.bin",
+        "boundingVolume": {
+            "max": [
+                38.0,
+                8.0,
+                29.0
+            ],
+            "min": [
+                -17.0,
+                0.0,
+                -29.0
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            3150
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            3150,
+            "uint16"
+        ],
+        "name": "polySurface24",
+        "normals": [
+            20460,
+            3540,
+            "float32"
+        ],
+        "tangents": [
+            34620,
+            4720,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                53500,
+                2360,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 1180,
+        "vertices": [
+            6300,
+            3540,
+            "float32"
+        ]
+    },
+    "level_v03/textures/level_color.texture": {
+        "anisotropy": 1,
+        "fileName": "level_color.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "level_color",
+        "offset": [
+            0,
+            0
+        ],
+        "realUrl": "/Users/joakimareschoug/Goo/010_Zombie/texture/level_color.png",
+        "ref": "level_v03/textures/level_color.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "level_v03/images/level_color.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2013-11-28T16:00:04.307000",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "level_v03/entities/RootNode.entity",
+            "level_v03/entities/polySurface24_0.entity",
+            "entities/DirectionalLight.entity"
+        ],
+        "fogColor": [
+            0,
+            0,
+            0
+        ],
+        "fogFar": 30,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "level_v03/level_v03.group",
+            "root.group"
+        ],
+        "id": "GERwy220Sv6S4LMudmfFZg",
+        "licenseType": "CC0",
+        "modified": "2013-11-28T16:00:04.307000",
+        "name": "Default Goo Project",
+        "originalLicenseType": null,
+        "own": [
+            "BVvp5-QhTIaPFFbuEBmqKg"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": true,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [
+            "entities/DirectionalLight.entity"
+        ],
+        "name": "root",
+        "ref": "root.group"
+    }
+}

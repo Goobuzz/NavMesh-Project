@@ -1,6 +1,6 @@
 define([
 	'goo/entities/systems/System',
-	'lib/Game'
+	'js/Game'
 ],
 function (
 	System,
@@ -42,10 +42,12 @@ function (
 		this._accumulated += Time.dt;
 
 		while(Time.fixedDT < this._accumulated){
-			Game.raiseEvent("FixedUpdate");
-			if(Game.dynamicsWorld){
-				Game.dynamicsWorld.stepSimulation(Time.fixedDT, 10);
+			
+			// apply ammo step here using Time.fixedDT
+			if(Game.ammoWorld){
+				Game.ammoWorld.stepSimulation(Time.fixedDT, 5);
 			}
+			Game.raiseEvent("FixedUpdate");
 			this._accumulated -= Time.fixedDT;
 		}
 
@@ -56,6 +58,5 @@ function (
 		Game.raiseEvent("RenderUpdate");
 		Game.raiseEvent("LateUpdate");
 	};
-
 	return Time;
 });
