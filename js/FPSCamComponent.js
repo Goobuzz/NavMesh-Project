@@ -9,7 +9,7 @@ define([
 	'goo/renderer/Camera',
 	'goo/entities/components/CameraComponent',
 	'goo/entities/EntityUtils',
-	'js/sphereMovement'
+	'js/SphereMovement'
 ], function(
 	Component,
 	Vector3,
