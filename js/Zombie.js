@@ -7,7 +7,6 @@ define([
 	'goo/math/Quaternion',
 	'goo/math/Vector3',
 	'js/SphereSpatial',
-	'js/SphereMovement',
 	'goo/entities/components/ScriptComponent',
 	'goo/renderer/shaders/ShaderLib'
 
@@ -20,7 +19,6 @@ define([
 	Quaternion,
 	Vector3,
 	SphereSpatial,
-	SphereMovement,
 	ScriptComponent,
 	ShaderLib
 ){
