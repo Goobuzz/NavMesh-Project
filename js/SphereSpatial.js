@@ -1,4 +1,4 @@
-define(['js/sphereMovement'],
+define(['js/SphereMovement'],
     function(
         SphereMovement
         ) {
