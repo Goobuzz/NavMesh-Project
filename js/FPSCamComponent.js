@@ -8,8 +8,8 @@ define([
 	'goo/math/Ray',
 	'goo/renderer/Camera',
 	'goo/entities/components/CameraComponent',
-	'goo/entities/EntityUtils',
-	'js/SphereMovement'
+	'goo/entities/EntityUtils'
+//	'js/SphereMovement'
 ], function(
 	Component,
 	Vector3,
@@ -20,8 +20,8 @@ define([
 	Ray,
 	Camera,
 	CameraComponent,
-	EntityUtils,
-	SphereMovement
+	EntityUtils
+//	SphereMovement
 ) {
 	'use strict';
 	function FPSCamComponent(userEntity){
