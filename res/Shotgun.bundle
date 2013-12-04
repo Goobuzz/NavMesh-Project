@@ -1,0 +1,698 @@
+{
+    "entities/DirectionalLight.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 2.87,
+                "lightCookie": null,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 1000,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Parallel",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    -42.90266872418161,
+                    51.748914586223265,
+                    3.014537500800743
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    71.51213073730469,
+                    0
+                ]
+            }
+        },
+        "name": "DirectionalLight",
+        "ref": "entities/DirectionalLight.entity"
+    },
+    "entities/DirectionalLight_0.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 2.63,
+                "lightCookie": null,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 1000,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Parallel",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "DirectionalLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    -144.2308644011115,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    -30.8933162689209,
+                    0,
+                    -42.88330841064453
+                ]
+            }
+        },
+        "name": "DirectionalLight_0",
+        "ref": "entities/DirectionalLight_0.entity"
+    },
+    "entities/PointLight.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 5.46,
+                "lightCookie": null,
+                "range": 500,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 500,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "PointLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    4.120697975158691,
+                    5.226230621337891
+                ]
+            }
+        },
+        "name": "PointLight",
+        "ref": "entities/PointLight.entity"
+    },
+    "project.project": {
+        "backgroundColor": [
+            0.75,
+            0.76,
+            0.78,
+            1
+        ],
+        "created": "2013-12-03T09:52:45.934698",
+        "deleted": false,
+        "edit": [],
+        "entityRefs": [
+            "shotgun/entities/shotgun_mesh_0.entity",
+            "shotgun/entities/RootNode.entity"
+        ],
+        "fogColor": [
+            1,
+            1,
+            1
+        ],
+        "fogFar": 1000,
+        "fogNear": 0,
+        "globalAmbient": [
+            0,
+            0,
+            0
+        ],
+        "groupRefs": [
+            "shotgun/shotgun.group",
+            "root.group"
+        ],
+        "id": "XZTw--djSV-B5yWJdfEG-Q",
+        "licenseType": "CC0",
+        "modified": "2013-12-03T09:52:45.934698",
+        "name": "Shotgun",
+        "originalLicenseType": null,
+        "own": [
+            "Wswf0FL7TnG-JJGFCFTB3Q"
+        ],
+        "parent": null,
+        "public": true,
+        "ref": "project.project",
+        "skybox": {
+            "attribution": {
+                "link": "http://www.3delyvisions.com/",
+                "name": "3DElyvisions"
+            },
+            "environmentType": 1,
+            "imageUrls": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "ref": "environment/Bright_Space.skybox",
+            "rotation": 0,
+            "shape": "Box"
+        },
+        "useFog": false,
+        "view": []
+    },
+    "root.group": {
+        "libraryRefs": [
+            "images/shotgun_emissive.png",
+            "textures/shotgun_emissive.texture",
+            "entities/PointLight.entity",
+            "entities/DirectionalLight.entity",
+            "entities/DirectionalLight_0.entity",
+            "images/shotgun_reflectivity.png",
+            "textures/shotgun_reflectivity.texture",
+            "textures/shotgun_reflectivity_0.texture",
+            "images/shotgun_specularity.png"
+        ],
+        "name": "root",
+        "ref": "root.group"
+    },
+    "shotgun/entities/PointLight.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 7.08,
+                "lightCookie": null,
+                "range": 50,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 50,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "PointLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    21.57941436767578,
+                    0
+                ]
+            }
+        },
+        "name": "PointLight",
+        "ref": "shotgun/entities/PointLight.entity"
+    },
+    "shotgun/entities/PointLight_0.entity": {
+        "components": {
+            "light": {
+                "attenuate": true,
+                "color": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "direction": [
+                    0,
+                    0,
+                    0
+                ],
+                "intensity": 1,
+                "lightCookie": null,
+                "range": 50,
+                "shadowCaster": false,
+                "shadowSettings": {
+                    "darkness": 0,
+                    "far": 1000,
+                    "fov": 55,
+                    "near": 1,
+                    "projection": "Perspective",
+                    "resolution": [
+                        256,
+                        256
+                    ],
+                    "shadowType": "VSM",
+                    "size": 400,
+                    "type": "Blur",
+                    "upVector": [
+                        0,
+                        1,
+                        0
+                    ]
+                },
+                "specularIntensity": 1,
+                "type": "PointLight"
+            },
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "PointLight_0",
+        "ref": "shotgun/entities/PointLight_0.entity"
+    },
+    "shotgun/entities/RootNode.entity": {
+        "components": {
+            "transform": {
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ],
+                "scale": [
+                    1,
+                    1,
+                    1
+                ],
+                "translation": [
+                    0,
+                    0,
+                    0
+                ]
+            }
+        },
+        "name": "shotgun",
+        "nodeType": "Null",
+        "ref": "shotgun/entities/RootNode.entity"
+    },
+    "shotgun/entities/shotgun_mesh_0.entity": {
+        "components": {
+            "meshData": {
+                "meshRef": "shotgun/meshes/shotgun_mesh_0.mesh"
+            },
+            "meshRenderer": {
+                "castShadows": true,
+                "cullMode": "Dynamic",
+                "materialRefs": [
+                    "shotgun/materials/lambert2.material"
+                ],
+                "receiveShadows": true,
+                "reflectable": false
+            },
+            "transform": {
+                "parentRef": "shotgun/entities/RootNode.entity",
+                "rotation": [
+                    0.0,
+                    -0.0,
+                    0.0
+                ],
+                "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "translation": [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        },
+        "name": "shotgun_mesh",
+        "nodeType": "Mesh"
+    },
+    "shotgun/materials/lambert2.material": {
+        "blendState": {
+            "blendDst": "OneMinusSrcAlphaFactor",
+            "blendEquation": "AddEquation",
+            "blendSrc": "SrcAlphaFactor",
+            "blending": "NoBlending"
+        },
+        "cullState": {
+            "cullFace": "Back",
+            "enabled": true,
+            "frontFace": "CCW"
+        },
+        "depthState": {
+            "enabled": true,
+            "write": true
+        },
+        "name": "shotgun_material",
+        "ref": "shotgun/materials/lambert2.material",
+        "renderQueue": 1000,
+        "shaderRef": "GOO_ENGINE_SHADERS/uber",
+        "texturesMapping": {
+            "DIFFUSE_MAP": {
+                "enabled": true,
+                "textureRef": "shotgun/textures/shotgun_color.texture"
+            },
+            "EMISSIVE_MAP": {
+                "enabled": true,
+                "textureRef": "textures/shotgun_emissive.texture"
+            },
+            "REFLECTION_MAP": {
+                "enabled": true,
+                "textureRef": "textures/shotgun_reflectivity_0.texture"
+            },
+            "SPECULAR_MAP": {
+                "enabled": true,
+                "textureRef": "textures/shotgun_reflectivity.texture"
+            }
+        },
+        "type": "Lambert",
+        "uniforms": {
+            "discardThreshold": {
+                "enabled": false,
+                "value": 0
+            },
+            "fresnel": {
+                "enabled": true,
+                "value": 0.22
+            },
+            "materialAmbient": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialDiffuse": {
+                "enabled": true,
+                "value": [
+                    0.800000011920929,
+                    0.800000011920929,
+                    0.800000011920929,
+                    1
+                ]
+            },
+            "materialEmissive": {
+                "enabled": true,
+                "value": [
+                    0.6,
+                    0.6,
+                    0.6,
+                    1
+                ]
+            },
+            "materialSpecular": {
+                "enabled": true,
+                "value": [
+                    0,
+                    0,
+                    0,
+                    1
+                ]
+            },
+            "materialSpecularPower": {
+                "enabled": true,
+                "value": 1
+            },
+            "normalMultiplier": {
+                "enabled": true,
+                "value": 1
+            },
+            "opacity": {
+                "enabled": true,
+                "value": 1
+            },
+            "reflectivity": {
+                "enabled": true,
+                "value": 0.08
+            }
+        }
+    },
+    "shotgun/meshes/shotgun_mesh_0.mesh": {
+        "binaryRef": "shotgun/binaries/1386064410_data.bin",
+        "boundingVolume": {
+            "max": [
+                33.14143753051758,
+                1.4818576574325562,
+                1.0969254970550537
+            ],
+            "min": [
+                -7.8404645919799805,
+                -6.664533615112305,
+                -3.088940382003784
+            ],
+            "type": "BoundingBox"
+        },
+        "colors": [],
+        "indexLengths": [
+            2208
+        ],
+        "indexModes": [
+            "Triangles"
+        ],
+        "indices": [
+            0,
+            2208,
+            "uint16"
+        ],
+        "name": "shotgun_mesh",
+        "normals": [
+            13932,
+            2379,
+            "float32"
+        ],
+        "tangents": [
+            23448,
+            3172,
+            "float32"
+        ],
+        "textureCoords": [
+            [
+                36136,
+                1586,
+                "float32"
+            ]
+        ],
+        "type": "Mesh",
+        "vertexCount": 793,
+        "vertices": [
+            4416,
+            2379,
+            "float32"
+        ]
+    },
+    "shotgun/shotgun.group": {
+        "libraryRefs": [
+            "shotgun/entities/shotgun_mesh_0.entity",
+            "shotgun/textures/shotgun_color.texture",
+            "shotgun/meshes/shotgun_mesh_0.mesh",
+            "shotgun/entities/RootNode.entity",
+            "shotgun/materials/lambert2.material",
+            "shotgun/binaries/1386064410_data.bin",
+            "shotgun/images/shotgun_color.png",
+            "shotgun/entities/PointLight.entity",
+            "shotgun/entities/PointLight_0.entity"
+        ],
+        "name": "shotgun",
+        "ref": "shotgun/shotgun.group"
+    },
+    "shotgun/textures/shotgun_color.texture": {
+        "anisotropy": 1,
+        "fileName": "shotgun_color.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "shotgun_color",
+        "offset": [
+            0,
+            0
+        ],
+        "realUrl": "/Users/joakimareschoug/Goo/010_Zombie/texture/shotgun_color.png",
+        "ref": "shotgun/textures/shotgun_color.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "shotgun/images/shotgun_color.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "textures/shotgun_emissive.texture": {
+        "anisotropy": 1,
+        "fileName": "shotgun_emissive.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "shotgun_emissive",
+        "offset": [
+            0,
+            0
+        ],
+        "ref": "textures/shotgun_emissive.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "images/shotgun_emissive.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "textures/shotgun_reflectivity.texture": {
+        "anisotropy": 1,
+        "fileName": "shotgun_reflectivity.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "shotgun_reflectivity",
+        "offset": [
+            0,
+            0
+        ],
+        "ref": "textures/shotgun_reflectivity.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "images/shotgun_specularity.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    },
+    "textures/shotgun_reflectivity_0.texture": {
+        "anisotropy": 1,
+        "fileName": "shotgun_reflectivity.png",
+        "flipY": true,
+        "magFilter": "Bilinear",
+        "minFilter": "Trilinear",
+        "name": "shotgun_reflectivity",
+        "offset": [
+            0,
+            0
+        ],
+        "ref": "textures/shotgun_reflectivity_0.texture",
+        "repeat": [
+            1,
+            1
+        ],
+        "url": "images/shotgun_reflectivity.png",
+        "wrapU": "Repeat",
+        "wrapV": "Repeat"
+    }
+}
