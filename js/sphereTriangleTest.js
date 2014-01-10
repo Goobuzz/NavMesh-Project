@@ -255,7 +255,7 @@ require([
 			
  			createUserEntity();
 
- 			for(var i = 0, ilen = 20; i < ilen; i++){
+ 			for(var i = 0, ilen = 10; i < ilen; i++){
  				Zombie.spawn();
  			}
 
